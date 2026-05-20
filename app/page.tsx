@@ -60,7 +60,7 @@ export default function Home() {
 
       {/* HERO */}
       <div style={{ position: "relative", padding: "70px 24px 90px", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('https://images.unsplash.com/photo-1539066628-3f8fdc64e8c6?w=1600&fit=crop')", backgroundSize: "cover", backgroundPosition: "center" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('https://images.unsplash.com/photo-1726428977637-ba8fc5a5047d?w=1600&fit=crop')", backgroundSize: "cover", backgroundPosition: "center" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,20,80,0.62) 0%, rgba(10,20,80,0.45) 50%, rgba(10,20,80,0.62) 100%)" }} />
         <div style={{ position: "relative", maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
           <h1 style={{ fontSize: 48, fontWeight: 800, color: "#fff", marginBottom: 12, lineHeight: 1.2 }}>Rien n&apos;est vraiment perdu.</h1>
