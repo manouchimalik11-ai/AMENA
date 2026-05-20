@@ -40,14 +40,20 @@ export default function Home() {
       {/* NAVBAR */}
       <nav style={{ background: "#fff", borderBottom: "1px solid #e8e8e8", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64, position: "sticky", top: 0, zIndex: 100, boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="20" fill="#e53935"/>
-            <path d="M20 8C14.477 8 10 12.477 10 18C10 22.418 12.718 26.196 16.6 27.764L15 32H25L23.4 27.764C27.282 26.196 30 22.418 30 18C30 12.477 25.523 8 20 8Z" fill="white"/>
-            <circle cx="20" cy="18" r="5" fill="#e53935"/>
+          <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#ff5252"/>
+                <stop offset="100%" stopColor="#c62828"/>
+              </linearGradient>
+            </defs>
+            <rect width="42" height="42" rx="13" fill="url(#logoGrad)"/>
+            <circle cx="18" cy="18" r="8" stroke="white" strokeWidth="2.8" fill="none"/>
+            <line x1="24" y1="24" x2="31" y2="31" stroke="white" strokeWidth="2.8" strokeLinecap="round"/>
           </svg>
           <div>
             <div style={{ fontWeight: 800, fontSize: 20, color: "#1a1a2e", lineHeight: 1, letterSpacing: "-0.5px" }}>Amena</div>
-            <div style={{ fontSize: 10, color: "#888" }}>Lost & Find Tunisie</div>
+            <div style={{ fontSize: 10, color: "#888" }}>Lost & Found Tunisia</div>
           </div>
         </div>
         <div style={{ display: "flex", gap: 28, alignItems: "center" }}>
