@@ -17,7 +17,7 @@ const annonces = [
   { id: 4, titre: "Sac Trouvé", lieu: "La Marsa", temps: "Il y a 4h", type: "trouve", categorie: "Portefeuilles", image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=300&h=200&fit=crop" },
   { id: 5, titre: "Chat Perdu", lieu: "Sousse", temps: "Il y a 5h", type: "perdu", categorie: "Animaux", image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=300&h=200&fit=crop" },
   { id: 6, titre: "Carte d'identité", lieu: "Sfax", temps: "Il y a 2h", type: "trouve", categorie: "Documents", image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300&h=200&fit=crop" },
-  { id: 7, titre: "AirPods", lieu: "Nabeul", temps: "Il y a 6h", type: "perdu", categorie: "Téléphones", image: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=300&h=200&fit=crop" },
+  { id: 7, titre: "Cahier de révision", lieu: "Univ. de Carthage", temps: "Il y a 6h", type: "perdu", categorie: "Documents", image: "https://images.unsplash.com/photo-1566869112473-77c4fb94359c?w=300&h=200&fit=crop" },
   { id: 8, titre: "AirPods Perdus", lieu: "Nabeul", temps: "Il y a 6h", type: "trouve", categorie: "Téléphones", image: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=300&h=200&fit=crop" },
 ];
 
@@ -61,6 +61,8 @@ export default function Home() {
           <a href="#" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Objets Perdus</a>
           <a href="#" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Objets Trouvés</a>
           <a href="#" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Aide</a>
+          <a href="#" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Créer un compte</a>
+          <span style={{ color: "#ccc", fontSize: 14 }}>/</span>
           <a href="#" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Se Connecter</a>
         </div>
       </nav>
