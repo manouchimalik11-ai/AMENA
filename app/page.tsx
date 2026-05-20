@@ -67,22 +67,31 @@ export default function Home() {
           <h1 style={{ fontSize: 48, fontWeight: 800, color: "#fff", marginBottom: 12, lineHeight: 1.2 }}>Rien n&apos;est vraiment perdu.</h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", marginBottom: 36 }}>Retrouvez vos objets perdus ou à ceux que vous avez trouvés</p>
 
-          {/* Barre de recherche */}
-          <div style={{ background: "#fff", borderRadius: 16, padding: "8px 8px 8px 20px", display: "flex", alignItems: "center", gap: 12, boxShadow: "0 8px 32px rgba(0,0,0,0.25)", maxWidth: 780, margin: "0 auto 20px" }}>
-            <span style={{ fontSize: 20 }}>🔍</span>
-            <input
-              type="text"
-              placeholder="Recherche intelligente par IA"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              style={{ flex: 1, border: "none", outline: "none", fontSize: 16, color: "#333", background: "transparent" }}
-            />
-            <button style={{ background: "#2e7d32", color: "#fff", border: "none", borderRadius: 10, padding: "12px 18px", fontWeight: 600, fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, whiteSpace: "nowrap" }}>
-              📷 Télécharge une photo
-            </button>
-            <button style={{ background: "#e53935", color: "#fff", border: "none", borderRadius: 10, padding: "12px 18px", fontWeight: 600, fontSize: 13, cursor: "pointer", whiteSpace: "nowrap" }}>
-              Déposer une Annonce
-            </button>
+          {/* Deux barres principales */}
+          <div style={{ display: "flex", gap: 16, maxWidth: 780, margin: "0 auto 20px", flexWrap: "wrap" }}>
+            {/* Barre 1 : Déposer une annonce */}
+            <div style={{ flex: 1, minWidth: 280, background: "#e53935", borderRadius: 16, padding: "18px 24px", display: "flex", alignItems: "center", gap: 14, boxShadow: "0 8px 32px rgba(0,0,0,0.25)", cursor: "pointer" }}>
+              <span style={{ fontSize: 28 }}>📢</span>
+              <div style={{ textAlign: "left" }}>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 16 }}>Déposer une annonce</div>
+                <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 12 }}>Signalez un objet perdu ou trouvé</div>
+              </div>
+            </div>
+
+            {/* Barre 2 : Rechercher dans Amena */}
+            <div style={{ flex: 1, minWidth: 280, background: "#fff", borderRadius: 16, padding: "8px 8px 8px 18px", display: "flex", alignItems: "center", gap: 10, boxShadow: "0 8px 32px rgba(0,0,0,0.25)" }}>
+              <span style={{ fontSize: 20 }}>🔍</span>
+              <input
+                type="text"
+                placeholder="Rechercher dans Amena..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                style={{ flex: 1, border: "none", outline: "none", fontSize: 15, color: "#333", background: "transparent" }}
+              />
+              <button style={{ background: "#1a73e8", color: "#fff", border: "none", borderRadius: 10, padding: "12px 16px", fontWeight: 600, fontSize: 13, cursor: "pointer", whiteSpace: "nowrap" }}>
+                Rechercher
+              </button>
+            </div>
           </div>
 
           {/* Tags rapides */}
