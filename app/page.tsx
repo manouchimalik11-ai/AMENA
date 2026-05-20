@@ -78,12 +78,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Barre 2 : Rechercher dans Amena */}
+            {/* Barre 2 : Recherche intelligente par IA */}
             <div style={{ flex: 1, minWidth: 280, background: "#fff", borderRadius: 16, padding: "8px 8px 8px 18px", display: "flex", alignItems: "center", gap: 10, boxShadow: "0 8px 32px rgba(0,0,0,0.25)" }}>
               <span style={{ fontSize: 20 }}>🔍</span>
               <input
                 type="text"
-                placeholder="Rechercher dans Amena..."
+                placeholder="Recherche intelligente par IA..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 style={{ flex: 1, border: "none", outline: "none", fontSize: 15, color: "#333", background: "transparent" }}
