@@ -94,14 +94,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Tags rapides */}
-          <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
-            {["📱 Téléphones", "🔑 Clés", "👜 Portefeuilles"].map((tag) => (
-              <button key={tag} style={{ background: "rgba(255,255,255,0.2)", color: "#fff", border: "1px solid rgba(255,255,255,0.4)", borderRadius: 20, padding: "8px 18px", fontSize: 14, cursor: "pointer", backdropFilter: "blur(4px)" }}>
-                {tag}
-              </button>
-            ))}
-          </div>
         </div>
       </div>
 
