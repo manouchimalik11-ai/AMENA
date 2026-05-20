@@ -40,9 +40,13 @@ export default function Home() {
       {/* NAVBAR */}
       <nav style={{ background: "#fff", borderBottom: "1px solid #e8e8e8", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64, position: "sticky", top: 0, zIndex: 100, boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ width: 38, height: 38, background: "#e53935", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 20, fontWeight: 800 }}>A</div>
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" fill="#e53935"/>
+            <path d="M20 8C14.477 8 10 12.477 10 18C10 22.418 12.718 26.196 16.6 27.764L15 32H25L23.4 27.764C27.282 26.196 30 22.418 30 18C30 12.477 25.523 8 20 8Z" fill="white"/>
+            <circle cx="20" cy="18" r="5" fill="#e53935"/>
+          </svg>
           <div>
-            <div style={{ fontWeight: 700, fontSize: 18, color: "#1a1a2e", lineHeight: 1 }}>Amena</div>
+            <div style={{ fontWeight: 800, fontSize: 20, color: "#1a1a2e", lineHeight: 1, letterSpacing: "-0.5px" }}>Amena</div>
             <div style={{ fontSize: 10, color: "#888" }}>Lost & Find Tunisie</div>
           </div>
         </div>
@@ -52,9 +56,6 @@ export default function Home() {
           <a href="#" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Objets Trouvés</a>
           <a href="#" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Aide</a>
           <a href="#" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Se Connecter</a>
-          <button style={{ background: "#e53935", color: "#fff", border: "none", borderRadius: 8, padding: "10px 18px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>
-            Déposer une Annonce
-          </button>
         </div>
       </nav>
 
@@ -67,7 +68,7 @@ export default function Home() {
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", marginBottom: 36 }}>Retrouvez vos objets perdus ou à ceux que vous avez trouvés</p>
 
           {/* Barre de recherche */}
-          <div style={{ background: "#fff", borderRadius: 16, padding: "8px 8px 8px 20px", display: "flex", alignItems: "center", gap: 12, boxShadow: "0 8px 32px rgba(0,0,0,0.25)", maxWidth: 620, margin: "0 auto 20px" }}>
+          <div style={{ background: "#fff", borderRadius: 16, padding: "8px 8px 8px 20px", display: "flex", alignItems: "center", gap: 12, boxShadow: "0 8px 32px rgba(0,0,0,0.25)", maxWidth: 780, margin: "0 auto 20px" }}>
             <span style={{ fontSize: 20 }}>🔍</span>
             <input
               type="text"
@@ -76,8 +77,11 @@ export default function Home() {
               onChange={(e) => setSearch(e.target.value)}
               style={{ flex: 1, border: "none", outline: "none", fontSize: 16, color: "#333", background: "transparent" }}
             />
-            <button style={{ background: "#2e7d32", color: "#fff", border: "none", borderRadius: 10, padding: "12px 22px", fontWeight: 600, fontSize: 14, cursor: "pointer", display: "flex", alignItems: "center", gap: 8, whiteSpace: "nowrap" }}>
+            <button style={{ background: "#2e7d32", color: "#fff", border: "none", borderRadius: 10, padding: "12px 18px", fontWeight: 600, fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, whiteSpace: "nowrap" }}>
               📷 Télécharge une photo
+            </button>
+            <button style={{ background: "#e53935", color: "#fff", border: "none", borderRadius: 10, padding: "12px 18px", fontWeight: 600, fontSize: 13, cursor: "pointer", whiteSpace: "nowrap" }}>
+              Déposer une Annonce
             </button>
           </div>
 
