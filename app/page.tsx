@@ -13,11 +13,11 @@ const categories = [
 const annonces = [
   { id: 1, titre: "iPhone 13", lieu: "Tunis", temps: "Il y a 2h", type: "perdu", categorie: "Téléphones", image: "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=300&h=200&fit=crop" },
   { id: 2, titre: "Portefeuille", lieu: "Sfax", temps: "Il y a 9h", type: "trouve", categorie: "Portefeuilles", image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=300&h=200&fit=crop" },
-  { id: 3, titre: "Clés Perdues", lieu: "Ariana", temps: "Il y a 3h", type: "perdu", categorie: "Clés", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop" },
+  { id: 3, titre: "Clé de voiture perdue", lieu: "Ariana", temps: "Il y a 3h", type: "perdu", categorie: "Clés", image: "/cle-voiture.jpg" },
   { id: 4, titre: "Sac Trouvé", lieu: "La Marsa", temps: "Il y a 4h", type: "trouve", categorie: "Portefeuilles", image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=300&h=200&fit=crop" },
   { id: 5, titre: "Chat Perdu", lieu: "Sousse", temps: "Il y a 5h", type: "perdu", categorie: "Animaux", image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=300&h=200&fit=crop" },
   { id: 6, titre: "Carte d'identité", lieu: "Sfax", temps: "Il y a 2h", type: "trouve", categorie: "Documents", image: "/carte-identite.png" },
-  { id: 7, titre: "Cahier de révision", lieu: "Univ. de Carthage", temps: "Il y a 6h", type: "perdu", categorie: "Documents", image: "https://images.unsplash.com/photo-1566869112473-77c4fb94359c?w=300&h=200&fit=crop" },
+  { id: 7, titre: "Cahier de révision", lieu: "Univ. de Carthage", temps: "Il y a 6h", type: "perdu", categorie: "Documents", image: "https://images.unsplash.com/photo-1769794371008-954a71d95ce8?w=300&h=200&fit=crop" },
   { id: 8, titre: "AirPods Perdus", lieu: "Nabeul", temps: "Il y a 6h", type: "trouve", categorie: "Téléphones", image: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=300&h=200&fit=crop" },
 ];
 
