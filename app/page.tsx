@@ -25,7 +25,7 @@ export default function Home() {
   const [search, setSearch] = useState("");
   const [filtreCategorie, setFiltreCategorie] = useState("Tous");
   const [filtreType, setFiltreType] = useState("tous");
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [derniers7jours, setDerniers7jours] = useState(false);
 
   const annoncesFiltrees = annonces.filter((a) => {
     const matchSearch = a.titre.toLowerCase().includes(search.toLowerCase()) || a.lieu.toLowerCase().includes(search.toLowerCase());
@@ -40,10 +40,10 @@ export default function Home() {
       {/* NAVBAR */}
       <nav style={{ background: "#fff", borderBottom: "1px solid #e8e8e8", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64, position: "sticky", top: 0, zIndex: 100, boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ width: 38, height: 38, background: "linear-gradient(135deg, #1a73e8, #0d47a1)", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 18 }}>🔍</div>
+          <div style={{ width: 38, height: 38, background: "#e53935", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 20, fontWeight: 800 }}>A</div>
           <div>
             <div style={{ fontWeight: 700, fontSize: 18, color: "#1a1a2e", lineHeight: 1 }}>Amena</div>
-            <div style={{ fontSize: 10, color: "#888" }}>Lost & Found Tunisie</div>
+            <div style={{ fontSize: 10, color: "#888" }}>Lost & Find Tunisie</div>
           </div>
         </div>
         <div style={{ display: "flex", gap: 28, alignItems: "center" }}>
@@ -59,14 +59,15 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <div style={{ background: "linear-gradient(135deg, #1a237e 0%, #1565c0 50%, #0288d1 100%)", padding: "60px 24px 80px", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, background: "url('https://images.unsplash.com/photo-1539066628-3f8fdc64e8c6?w=1400&fit=crop') center/cover no-repeat", opacity: 0.18 }} />
+      <div style={{ position: "relative", padding: "70px 24px 90px", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('https://images.unsplash.com/photo-1539066628-3f8fdc64e8c6?w=1600&fit=crop')", backgroundSize: "cover", backgroundPosition: "center" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,20,80,0.62) 0%, rgba(10,20,80,0.45) 50%, rgba(10,20,80,0.62) 100%)" }} />
         <div style={{ position: "relative", maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
           <h1 style={{ fontSize: 48, fontWeight: 800, color: "#fff", marginBottom: 12, lineHeight: 1.2 }}>Rien n&apos;est vraiment perdu.</h1>
-          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", marginBottom: 36 }}>Retrouvons vos objets perdus dans toute la Tunisie avec confiance</p>
+          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", marginBottom: 36 }}>Retrouvez vos objets perdus ou à ceux que vous avez trouvés</p>
 
           {/* Barre de recherche */}
-          <div style={{ background: "#fff", borderRadius: 16, padding: "8px 8px 8px 20px", display: "flex", alignItems: "center", gap: 12, boxShadow: "0 8px 32px rgba(0,0,0,0.2)", maxWidth: 620, margin: "0 auto 20px" }}>
+          <div style={{ background: "#fff", borderRadius: 16, padding: "8px 8px 8px 20px", display: "flex", alignItems: "center", gap: 12, boxShadow: "0 8px 32px rgba(0,0,0,0.25)", maxWidth: 620, margin: "0 auto 20px" }}>
             <span style={{ fontSize: 20 }}>🔍</span>
             <input
               type="text"
@@ -75,8 +76,8 @@ export default function Home() {
               onChange={(e) => setSearch(e.target.value)}
               style={{ flex: 1, border: "none", outline: "none", fontSize: 16, color: "#333", background: "transparent" }}
             />
-            <button style={{ background: "#2e7d32", color: "#fff", border: "none", borderRadius: 10, padding: "12px 22px", fontWeight: 600, fontSize: 14, cursor: "pointer", display: "flex", alignItems: "center", gap: 8 }}>
-              📷 Télécharger une photo
+            <button style={{ background: "#2e7d32", color: "#fff", border: "none", borderRadius: 10, padding: "12px 22px", fontWeight: 600, fontSize: 14, cursor: "pointer", display: "flex", alignItems: "center", gap: 8, whiteSpace: "nowrap" }}>
+              📷 Télécharge une photo
             </button>
           </div>
 
@@ -97,28 +98,61 @@ export default function Home() {
         {/* SIDEBAR FILTRES */}
         <aside style={{ width: 220, flexShrink: 0 }}>
           <div style={{ background: "#fff", borderRadius: 14, padding: "20px", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
-            <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 20, display: "flex", alignItems: "center", gap: 8 }}>⚙️ Filtres</div>
+            <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 20, display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ fontSize: 16 }}>☰</span> Filtres
+            </div>
 
-            <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 12, color: "#333" }}>Catégorie</div>
+            <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 10, color: "#333" }}>Catégorie</div>
             {["Tous", ...categories.map(c => c.label)].map((cat) => (
               <div
                 key={cat}
                 onClick={() => setFiltreCategorie(cat)}
-                style={{ padding: "9px 12px", borderRadius: 8, cursor: "pointer", fontSize: 14, marginBottom: 4, background: filtreCategorie === cat ? "#e3f2fd" : "transparent", color: filtreCategorie === cat ? "#1a73e8" : "#555", fontWeight: filtreCategorie === cat ? 600 : 400, transition: "all 0.2s" }}
+                style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 4px", cursor: "pointer", fontSize: 13, marginBottom: 1 }}
               >
-                {cat === "Tous" ? "🗂️ " : categories.find(c => c.label === cat)?.icon + " "}{cat}
+                <div style={{
+                  width: 15, height: 15, borderRadius: 3, border: `2px solid ${filtreCategorie === cat ? "#1a73e8" : "#ccc"}`,
+                  background: filtreCategorie === cat ? "#1a73e8" : "#fff",
+                  display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0
+                }}>
+                  {filtreCategorie === cat && <span style={{ color: "#fff", fontSize: 9, fontWeight: 700, lineHeight: 1 }}>✓</span>}
+                </div>
+                <span style={{ color: filtreCategorie === cat ? "#1a73e8" : "#555", fontWeight: filtreCategorie === cat ? 600 : 400 }}>
+                  {cat === "Tous" ? "Tous" : `${categories.find(c => c.label === cat)?.icon} ${cat}`}
+                </span>
               </div>
             ))}
 
-            <div style={{ borderTop: "1px solid #f0f0f0", margin: "16px 0" }} />
+            <div style={{ borderTop: "1px solid #f0f0f0", margin: "14px 0" }} />
 
-            <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 12, color: "#333" }}>Type</div>
+            <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 10, color: "#333" }}>Type</div>
             {[["tous", "Tous"], ["perdu", "Perdu"], ["trouve", "Trouvé"]].map(([val, label]) => (
-              <div key={val} onClick={() => setFiltreType(val)} style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 12px", borderRadius: 8, cursor: "pointer", marginBottom: 4, background: filtreType === val ? "#e3f2fd" : "transparent" }}>
-                <div style={{ width: 16, height: 16, borderRadius: "50%", border: `2px solid ${filtreType === val ? "#1a73e8" : "#ccc"}`, background: filtreType === val ? "#1a73e8" : "transparent" }} />
-                <span style={{ fontSize: 14, color: filtreType === val ? "#1a73e8" : "#555", fontWeight: filtreType === val ? 600 : 400 }}>{label}</span>
+              <div key={val} onClick={() => setFiltreType(val)} style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 4px", cursor: "pointer", marginBottom: 1 }}>
+                <div style={{
+                  width: 15, height: 15, borderRadius: "50%", border: `2px solid ${filtreType === val ? "#1a73e8" : "#ccc"}`,
+                  background: filtreType === val ? "#1a73e8" : "transparent",
+                  display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0
+                }}>
+                  {filtreType === val && <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#fff" }} />}
+                </div>
+                <span style={{ fontSize: 13, color: filtreType === val ? "#1a73e8" : "#555", fontWeight: filtreType === val ? 600 : 400 }}>{label}</span>
               </div>
             ))}
+
+            <div style={{ borderTop: "1px solid #f0f0f0", margin: "14px 0" }} />
+
+            <div
+              onClick={() => setDerniers7jours(!derniers7jours)}
+              style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 4px", cursor: "pointer", fontSize: 13 }}
+            >
+              <div style={{
+                width: 15, height: 15, borderRadius: 3, border: `2px solid ${derniers7jours ? "#1a73e8" : "#ccc"}`,
+                background: derniers7jours ? "#1a73e8" : "#fff",
+                display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0
+              }}>
+                {derniers7jours && <span style={{ color: "#fff", fontSize: 9, fontWeight: 700, lineHeight: 1 }}>✓</span>}
+              </div>
+              <span style={{ color: derniers7jours ? "#1a73e8" : "#555", fontWeight: derniers7jours ? 600 : 400 }}>Derniers 7 jours</span>
+            </div>
           </div>
         </aside>
 
@@ -136,13 +170,15 @@ export default function Home() {
               Aucun objet trouvé pour cette recherche.
             </div>
           ) : (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 18 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 18 }}>
               {annoncesFiltrees.map((annonce) => (
-                <div key={annonce.id} style={{ background: "#fff", borderRadius: 14, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.07)", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}
+                <div
+                  key={annonce.id}
+                  style={{ background: "#fff", borderRadius: 14, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.07)", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(0,0,0,0.13)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 12px rgba(0,0,0,0.07)"; }}
                 >
-                  <div style={{ position: "relative", height: 160, overflow: "hidden" }}>
+                  <div style={{ height: 150, overflow: "hidden" }}>
                     <img src={annonce.image} alt={annonce.titre} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   </div>
                   <div style={{ padding: "14px" }}>
@@ -151,9 +187,9 @@ export default function Home() {
                     <button style={{
                       width: "100%", border: "none", borderRadius: 8, padding: "10px 0", fontWeight: 700, fontSize: 13, cursor: "pointer",
                       background: annonce.type === "perdu" ? "#e53935" : "#2e7d32",
-                      color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", gap: 8
+                      color: "#fff"
                     }}>
-                      {annonce.type === "perdu" ? "🔴 Perdu" : "✅ Trouvé"}
+                      {annonce.type === "perdu" ? "Perdu" : "Trouvé"}
                     </button>
                   </div>
                 </div>
@@ -167,7 +203,7 @@ export default function Home() {
       <div style={{ background: "#fff", padding: "48px 24px", marginTop: 16 }}>
         <div style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
           {[
-            { icon: "📢", titre: "Publiez une annonce", desc: "Déclarez facilement vos objets perdus ou trouvés." },
+            { icon: "📢", titre: "Publiez une annonce", desc: "Déclarez facilement vos objets perdus ou trouvés en quelques clics." },
             { icon: "🔍", titre: "Recherchez & Trouvez", desc: "Cherchez par ville, catégorie et description." },
             { icon: "🛡️", titre: "Récupérez en Sécurité", desc: "Échangez en toute confiance et sécurité." },
           ].map((f) => (
@@ -180,6 +216,29 @@ export default function Home() {
         </div>
       </div>
 
+      {/* SECTION PARTENAIRES */}
+      <div style={{ background: "#f5f7fa", padding: "48px 24px" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 32, color: "#1a1a2e" }}>Nos Partenaires</h2>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 32, flexWrap: "wrap" }}>
+            {[
+              { nom: "Taxis Tunisie", bg: "#e53935", color: "#fff" },
+              { nom: "La Poste TN", bg: "#ffc107", color: "#333" },
+              { nom: "Topnet", bg: "#1a73e8", color: "#fff" },
+              { nom: "Orange TN", bg: "#ff6f00", color: "#fff" },
+            ].map((p) => (
+              <div key={p.nom} style={{
+                background: p.bg, color: p.color, borderRadius: 12, padding: "14px 28px",
+                fontWeight: 700, fontSize: 14, boxShadow: "0 2px 10px rgba(0,0,0,0.12)",
+                minWidth: 120, textAlign: "center", cursor: "pointer"
+              }}>
+                {p.nom}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* FOOTER */}
       <footer style={{ background: "#1a1a2e", color: "#aaa", padding: "32px 24px", textAlign: "center" }}>
         <div style={{ display: "flex", justifyContent: "center", gap: 24, marginBottom: 16 }}>
@@ -189,7 +248,7 @@ export default function Home() {
         </div>
         <div style={{ display: "flex", justifyContent: "center", gap: 16, marginBottom: 16 }}>
           {["f", "t", "in"].map((s) => (
-            <div key={s} style={{ width: 36, height: 36, borderRadius: "50%", border: "1px solid #444", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, cursor: "pointer" }}>{s}</div>
+            <div key={s} style={{ width: 36, height: 36, borderRadius: "50%", border: "1px solid #444", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, cursor: "pointer", color: "#aaa" }}>{s}</div>
           ))}
         </div>
         <div style={{ fontSize: 13 }}>© 2024 <strong style={{ color: "#fff" }}>Amena</strong> – Tous droits réservés.</div>
