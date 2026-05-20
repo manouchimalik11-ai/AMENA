@@ -63,7 +63,7 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, background: "url('https://images.unsplash.com/photo-1539066628-3f8fdc64e8c6?w=1400&fit=crop') center/cover no-repeat", opacity: 0.18 }} />
         <div style={{ position: "relative", maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
           <h1 style={{ fontSize: 48, fontWeight: 800, color: "#fff", marginBottom: 12, lineHeight: 1.2 }}>Rien n&apos;est vraiment perdu.</h1>
-          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", marginBottom: 36 }}>Retrouvons vos objets perdus en Tunisie avec confiance</p>
+          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", marginBottom: 36 }}>Retrouvons vos objets perdus dans toute la Tunisie avec confiance</p>
 
           {/* Barre de recherche */}
           <div style={{ background: "#fff", borderRadius: 16, padding: "8px 8px 8px 20px", display: "flex", alignItems: "center", gap: 12, boxShadow: "0 8px 32px rgba(0,0,0,0.2)", maxWidth: 620, margin: "0 auto 20px" }}>
