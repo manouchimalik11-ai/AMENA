@@ -65,8 +65,14 @@ body {
 /* Annonces grid */
 .annonces-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 20px;
+}
+
+/* Search bar */
+.search-bar-inner {
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 900px) {
@@ -131,6 +137,16 @@ body {
 
   .annonces-grid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .search-bar-inner {
+    flex-direction: column;
+    padding: 12px !important;
+    gap: 8px !important;
+  }
+
+  .search-bar-inner input {
+    width: 100% !important;
   }
 
   .card-list-img {
