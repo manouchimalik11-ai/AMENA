@@ -61,9 +61,10 @@ export default function Home() {
           <a href="#" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Objets Perdus</a>
           <a href="#" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Objets Trouvés</a>
           <a href="#" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Aide</a>
-          <a href="#" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Créer un compte</a>
-          <span style={{ color: "#ccc", fontSize: 14 }}>/</span>
-          <a href="#" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Se Connecter</a>
+          <div style={{ display: "flex", alignItems: "center", gap: 0, border: "2px solid #e53935", borderRadius: 8, overflow: "hidden" }}>
+            <a href="#" style={{ color: "#e53935", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px", borderRight: "1px solid #e53935" }}>Créer un compte</a>
+            <a href="#" style={{ color: "#e53935", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px" }}>Se Connecter</a>
+          </div>
         </div>
       </nav>
 
