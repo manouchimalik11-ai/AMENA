@@ -222,27 +222,40 @@ export default function Home() {
               Aucun objet trouvé pour cette recherche.
             </div>
           ) : (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 18 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 20 }}>
               {annoncesFiltrees.map((annonce) => (
                 <div
                   key={annonce.id}
-                  style={{ background: "#fff", borderRadius: 14, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.07)", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(0,0,0,0.13)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 12px rgba(0,0,0,0.07)"; }}
+                  style={{ background: "#fff", borderRadius: 16, overflow: "hidden", boxShadow: "0 2px 16px rgba(0,0,0,0.08)", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 32px rgba(0,0,0,0.14)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 16px rgba(0,0,0,0.08)"; }}
                 >
-                  <div style={{ height: 150, overflow: "hidden" }}>
+                  {/* Image avec overlays */}
+                  <div style={{ position: "relative", height: 190, overflow: "hidden" }}>
                     <img src={annonce.image} alt={annonce.titre} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                  </div>
-                  <div style={{ padding: "14px" }}>
-                    <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{annonce.titre}</div>
-                    <div style={{ fontSize: 12, color: "#888", marginBottom: 12 }}>{annonce.lieu} · {annonce.temps}</div>
-                    <button style={{
-                      width: "100%", border: "none", borderRadius: 8, padding: "10px 0", fontWeight: 700, fontSize: 13, cursor: "pointer",
+                    {/* Badge perdu/trouvé */}
+                    <div style={{
+                      position: "absolute", top: 10, left: 10,
                       background: annonce.type === "perdu" ? "#e53935" : "#2e7d32",
-                      color: "#fff"
+                      color: "#fff", fontSize: 11, fontWeight: 700,
+                      padding: "4px 10px", borderRadius: 20,
                     }}>
                       {annonce.type === "perdu" ? "Perdu" : "Trouvé"}
-                    </button>
+                    </div>
+                    {/* Bouton favori */}
+                    <div style={{
+                      position: "absolute", top: 10, right: 10,
+                      width: 32, height: 32, borderRadius: "50%",
+                      background: "#fff", display: "flex", alignItems: "center",
+                      justifyContent: "center", boxShadow: "0 2px 8px rgba(0,0,0,0.15)", fontSize: 16
+                    }}>♡</div>
+                  </div>
+                  {/* Infos */}
+                  <div style={{ padding: "14px 16px" }}>
+                    <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 5, color: "#1a1a2e" }}>{annonce.titre}</div>
+                    <div style={{ fontSize: 13, color: "#888", display: "flex", alignItems: "center", gap: 4 }}>
+                      <span>📍</span>{annonce.lieu} · {annonce.temps}
+                    </div>
                   </div>
                 </div>
               ))}
