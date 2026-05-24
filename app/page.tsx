@@ -100,28 +100,33 @@ export default function Home() {
             <div style={{
               flex: 1, minWidth: 300,
               background: "rgba(255,255,255,0.97)",
-              borderRadius: 20, padding: "10px 10px 10px 24px",
-              display: "flex", alignItems: "center", gap: 12,
+              borderRadius: 20,
+              display: "flex", flexDirection: "column",
               boxShadow: "0 12px 40px rgba(0,0,0,0.2)",
-              backdropFilter: "blur(10px)"
+              overflow: "hidden"
             }}>
-              <div style={{ width: 36, height: 36, borderRadius: 10, background: "#e3f2fd", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0 }}>🔍</div>
-              <input
-                type="text"
-                placeholder="Recherche intelligente par IA..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                style={{ flex: 1, border: "none", outline: "none", fontSize: 15, color: "#333", background: "transparent", fontWeight: 500 }}
-              />
-              <button style={{
-                background: "linear-gradient(135deg, #1a73e8, #0d47a1)",
-                color: "#fff", border: "none", borderRadius: 12,
-                padding: "14px 22px", fontWeight: 700, fontSize: 14,
-                cursor: "pointer", whiteSpace: "nowrap",
-                boxShadow: "0 4px 14px rgba(26,115,232,0.4)"
-              }}>
-                Rechercher
-              </button>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "18px 20px 10px 20px" }}>
+                <div style={{ width: 36, height: 36, borderRadius: 10, background: "#e3f2fd", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0 }}>🔍</div>
+                <input
+                  type="text"
+                  placeholder="Recherche intelligente par IA..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  style={{ flex: 1, border: "none", outline: "none", fontSize: 15, color: "#333", background: "transparent", fontWeight: 500, minWidth: 0 }}
+                />
+              </div>
+              <div style={{ padding: "0 12px 12px 12px" }}>
+                <button style={{
+                  width: "100%",
+                  background: "linear-gradient(135deg, #1a73e8, #0d47a1)",
+                  color: "#fff", border: "none", borderRadius: 12,
+                  padding: "12px", fontWeight: 700, fontSize: 14,
+                  cursor: "pointer",
+                  boxShadow: "0 4px 14px rgba(26,115,232,0.4)"
+                }}>
+                  Rechercher
+                </button>
+              </div>
             </div>
           </div>
 
