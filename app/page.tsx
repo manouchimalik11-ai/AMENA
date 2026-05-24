@@ -77,27 +77,49 @@ export default function Home() {
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", marginBottom: 36 }}>Retrouvez vos objets perdus ou à ceux que vous avez trouvés</p>
 
           {/* Deux barres principales */}
-          <div style={{ display: "flex", gap: 16, maxWidth: 780, margin: "0 auto 20px", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 20, maxWidth: 900, margin: "0 auto 20px", flexWrap: "wrap" }}>
             {/* Barre 1 : Déposer une annonce */}
-            <div style={{ flex: 1, minWidth: 280, background: "#e53935", borderRadius: 16, padding: "18px 24px", display: "flex", alignItems: "center", gap: 14, boxShadow: "0 8px 32px rgba(0,0,0,0.25)", cursor: "pointer" }}>
-              <span style={{ fontSize: 28 }}>📢</span>
-              <div style={{ textAlign: "left" }}>
-                <div style={{ color: "#fff", fontWeight: 700, fontSize: 16 }}>Déposer une annonce</div>
-                <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 12 }}>Signalez un objet perdu ou trouvé</div>
+            <div style={{
+              flex: 1, minWidth: 300,
+              background: "linear-gradient(135deg, #ff5252 0%, #c62828 100%)",
+              borderRadius: 20, padding: "26px 30px",
+              display: "flex", alignItems: "center", gap: 18,
+              boxShadow: "0 12px 40px rgba(229,57,53,0.45)",
+              cursor: "pointer", position: "relative", overflow: "hidden"
+            }}>
+              <div style={{ position: "absolute", top: -20, right: -20, width: 100, height: 100, borderRadius: "50%", background: "rgba(255,255,255,0.08)" }} />
+              <div style={{ position: "absolute", bottom: -30, right: 30, width: 80, height: 80, borderRadius: "50%", background: "rgba(255,255,255,0.06)" }} />
+              <div style={{ width: 52, height: 52, borderRadius: 14, background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 26, flexShrink: 0 }}>📢</div>
+              <div style={{ textAlign: "left", position: "relative" }}>
+                <div style={{ color: "#fff", fontWeight: 800, fontSize: 18, marginBottom: 4 }}>Déposer une annonce</div>
+                <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 13 }}>Signalez un objet perdu ou trouvé</div>
               </div>
             </div>
 
             {/* Barre 2 : Recherche intelligente par IA */}
-            <div style={{ flex: 1, minWidth: 280, background: "#fff", borderRadius: 16, padding: "8px 8px 8px 18px", display: "flex", alignItems: "center", gap: 10, boxShadow: "0 8px 32px rgba(0,0,0,0.25)" }}>
-              <span style={{ fontSize: 20 }}>🔍</span>
+            <div style={{
+              flex: 1, minWidth: 300,
+              background: "rgba(255,255,255,0.97)",
+              borderRadius: 20, padding: "10px 10px 10px 24px",
+              display: "flex", alignItems: "center", gap: 12,
+              boxShadow: "0 12px 40px rgba(0,0,0,0.2)",
+              backdropFilter: "blur(10px)"
+            }}>
+              <div style={{ width: 36, height: 36, borderRadius: 10, background: "#e3f2fd", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0 }}>🔍</div>
               <input
                 type="text"
                 placeholder="Recherche intelligente par IA..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                style={{ flex: 1, border: "none", outline: "none", fontSize: 15, color: "#333", background: "transparent" }}
+                style={{ flex: 1, border: "none", outline: "none", fontSize: 15, color: "#333", background: "transparent", fontWeight: 500 }}
               />
-              <button style={{ background: "#1a73e8", color: "#fff", border: "none", borderRadius: 10, padding: "12px 16px", fontWeight: 600, fontSize: 13, cursor: "pointer", whiteSpace: "nowrap" }}>
+              <button style={{
+                background: "linear-gradient(135deg, #1a73e8, #0d47a1)",
+                color: "#fff", border: "none", borderRadius: 12,
+                padding: "14px 22px", fontWeight: 700, fontSize: 14,
+                cursor: "pointer", whiteSpace: "nowrap",
+                boxShadow: "0 4px 14px rgba(26,115,232,0.4)"
+              }}>
                 Rechercher
               </button>
             </div>
