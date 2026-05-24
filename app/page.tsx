@@ -129,27 +129,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* CATÉGORIES RAPIDES — inspiré LeBonCoin */}
-      <div style={{ background: "#fff", borderBottom: "1px solid #ebebeb", padding: "0 32px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", gap: 4, overflowX: "auto", padding: "12px 0" }}>
-          {[{ icon: "🗂️", label: "Tous" }, ...categories].map((cat) => (
-            <button
-              key={cat.label}
-              onClick={() => setFiltreCategorie(cat.label)}
-              style={{
-                display: "flex", flexDirection: "column", alignItems: "center", gap: 5,
-                padding: "10px 20px", borderRadius: 12, flexShrink: 0,
-                border: filtreCategorie === cat.label ? "2px solid #e53935" : "2px solid transparent",
-                background: filtreCategorie === cat.label ? "#fff5f5" : "transparent",
-                cursor: "pointer"
-              }}
-            >
-              <span style={{ fontSize: 24 }}>{cat.icon}</span>
-              <span style={{ fontSize: 12, color: filtreCategorie === cat.label ? "#e53935" : "#555", fontWeight: filtreCategorie === cat.label ? 700 : 500, whiteSpace: "nowrap" }}>{cat.label}</span>
-            </button>
-          ))}
-        </div>
-      </div>
 
       {/* CONTENU PRINCIPAL */}
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "28px 32px", display: "flex", gap: 28 }}>
