@@ -1,6 +1,7 @@
 import { annonces } from "@/lib/data";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AnnonceActions from "@/components/AnnonceActions";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
@@ -46,31 +47,13 @@ export default async function AnnoncePage({ params }: { params: Promise<{ id: st
                   <span style={{ background: "#fff5f5", color: "#e53935", fontSize: 13, fontWeight: 600, padding: "4px 12px", borderRadius: 20 }}>{annonce.categorie}</span>
                 </div>
               </div>
-
-              <div style={{ display: "flex", gap: 10 }}>
-                <button style={{ padding: "10px 16px", border: "2px solid #ebebeb", borderRadius: 10, background: "#fff", cursor: "pointer", fontSize: 20 }} title="Ajouter aux favoris">♡</button>
-                <button style={{ padding: "10px 16px", border: "2px solid #ebebeb", borderRadius: 10, background: "#fff", cursor: "pointer", fontSize: 14, color: "#555", fontWeight: 600 }}>🔗 Partager</button>
-              </div>
+              {/* Boutons Favori + Partager rendus par le composant client */}
+              <AnnonceActions annonce={annonce} />
             </div>
 
             <div style={{ borderTop: "1px solid #f0f0f0", paddingTop: 24, marginBottom: 28 }}>
               <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: "#1a1a2e" }}>Description</h2>
               <p style={{ fontSize: 15, color: "#555", lineHeight: 1.8, margin: 0 }}>{annonce.description}</p>
-            </div>
-
-            {/* Contacter */}
-            <div style={{ background: annonce.type === "perdu" ? "#fff5f5" : "#f1f8f1", borderRadius: 14, padding: "24px", border: `1px solid ${annonce.type === "perdu" ? "#ffd0d0" : "#c8e6c9"}` }}>
-              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6, color: typeColor }}>
-                {annonce.type === "perdu" ? "Vous avez trouvé cet objet ?" : "C'est votre objet ?"}
-              </div>
-              <p style={{ fontSize: 14, color: "#666", marginBottom: 16, lineHeight: 1.6 }}>
-                {annonce.type === "perdu"
-                  ? "Aidez le propriétaire à retrouver son bien. Contactez-le directement."
-                  : "Si cet objet vous appartient, contactez le déclarant pour le récupérer."}
-              </p>
-              <button style={{ background: typeColor, color: "#fff", border: "none", borderRadius: 10, padding: "12px 28px", fontSize: 15, fontWeight: 700, cursor: "pointer", boxShadow: `0 4px 14px ${typeColor}55` }}>
-                📩 Contacter
-              </button>
             </div>
           </div>
         </div>

@@ -45,10 +45,10 @@ export default function Navbar() {
           <Link href="/" style={{ color: "#e53935", fontWeight: 600, fontSize: 14, textDecoration: "none", borderBottom: "2px solid #e53935", paddingBottom: 2 }}>Accueil</Link>
           <Link href="/?type=perdu" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Objets Perdus</Link>
           <Link href="/?type=trouve" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Objets Trouvés</Link>
-          <Link href="#" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Aide</Link>
+          <Link href="/aide" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>Aide</Link>
           <div style={{ display: "flex", alignItems: "center", border: "2px solid #e53935", borderRadius: 8, overflow: "hidden" }}>
-            <Link href="#" style={{ color: "#e53935", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px", borderRight: "1px solid #e53935" }}>Créer un compte</Link>
-            <Link href="#" style={{ color: "#e53935", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px" }}>Se Connecter</Link>
+            <Link href="/inscription" style={{ color: "#e53935", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px", borderRight: "1px solid #e53935" }}>Créer un compte</Link>
+            <Link href="/connexion" style={{ color: "#e53935", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px" }}>Se Connecter</Link>
           </div>
         </div>
 
@@ -71,10 +71,10 @@ export default function Navbar() {
           <Link href="/" style={{ color: "#e53935", fontWeight: 600, fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>Accueil</Link>
           <Link href="/?type=perdu" style={{ color: "#555", fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>Objets Perdus</Link>
           <Link href="/?type=trouve" style={{ color: "#555", fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>Objets Trouvés</Link>
-          <Link href="#" style={{ color: "#555", fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>Aide</Link>
+          <Link href="/aide" style={{ color: "#555", fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>Aide</Link>
           <div style={{ display: "flex", gap: 12, paddingTop: 8, borderTop: "1px solid #f0f0f0" }}>
-            <Link href="#" style={{ flex: 1, textAlign: "center", color: "#e53935", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", border: "2px solid #e53935", borderRadius: 8 }}>Créer un compte</Link>
-            <Link href="#" style={{ flex: 1, textAlign: "center", color: "#fff", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", background: "#e53935", borderRadius: 8 }}>Se Connecter</Link>
+            <Link href="/inscription" style={{ flex: 1, textAlign: "center", color: "#e53935", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", border: "2px solid #e53935", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>Créer un compte</Link>
+            <Link href="/connexion" style={{ flex: 1, textAlign: "center", color: "#fff", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", background: "#e53935", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>Se Connecter</Link>
           </div>
         </div>
       )}

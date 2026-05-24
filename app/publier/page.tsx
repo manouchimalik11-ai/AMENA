@@ -11,7 +11,16 @@ export default function PublierPage() {
   const [categorie, setCategorie] = useState("");
   const [lieu, setLieu] = useState("");
   const [description, setDescription] = useState("");
+  const [photo, setPhoto] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+
+  function handlePhoto(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => setPhoto(reader.result as string);
+    reader.readAsDataURL(file);
+  }
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -152,11 +161,23 @@ export default function PublierPage() {
             {/* Photo */}
             <div>
               <label style={{ fontWeight: 700, fontSize: 14, color: "#333", display: "block", marginBottom: 8 }}>Photo (optionnel)</label>
-              <div style={{ border: "2px dashed #e0e0e0", borderRadius: 10, padding: "28px", textAlign: "center", cursor: "pointer", color: "#999" }}>
-                <div style={{ fontSize: 32, marginBottom: 8 }}>📷</div>
-                <div style={{ fontSize: 14 }}>Cliquez ou glissez une photo ici</div>
-                <div style={{ fontSize: 12, marginTop: 4 }}>PNG, JPG jusqu&apos;à 5 Mo</div>
-              </div>
+              <label style={{ display: "block", cursor: "pointer" }}>
+                <input type="file" accept="image/*" onChange={handlePhoto} style={{ display: "none" }} />
+                {photo ? (
+                  <div style={{ position: "relative", borderRadius: 10, overflow: "hidden", height: 180 }}>
+                    <img src={photo} alt="Aperçu" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.3)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: 600, fontSize: 14 }}>
+                      Cliquer pour changer
+                    </div>
+                  </div>
+                ) : (
+                  <div style={{ border: "2px dashed #e0e0e0", borderRadius: 10, padding: "28px", textAlign: "center", color: "#999", transition: "border-color 0.2s" }}>
+                    <div style={{ fontSize: 32, marginBottom: 8 }}>📷</div>
+                    <div style={{ fontSize: 14, fontWeight: 500 }}>Cliquez pour ajouter une photo</div>
+                    <div style={{ fontSize: 12, marginTop: 4 }}>PNG, JPG jusqu&apos;à 5 Mo</div>
+                  </div>
+                )}
+              </label>
             </div>
 
             {/* Submit */}
