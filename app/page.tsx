@@ -242,7 +242,7 @@ export default function Home() {
             <div key={s} style={{ width: 36, height: 36, borderRadius: "50%", border: "1px solid #444", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, cursor: "pointer", color: "#aaa" }}>{s}</div>
           ))}
         </div>
-        <div style={{ fontSize: 13 }}>© 2024 <strong style={{ color: "#fff" }}>Amena</strong> – Tous droits réservés.</div>
+        <div style={{ fontSize: 13 }}>© 2026 <strong style={{ color: "#fff" }}>Amena</strong> – Tous droits réservés.</div>
       </footer>
     </div>
   );
