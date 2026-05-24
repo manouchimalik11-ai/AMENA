@@ -82,17 +82,28 @@ export default function Home() {
             <div style={{
               flex: 1, minWidth: 300,
               background: "linear-gradient(135deg, #ff5252 0%, #c62828 100%)",
-              borderRadius: 20, padding: "26px 30px",
-              display: "flex", alignItems: "center", gap: 18,
+              borderRadius: 20,
+              display: "flex", flexDirection: "column",
               boxShadow: "0 12px 40px rgba(229,57,53,0.45)",
-              cursor: "pointer", position: "relative", overflow: "hidden"
+              overflow: "hidden"
             }}>
-              <div style={{ position: "absolute", top: -20, right: -20, width: 100, height: 100, borderRadius: "50%", background: "rgba(255,255,255,0.08)" }} />
-              <div style={{ position: "absolute", bottom: -30, right: 30, width: 80, height: 80, borderRadius: "50%", background: "rgba(255,255,255,0.06)" }} />
-              <div style={{ width: 52, height: 52, borderRadius: 14, background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 26, flexShrink: 0 }}>📢</div>
-              <div style={{ textAlign: "left", position: "relative" }}>
-                <div style={{ color: "#fff", fontWeight: 800, fontSize: 18, marginBottom: 4 }}>Déposer une annonce</div>
-                <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 13 }}>Signalez un objet perdu ou trouvé</div>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "18px 20px 10px 20px" }}>
+                <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0 }}>📢</div>
+                <div style={{ textAlign: "left" }}>
+                  <div style={{ color: "#fff", fontWeight: 800, fontSize: 15 }}>Déposer une annonce</div>
+                  <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 12 }}>Signalez un objet perdu ou trouvé</div>
+                </div>
+              </div>
+              <div style={{ padding: "0 12px 12px 12px" }}>
+                <button style={{
+                  width: "100%",
+                  background: "rgba(255,255,255,0.25)",
+                  color: "#fff", border: "2px solid rgba(255,255,255,0.5)", borderRadius: 12,
+                  padding: "12px", fontWeight: 700, fontSize: 14,
+                  cursor: "pointer"
+                }}>
+                  Publier maintenant
+                </button>
               </div>
             </div>
 
@@ -109,7 +120,7 @@ export default function Home() {
                 <div style={{ width: 36, height: 36, borderRadius: 10, background: "#e3f2fd", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0 }}>🔍</div>
                 <input
                   type="text"
-                  placeholder="Recherche intelligente par IA..."
+                  placeholder="Recherche intelligente par IA"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   style={{ flex: 1, border: "none", outline: "none", fontSize: 15, color: "#333", background: "transparent", fontWeight: 500, minWidth: 0 }}
