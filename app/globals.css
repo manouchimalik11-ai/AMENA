@@ -12,15 +12,128 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Navbar responsive */
+.nav-desktop {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-hamburger {
+  display: none;
+}
+
+/* Main layout */
+.main-layout {
+  display: flex;
+  gap: 28px;
+}
+
+.sidebar-wrapper {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+/* Sidebar mobile toggle */
+.sidebar-mobile-toggle {
+  display: none;
+}
+
+.sidebar-content {
+  display: block;
+}
+
+/* Hero */
+.hero-bars {
+  display: flex;
+  gap: 18px;
+}
+
+/* Features */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Annonces grid */
+.annonces-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .main-layout {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .sidebar-wrapper {
+    width: 100%;
+  }
+
+  .sidebar-mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 14px;
+    padding: 14px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+
+  .sidebar-content {
+    display: none;
+  }
+
+  .sidebar-content.open {
+    display: block;
+  }
+
+  .hero-bars {
+    flex-direction: column;
+  }
+
+  .hero-title {
+    font-size: 28px !important;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .annonces-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .card-list-img {
+    width: 120px !important;
+  }
 }
