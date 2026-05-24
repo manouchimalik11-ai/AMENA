@@ -51,82 +51,58 @@ export default function Home() {
             Rien n&apos;est<br />
             <span style={{ background: "linear-gradient(90deg, #ff8a80, #ff5252)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>vraiment perdu.</span>
           </h1>
-          <p style={{ fontSize: 17, color: "rgba(255,255,255,0.78)", marginBottom: 40, maxWidth: 500, margin: "0 auto 40px", lineHeight: 1.6 }}>
+          <p style={{ fontSize: 17, color: "rgba(255,255,255,0.78)", marginBottom: 36, maxWidth: 500, margin: "0 auto 36px", lineHeight: 1.6 }}>
             Retrouvez vos objets égarés ou aidez quelqu&apos;un à récupérer le sien.
           </p>
 
-          {/* Barre de recherche unifiée */}
-          <div style={{ background: "#fff", borderRadius: 18, boxShadow: "0 20px 60px rgba(0,0,0,0.3)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-            <div style={{ display: "flex", alignItems: "center", padding: "6px 6px 6px 20px", gap: 0 }} className="search-bar-inner">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ color: "#aaa", flexShrink: 0 }}>
+          {/* Deux boutons d'action principaux */}
+          <div className="hero-actions" style={{ display: "flex", gap: 16, justifyContent: "center", marginBottom: 28 }}>
+            <Link href="/publier?type=perdu" style={{ textDecoration: "none", flex: 1, maxWidth: 280 }}>
+              <div style={{ background: "linear-gradient(135deg, #ff5252, #c62828)", borderRadius: 18, padding: "22px 24px", boxShadow: "0 12px 40px rgba(229,57,53,0.5)", cursor: "pointer", textAlign: "left" }}>
+                <div style={{ fontSize: 28, marginBottom: 8 }}>😟</div>
+                <div style={{ color: "#fff", fontWeight: 800, fontSize: 17, marginBottom: 4 }}>J&apos;ai perdu un objet</div>
+                <div style={{ color: "rgba(255,255,255,0.75)", fontSize: 13 }}>Déposer une annonce →</div>
+              </div>
+            </Link>
+            <Link href="/publier?type=trouve" style={{ textDecoration: "none", flex: 1, maxWidth: 280 }}>
+              <div style={{ background: "rgba(255,255,255,0.95)", backdropFilter: "blur(10px)", borderRadius: 18, padding: "22px 24px", boxShadow: "0 12px 40px rgba(0,0,0,0.2)", cursor: "pointer", textAlign: "left" }}>
+                <div style={{ fontSize: 28, marginBottom: 8 }}>🙌</div>
+                <div style={{ color: "#1a1a2e", fontWeight: 800, fontSize: 17, marginBottom: 4 }}>J&apos;ai trouvé un objet</div>
+                <div style={{ color: "#e53935", fontSize: 13, fontWeight: 600 }}>Déposer une annonce →</div>
+              </div>
+            </Link>
+          </div>
+
+          {/* Barre de recherche */}
+          <div style={{ background: "#fff", borderRadius: 16, boxShadow: "0 8px 32px rgba(0,0,0,0.2)", overflow: "hidden" }}>
+            <div className="search-bar-inner" style={{ display: "flex", alignItems: "center", padding: "6px 6px 6px 20px" }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ color: "#bbb", flexShrink: 0 }}>
                 <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
                 <path d="M16.5 16.5L21 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               </svg>
               <input
                 type="text"
-                placeholder="Rechercher un objet perdu ou trouvé..."
+                placeholder="Rechercher dans les annonces..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 style={{ flex: 1, border: "none", outline: "none", fontSize: 15, color: "#222", background: "transparent", fontWeight: 500, padding: "14px 12px", minWidth: 0 }}
               />
-              <div style={{ width: 1, height: 28, background: "#eee", flexShrink: 0, margin: "0 4px" }} />
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ color: "#e53935", flexShrink: 0, marginLeft: 8 }}>
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor" />
-              </svg>
+              <div style={{ width: 1, height: 24, background: "#eee", flexShrink: 0, margin: "0 4px" }} />
               <input
                 type="text"
                 placeholder="Ville..."
                 value={ville}
                 onChange={(e) => setVille(e.target.value)}
-                style={{ width: 100, border: "none", outline: "none", fontSize: 14, color: "#333", background: "transparent", fontWeight: 500, padding: "14px 10px", minWidth: 0 }}
+                style={{ width: 90, border: "none", outline: "none", fontSize: 14, color: "#333", background: "transparent", fontWeight: 500, padding: "14px 8px", minWidth: 0 }}
               />
-              <button style={{ background: "linear-gradient(135deg, #ff5252, #c62828)", color: "#fff", border: "none", borderRadius: 12, padding: "14px 28px", fontWeight: 700, fontSize: 15, cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap" }}>
+              <button style={{ background: "linear-gradient(135deg, #ff5252, #c62828)", color: "#fff", border: "none", borderRadius: 12, padding: "13px 24px", fontWeight: 700, fontSize: 14, cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap" }}>
                 Rechercher
               </button>
             </div>
           </div>
 
-          {/* Catégories rapides */}
-          <div style={{ display: "flex", gap: 8, justifyContent: "center", marginTop: 20, flexWrap: "wrap" }}>
-            {categories.map((cat) => (
-              <button
-                key={cat.label}
-                onClick={() => setFiltreCategorie(filtreCategorie === cat.label ? "Tous" : cat.label)}
-                style={{
-                  background: filtreCategorie === cat.label ? "#fff" : "rgba(255,255,255,0.14)",
-                  color: filtreCategorie === cat.label ? "#e53935" : "rgba(255,255,255,0.88)",
-                  border: filtreCategorie === cat.label ? "none" : "1px solid rgba(255,255,255,0.2)",
-                  borderRadius: 100, padding: "7px 15px", fontSize: 13, fontWeight: 600, cursor: "pointer",
-                  display: "flex", alignItems: "center", gap: 5, transition: "all 0.18s",
-                  backdropFilter: "blur(6px)"
-                }}
-              >
-                {cat.icon} {cat.label}
-              </button>
-            ))}
-          </div>
         </div>
       </section>
-
-      {/* ── BARRE STATS ── */}
-      <div style={{ background: "#fff", borderBottom: "1px solid #f0f0f0", padding: "18px 32px" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", justifyContent: "center", gap: 0, flexWrap: "wrap" }}>
-          {[
-            { icon: "📋", val: "8", label: "Annonces actives" },
-            { icon: "📍", val: "10", label: "Villes couvertes" },
-            { icon: "🔁", val: "94%", label: "Taux de retrouvaille" },
-            { icon: "✅", val: "100%", label: "Gratuit" },
-          ].map((s, i) => (
-            <div key={s.label} style={{ display: "flex", alignItems: "center", gap: 10, padding: "6px 32px", borderRight: i < 3 ? "1px solid #f0f0f0" : "none", flexShrink: 0 }}>
-              <span style={{ fontSize: 20 }}>{s.icon}</span>
-              <div>
-                <div style={{ fontWeight: 800, fontSize: 18, color: "#1a1a2e", lineHeight: 1 }}>{s.val}</div>
-                <div style={{ fontSize: 11, color: "#999", marginTop: 2, fontWeight: 500 }}>{s.label}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* ── CONTENU PRINCIPAL ── */}
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "36px 32px" }}>

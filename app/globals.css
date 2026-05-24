@@ -55,6 +55,12 @@ body {
   gap: 18px;
 }
 
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
 /* Features */
 .features-grid {
   display: grid;
@@ -125,6 +131,11 @@ body {
 
   .hero-bars {
     flex-direction: column;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .hero-title {
