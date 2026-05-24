@@ -212,7 +212,7 @@ export default function Home() {
         <main style={{ flex: 1 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
             <h2 style={{ fontSize: 22, fontWeight: 700 }}>
-              Objets <span style={{ color: "#1a73e8" }}>récents</span>
+              Annonces <span style={{ color: "#1a73e8" }}>récemment déposées</span>
             </h2>
             <a href="#" style={{ color: "#1a73e8", fontSize: 14, textDecoration: "none", fontWeight: 500 }}>Voir tous les objets →</a>
           </div>
