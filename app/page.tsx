@@ -229,28 +229,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* SECTION PARTENAIRES */}
-      <div style={{ background: "#f5f7fa", padding: "48px 24px" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 32, color: "#1a1a2e" }}>Nos Partenaires</h2>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 32, flexWrap: "wrap" }}>
-            {[
-              { nom: "Taxis Tunisie", bg: "#e53935", color: "#fff" },
-              { nom: "La Poste TN", bg: "#ffc107", color: "#333" },
-              { nom: "Topnet", bg: "#1a73e8", color: "#fff" },
-              { nom: "Orange TN", bg: "#ff6f00", color: "#fff" },
-            ].map((p) => (
-              <div key={p.nom} style={{
-                background: p.bg, color: p.color, borderRadius: 12, padding: "14px 28px",
-                fontWeight: 700, fontSize: 14, boxShadow: "0 2px 10px rgba(0,0,0,0.12)",
-                minWidth: 120, textAlign: "center", cursor: "pointer"
-              }}>
-                {p.nom}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* FOOTER */}
       <footer style={{ background: "#1a1a2e", color: "#aaa", padding: "32px 24px", textAlign: "center" }}>
