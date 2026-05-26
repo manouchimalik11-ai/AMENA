@@ -217,8 +217,8 @@ export const tr = {
       login: "دخّل",
     },
     hero: {
-      title_line1: "ما كان حاجة",
-      title_line2: "تضيع للأبد.",
+      title_line1: "",
+      title_line2: "شي ما يضيع عليك",
       subtitle: "دوّر على حوايجك الضايعة أو عاون حد يلقاها.",
       lost_title: "ضيّعت حاجة",
       lost_desc: "بلّغ على ضياعك وكون محروس كي لقاوها.",

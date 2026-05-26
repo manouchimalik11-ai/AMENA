@@ -46,7 +46,7 @@ export default function Home() {
 
         <div style={{ position: "relative", maxWidth: 820, margin: "0 auto", textAlign: "center" }}>
           <h1 className="hero-title" style={{ fontSize: 52, fontWeight: 900, color: "#fff", marginBottom: 16, lineHeight: 1.12, letterSpacing: "-1px" }}>
-            {t.hero.title_line1}<br />
+            {t.hero.title_line1 && <>{t.hero.title_line1}<br /></>}
             <span style={{ background: "linear-gradient(90deg, #ff8a80, #ff5252)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{t.hero.title_line2}</span>
           </h1>
           <p style={{ fontSize: 17, color: "rgba(255,255,255,0.78)", marginBottom: 40, maxWidth: 700, margin: "0 auto 40px", lineHeight: 1.6, whiteSpace: "nowrap" }}>
