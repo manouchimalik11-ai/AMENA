@@ -8,13 +8,15 @@ import Sidebar from "@/components/Sidebar";
 import AnnonceCard from "@/components/AnnonceCard";
 import { useLang } from "@/lib/LangContext";
 import { tr } from "@/lib/translations";
+import { getCitiesInRadius } from "@/lib/geo";
 
 export default function Home() {
   const [search, setSearch] = useState("");
-  const [ville, setVille] = useState("");
   const [filtreCategorie, setFiltreCategorie] = useState("all");
   const [filtreType, setFiltreType] = useState("tous");
-  const [derniers7jours, setDerniers7jours] = useState(false);
+  const [villeSelectionnee, setVilleSelectionnee] = useState("");
+  const [rayon, setRayon] = useState(25);
+  const [filtreDate, setFiltreDate] = useState("");
   const [vue, setVue] = useState<"grille" | "liste">("grille");
   const [tri, setTri] = useState("recent");
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -23,11 +25,20 @@ export default function Home() {
 
   const annoncesFiltrees = annonces.filter((a) => {
     const s = search.toLowerCase();
-    const matchSearch = a.titre.fr.toLowerCase().includes(s) || a.titre.ar.includes(search) || a.lieu.toLowerCase().includes(s);
-    const matchVille = ville === "" || a.lieu.toLowerCase().includes(ville.toLowerCase());
+    const matchSearch = !s || a.titre.fr.toLowerCase().includes(s) || a.titre.ar.includes(search) || a.lieu.toLowerCase().includes(s);
+    const citiesInRange = villeSelectionnee ? getCitiesInRadius(villeSelectionnee, rayon) : null;
+    const matchVille = !villeSelectionnee || (citiesInRange ? citiesInRange.includes(a.lieu) : a.lieu === villeSelectionnee);
     const matchCat = filtreCategorie === "all" || a.categorie === filtreCategorie;
     const matchType = filtreType === "tous" || a.type === filtreType;
-    return matchSearch && matchVille && matchCat && matchType;
+    const h = a.heuresEcoulees;
+    const matchDate = !filtreDate
+      || (filtreDate === "24h" && h <= 24)
+      || (filtreDate === "48h" && h <= 48)
+      || (filtreDate === "7j"  && h <= 168)
+      || (filtreDate === "14j" && h <= 336)
+      || (filtreDate === "1m"  && h <= 720)
+      || (filtreDate === "1m+" && h > 720);
+    return matchSearch && matchVille && matchCat && matchType && matchDate;
   });
 
   const catLabel = filtreCategorie !== "all"
@@ -115,14 +126,6 @@ export default function Home() {
                 onChange={(e) => setSearch(e.target.value)}
                 style={{ flex: 1, border: "none", outline: "none", fontSize: 15, color: "#222", background: "transparent", fontWeight: 500, padding: "14px 12px", minWidth: 0 }}
               />
-              <div style={{ width: 1, height: 24, background: "#eee", flexShrink: 0, margin: "0 4px" }} />
-              <input
-                type="text"
-                placeholder={t.hero.city_ph}
-                value={ville}
-                onChange={(e) => setVille(e.target.value)}
-                style={{ width: 90, border: "none", outline: "none", fontSize: 14, color: "#333", background: "transparent", fontWeight: 500, padding: "14px 8px", minWidth: 0 }}
-              />
               <button style={{ background: "linear-gradient(135deg, #ff5252, #c62828)", color: "#fff", border: "none", borderRadius: 12, padding: "13px 24px", fontWeight: 700, fontSize: 14, cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap" }}>
                 {t.hero.search_btn}
               </button>
@@ -147,8 +150,12 @@ export default function Home() {
                 setFiltreCategorie={setFiltreCategorie}
                 filtreType={filtreType}
                 setFiltreType={setFiltreType}
-                derniers7jours={derniers7jours}
-                setDerniers7jours={setDerniers7jours}
+                villeSelectionnee={villeSelectionnee}
+                setVilleSelectionnee={setVilleSelectionnee}
+                rayon={rayon}
+                setRayon={setRayon}
+                filtreDate={filtreDate}
+                setFiltreDate={setFiltreDate}
               />
             </div>
           </aside>

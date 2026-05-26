@@ -5,6 +5,7 @@ export interface Annonce {
   titre: { fr: string; ar: string };
   lieu: string;
   temps: { fr: string; ar: string };
+  heuresEcoulees: number;
   type: AnnonceType;
   categorie: string;
   image: string;
@@ -26,6 +27,7 @@ export const annonces: Annonce[] = [
     titre: { fr: "iPhone 13 noir", ar: "آيفون 13" },
     lieu: "Tunis",
     temps: { fr: "Il y a 2 heures", ar: "من 2 ساعات" },
+    heuresEcoulees: 2,
     type: "perdu",
     categorie: "phones",
     image: "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=800&h=500&fit=crop",
@@ -39,6 +41,7 @@ export const annonces: Annonce[] = [
     titre: { fr: "Portefeuille en cuir", ar: "محفظة جلد" },
     lieu: "Sfax",
     temps: { fr: "Il y a 9 heures", ar: "من 9 ساعات" },
+    heuresEcoulees: 9,
     type: "trouve",
     categorie: "wallets",
     image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=800&h=500&fit=crop",
@@ -52,6 +55,7 @@ export const annonces: Annonce[] = [
     titre: { fr: "Clé de voiture Renault", ar: "مفتاح كرهبة رونو" },
     lieu: "Ariana",
     temps: { fr: "Il y a 3 heures", ar: "من 3 ساعات" },
+    heuresEcoulees: 3,
     type: "perdu",
     categorie: "keys",
     image: "/cle-voiture.jpg",
@@ -64,7 +68,8 @@ export const annonces: Annonce[] = [
     id: 4,
     titre: { fr: "Sac à main beige", ar: "شنطة بيج" },
     lieu: "La Marsa",
-    temps: { fr: "Il y a 4 heures", ar: "من 4 ساعات" },
+    temps: { fr: "Il y a 2 jours", ar: "من يومين" },
+    heuresEcoulees: 48,
     type: "trouve",
     categorie: "wallets",
     image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&h=500&fit=crop",
@@ -77,7 +82,8 @@ export const annonces: Annonce[] = [
     id: 5,
     titre: { fr: "Chat siamois disparu", ar: "قطوس سيامي ضايع" },
     lieu: "Sousse",
-    temps: { fr: "Il y a 5 heures", ar: "من 5 ساعات" },
+    temps: { fr: "Il y a 5 jours", ar: "من 5 أيام" },
+    heuresEcoulees: 120,
     type: "perdu",
     categorie: "animals",
     image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&h=500&fit=crop",
@@ -91,6 +97,7 @@ export const annonces: Annonce[] = [
     titre: { fr: "Carte d'identité nationale", ar: "بطاقة هوية وطنية" },
     lieu: "Sfax",
     temps: { fr: "Il y a 2 heures", ar: "من 2 ساعات" },
+    heuresEcoulees: 2,
     type: "trouve",
     categorie: "documents",
     image: "/carte-identite.png",
@@ -103,7 +110,8 @@ export const annonces: Annonce[] = [
     id: 7,
     titre: { fr: "Cahier de révision", ar: "كراسة مراجعة" },
     lieu: "Université de Carthage",
-    temps: { fr: "Il y a 6 heures", ar: "من 6 ساعات" },
+    temps: { fr: "Il y a 10 jours", ar: "من 10 أيام" },
+    heuresEcoulees: 240,
     type: "perdu",
     categorie: "documents",
     image: "https://images.unsplash.com/photo-1769794371008-954a71d95ce8?w=800&h=500&fit=crop",
@@ -117,6 +125,7 @@ export const annonces: Annonce[] = [
     titre: { fr: "AirPods Pro", ar: "آيربودس برو" },
     lieu: "Nabeul",
     temps: { fr: "Il y a 6 heures", ar: "من 6 ساعات" },
+    heuresEcoulees: 6,
     type: "trouve",
     categorie: "phones",
     image: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&h=500&fit=crop",
