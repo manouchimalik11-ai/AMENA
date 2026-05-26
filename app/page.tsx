@@ -45,7 +45,7 @@ export default function Home() {
             Rien n&apos;est<br />
             <span style={{ background: "linear-gradient(90deg, #ff8a80, #ff5252)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>vraiment perdu.</span>
           </h1>
-          <p style={{ fontSize: 17, color: "rgba(255,255,255,0.78)", marginBottom: 40, maxWidth: 500, margin: "0 auto 40px", lineHeight: 1.6 }}>
+          <p style={{ fontSize: 17, color: "rgba(255,255,255,0.78)", marginBottom: 40, maxWidth: 700, margin: "0 auto 40px", lineHeight: 1.6, whiteSpace: "nowrap" }}>
             Retrouvez vos objets égarés ou aidez quelqu&apos;un à récupérer le sien.
           </p>
 
