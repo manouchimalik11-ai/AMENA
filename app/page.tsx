@@ -8,14 +8,14 @@ import Sidebar from "@/components/Sidebar";
 import AnnonceCard from "@/components/AnnonceCard";
 import { useLang } from "@/lib/LangContext";
 import { tr } from "@/lib/translations";
-import { getCitiesInRadius } from "@/lib/geo";
+import { GOVERNORATES } from "@/lib/geo";
 
 export default function Home() {
   const [search, setSearch] = useState("");
   const [filtreCategorie, setFiltreCategorie] = useState("all");
   const [filtreType, setFiltreType] = useState("tous");
+  const [gouvernoratSelectionne, setGouvernoratSelectionne] = useState("");
   const [villeSelectionnee, setVilleSelectionnee] = useState("");
-  const [rayon, setRayon] = useState(25);
   const [filtreDate, setFiltreDate] = useState("");
   const [vue, setVue] = useState<"grille" | "liste">("grille");
   const [tri, setTri] = useState("recent");
@@ -26,8 +26,10 @@ export default function Home() {
   const annoncesFiltrees = annonces.filter((a) => {
     const s = search.toLowerCase();
     const matchSearch = !s || a.titre.fr.toLowerCase().includes(s) || a.titre.ar.includes(search) || a.lieu.toLowerCase().includes(s);
-    const citiesInRange = villeSelectionnee ? getCitiesInRadius(villeSelectionnee, rayon) : null;
-    const matchVille = !villeSelectionnee || (citiesInRange ? citiesInRange.includes(a.lieu) : a.lieu === villeSelectionnee);
+    const gov = gouvernoratSelectionne ? GOVERNORATES.find(g => g.key === gouvernoratSelectionne) : null;
+    const matchVille = !gov
+      || (villeSelectionnee ? a.lieu === villeSelectionnee
+        : gov.cities.some(c => c.toLowerCase() === a.lieu.toLowerCase()) || gov.fr.toLowerCase() === a.lieu.toLowerCase());
     const matchCat = filtreCategorie === "all" || a.categorie === filtreCategorie;
     const matchType = filtreType === "tous" || a.type === filtreType;
     const h = a.heuresEcoulees;
@@ -150,10 +152,10 @@ export default function Home() {
                 setFiltreCategorie={setFiltreCategorie}
                 filtreType={filtreType}
                 setFiltreType={setFiltreType}
+                gouvernoratSelectionne={gouvernoratSelectionne}
+                setGouvernoratSelectionne={setGouvernoratSelectionne}
                 villeSelectionnee={villeSelectionnee}
                 setVilleSelectionnee={setVilleSelectionnee}
-                rayon={rayon}
-                setRayon={setRayon}
                 filtreDate={filtreDate}
                 setFiltreDate={setFiltreDate}
               />
