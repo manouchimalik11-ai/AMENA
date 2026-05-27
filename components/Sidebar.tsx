@@ -152,10 +152,17 @@ export default function Sidebar({
         ))}
       </StyledSelect>
 
-      {/* ── VILLE (affiché si gouvernorat sélectionné) ── */}
+      {/* ── VILLE ── */}
+      {!selectedGov && (
+        <div style={{ marginTop: 8, fontSize: 12, color: "#bbb", fontStyle: "italic", paddingLeft: 2 }}>
+          {t.gov_hint}
+        </div>
+      )}
       {selectedGov && (
         <div style={{ marginTop: 10 }}>
-          <div style={{ fontSize: 12, color: "#888", fontWeight: 500, marginBottom: 6 }}>{t.city_label}</div>
+          <div style={{ fontSize: 12, color: "#888", fontWeight: 500, marginBottom: 6 }}>
+            {t.city_label} <span style={{ color: "#e53935", fontWeight: 700 }}>· {selectedGov[lang]}</span>
+          </div>
           <StyledSelect
             value={villeSelectionnee}
             onChange={setVilleSelectionnee}
