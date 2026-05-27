@@ -168,7 +168,7 @@ export default function Sidebar({
             onChange={setVilleSelectionnee}
           >
             <option value="">{t.city_all}</option>
-            {selectedGov.cities.map(c => (
+            {[...selectedGov.cities].sort((a, b) => a.localeCompare(b, "fr")).map(c => (
               <option key={c} value={c}>{c}</option>
             ))}
           </StyledSelect>
