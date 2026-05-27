@@ -8,7 +8,13 @@ import { useLang } from "@/lib/LangContext";
 import { tr } from "@/lib/translations";
 
 export default function PublierPage() {
-  const [type, setType] = useState<"perdu" | "trouve">("perdu");
+  const [type, setType] = useState<"perdu" | "trouve">(() => {
+    if (typeof window !== "undefined") {
+      const t = new URLSearchParams(window.location.search).get("type");
+      if (t === "trouve" || t === "perdu") return t;
+    }
+    return "perdu";
+  });
   const [titre, setTitre] = useState("");
   const [categorie, setCategorie] = useState("");
   const [lieu, setLieu] = useState("");
