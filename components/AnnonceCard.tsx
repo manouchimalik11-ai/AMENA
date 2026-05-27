@@ -27,6 +27,17 @@ export default function AnnonceCard({ annonce, vue }: Props) {
     </div>
   );
 
+  const boostBadge = annonce.boosted ? (
+    <div style={{
+      background: "linear-gradient(135deg, #f59e0b, #d97706)",
+      color: "#fff", fontSize: 10, fontWeight: 800, padding: "3px 9px",
+      borderRadius: 20, display: "flex", alignItems: "center", gap: 4,
+      boxShadow: "0 2px 8px rgba(245,158,11,0.4)"
+    }}>
+      ⚡ {t.badge.boosted}
+    </div>
+  ) : null;
+
   const heartBtn = (
     <button
       onClick={(e) => { e.preventDefault(); setFavori(!favori); }}
@@ -42,16 +53,23 @@ export default function AnnonceCard({ annonce, vue }: Props) {
       <Link href={`/annonce/${annonce.id}`} style={{ textDecoration: "none" }}>
         <div
           style={{
-            background: "#fff", borderRadius: 14, overflow: "hidden",
-            boxShadow: hovered ? "0 6px 20px rgba(0,0,0,0.12)" : "0 1px 8px rgba(0,0,0,0.07)",
-            border: "1px solid #ebebeb", display: "flex", cursor: "pointer", transition: "box-shadow 0.2s"
+            background: annonce.boosted ? "linear-gradient(135deg,#fffdf0,#fff)" : "#fff",
+            borderRadius: 14, overflow: "hidden",
+            boxShadow: hovered
+              ? annonce.boosted ? "0 6px 24px rgba(245,158,11,0.2)" : "0 6px 20px rgba(0,0,0,0.12)"
+              : annonce.boosted ? "0 2px 12px rgba(245,158,11,0.12)" : "0 1px 8px rgba(0,0,0,0.07)",
+            border: annonce.boosted ? "1.5px solid #f59e0b" : "1px solid #ebebeb",
+            display: "flex", cursor: "pointer", transition: "box-shadow 0.2s"
           }}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
           <div style={{ width: 180, height: 130, flexShrink: 0, position: "relative" }} className="card-list-img">
             <img src={annonce.image} alt={annonce.titre[lang]} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-            <div style={{ position: "absolute", top: 8, left: 8 }}>{badge}</div>
+            <div style={{ position: "absolute", top: 8, left: 8, display: "flex", flexDirection: "column", gap: 4 }}>
+              {badge}
+              {boostBadge}
+            </div>
           </div>
           <div style={{ padding: "18px 20px", flex: 1 }}>
             <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6, color: "#1a1a2e" }}>{annonce.titre[lang]}</div>
@@ -72,9 +90,13 @@ export default function AnnonceCard({ annonce, vue }: Props) {
     <Link href={`/annonce/${annonce.id}`} style={{ textDecoration: "none" }}>
       <div
         style={{
-          background: "#fff", borderRadius: 16, overflow: "hidden",
-          boxShadow: hovered ? "0 12px 28px rgba(0,0,0,0.12)" : "0 1px 8px rgba(0,0,0,0.08)",
-          border: "1px solid #ebebeb", cursor: "pointer",
+          background: annonce.boosted ? "linear-gradient(180deg,#fffdf0,#fff)" : "#fff",
+          borderRadius: 16, overflow: "hidden",
+          boxShadow: hovered
+            ? annonce.boosted ? "0 12px 32px rgba(245,158,11,0.22)" : "0 12px 28px rgba(0,0,0,0.12)"
+            : annonce.boosted ? "0 2px 14px rgba(245,158,11,0.14)" : "0 1px 8px rgba(0,0,0,0.08)",
+          border: annonce.boosted ? "1.5px solid #f59e0b" : "1px solid #ebebeb",
+          cursor: "pointer",
           transform: hovered ? "translateY(-4px)" : "translateY(0)",
           transition: "transform 0.2s, box-shadow 0.2s"
         }}
@@ -83,7 +105,10 @@ export default function AnnonceCard({ annonce, vue }: Props) {
       >
         <div style={{ position: "relative", height: 190, overflow: "hidden" }}>
           <img src={annonce.image} alt={annonce.titre[lang]} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-          <div style={{ position: "absolute", top: 10, left: 10 }}>{badge}</div>
+          <div style={{ position: "absolute", top: 10, left: 10, display: "flex", flexDirection: "column", gap: 4 }}>
+            {badge}
+            {boostBadge}
+          </div>
           <div style={{ position: "absolute", top: 10, right: 10 }}>{heartBtn}</div>
         </div>
         <div style={{ padding: "14px 16px" }}>

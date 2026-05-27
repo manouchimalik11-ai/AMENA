@@ -330,13 +330,38 @@ export default function RechercheClient({ initialQuery }: Props) {
                   </button>
                 )}
               </div>
-            ) : (
-              <div className="annonces-grid">
-                {filtered.map(a => (
-                  <AnnonceCard key={a.id} annonce={a} vue="grille" />
-                ))}
-              </div>
-            )}
+            ) : (() => {
+              const boosted = filtered.filter(a => a.boosted);
+              const regular = filtered.filter(a => !a.boosted);
+              return (
+                <>
+                  {boosted.length > 0 && (
+                    <div style={{ marginBottom: 28 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
+                        <span style={{ background: "linear-gradient(135deg,#f59e0b,#d97706)", color: "#fff", fontSize: 11, fontWeight: 800, padding: "4px 12px", borderRadius: 20 }}>⚡ {t.listing.boosted_section}</span>
+                        <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg,#f59e0b22,transparent)" }} />
+                      </div>
+                      <div className="annonces-grid">
+                        {boosted.map(a => <AnnonceCard key={a.id} annonce={a} vue="grille" />)}
+                      </div>
+                    </div>
+                  )}
+                  {regular.length > 0 && (
+                    <div>
+                      {boosted.length > 0 && (
+                        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
+                          <span style={{ fontSize: 12, fontWeight: 700, color: "#aaa" }}>{t.listing.regular_section}</span>
+                          <div style={{ flex: 1, height: 1, background: "#f0f0f0" }} />
+                        </div>
+                      )}
+                      <div className="annonces-grid">
+                        {regular.map(a => <AnnonceCard key={a.id} annonce={a} vue="grille" />)}
+                      </div>
+                    </div>
+                  )}
+                </>
+              );
+            })()}
           </main>
         </div>
       </div>

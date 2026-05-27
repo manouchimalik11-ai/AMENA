@@ -10,6 +10,8 @@ export interface Annonce {
   categorie: string;
   image: string;
   description: { fr: string; ar: string };
+  boosted?: boolean;
+  boostedUntil?: number; // timestamp ms
 }
 
 export const categories = [
@@ -35,6 +37,8 @@ export const annonces: Annonce[] = [
       fr: "iPhone 13 noir perdu dans le métro ligne 1, station République. Fond d'écran photo de famille. Récompense promise.",
       ar: "آيفون 13 أسود ضاع في الترينو خط 1، محطة الجمهورية. فند الشاشة صورة العيلة. نكافئ من يرجعو.",
     },
+    boosted: true,
+    boostedUntil: Date.now() + 7 * 24 * 60 * 60 * 1000,
   },
   {
     id: 2,
@@ -105,6 +109,8 @@ export const annonces: Annonce[] = [
       fr: "Carte nationale d'identité trouvée devant la poste de Sfax centre. Le propriétaire peut me contacter avec ses informations pour la récupérer.",
       ar: "بطاقة هوية وطنية لقيتها قدام بوسطة صفاقس الوسطى. صاحبها يتواصل معايا بمعلوماتو باش يرجعها.",
     },
+    boosted: true,
+    boostedUntil: Date.now() + 3 * 24 * 60 * 60 * 1000,
   },
   {
     id: 7,

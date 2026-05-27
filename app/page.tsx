@@ -209,19 +209,50 @@ export default function Home() {
                   <Link href="/publier" style={{ color: "#e53935", textDecoration: "none", fontWeight: 600 }}>{t.listing.empty_link}</Link>
                 </div>
               </div>
-            ) : vue === "grille" ? (
-              <div className="annonces-grid">
-                {annoncesFiltrees.map((annonce) => (
-                  <AnnonceCard key={annonce.id} annonce={annonce} vue="grille" />
-                ))}
-              </div>
-            ) : (
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                {annoncesFiltrees.map((annonce) => (
-                  <AnnonceCard key={annonce.id} annonce={annonce} vue="liste" />
-                ))}
-              </div>
-            )}
+            ) : (() => {
+              const boosted = annoncesFiltrees.filter(a => a.boosted);
+              const regular = annoncesFiltrees.filter(a => !a.boosted);
+              return (
+                <>
+                  {boosted.length > 0 && (
+                    <div style={{ marginBottom: 28 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
+                        <span style={{ background: "linear-gradient(135deg,#f59e0b,#d97706)", color: "#fff", fontSize: 11, fontWeight: 800, padding: "4px 12px", borderRadius: 20 }}>⚡ {t.listing.boosted_section}</span>
+                        <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg,#f59e0b22,transparent)" }} />
+                      </div>
+                      {vue === "grille" ? (
+                        <div className="annonces-grid">
+                          {boosted.map(a => <AnnonceCard key={a.id} annonce={a} vue="grille" />)}
+                        </div>
+                      ) : (
+                        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                          {boosted.map(a => <AnnonceCard key={a.id} annonce={a} vue="liste" />)}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  {regular.length > 0 && (
+                    <div>
+                      {boosted.length > 0 && (
+                        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
+                          <span style={{ fontSize: 12, fontWeight: 700, color: "#aaa" }}>{t.listing.regular_section}</span>
+                          <div style={{ flex: 1, height: 1, background: "#f0f0f0" }} />
+                        </div>
+                      )}
+                      {vue === "grille" ? (
+                        <div className="annonces-grid">
+                          {regular.map(a => <AnnonceCard key={a.id} annonce={a} vue="grille" />)}
+                        </div>
+                      ) : (
+                        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                          {regular.map(a => <AnnonceCard key={a.id} annonce={a} vue="liste" />)}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </>
+              );
+            })()}
           </main>
         </div>
       </div>
