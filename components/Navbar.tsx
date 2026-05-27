@@ -62,6 +62,7 @@ export default function Navbar() {
           <Link href="/?type=perdu" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>{t.lost}</Link>
           <Link href="/?type=trouve" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>{t.found}</Link>
           <Link href="/aide" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>{t.help}</Link>
+          <Link href="/boost" style={{ background: "linear-gradient(135deg,#f59e0b,#d97706)", color: "#fff", fontSize: 13, fontWeight: 800, textDecoration: "none", padding: "7px 14px", borderRadius: 8, boxShadow: "0 2px 8px rgba(245,158,11,0.35)" }}>{t.boost}</Link>
           {langToggle}
           <div style={{ display: "flex", alignItems: "center", border: "2px solid #e53935", borderRadius: 8, overflow: "hidden" }}>
             <Link href="/inscription" style={{ color: "#e53935", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px", borderRight: "1px solid #e53935" }}>{t.register}</Link>
@@ -89,6 +90,7 @@ export default function Navbar() {
           <Link href="/?type=perdu" style={{ color: "#555", fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.lost}</Link>
           <Link href="/?type=trouve" style={{ color: "#555", fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.found}</Link>
           <Link href="/aide" style={{ color: "#555", fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.help}</Link>
+          <Link href="/boost" style={{ color: "#d97706", fontSize: 15, fontWeight: 700, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.boost}</Link>
           <div style={{ paddingTop: 4 }}>{langToggle}</div>
           <div style={{ display: "flex", gap: 12, paddingTop: 8, borderTop: "1px solid #f0f0f0" }}>
             <Link href="/inscription" style={{ flex: 1, textAlign: "center", color: "#e53935", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", border: "2px solid #e53935", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>{t.register}</Link>

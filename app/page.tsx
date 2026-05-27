@@ -210,8 +210,8 @@ export default function Home() {
                 </div>
               </div>
             ) : (() => {
-              const boosted = annoncesFiltrees.filter(a => a.boosted);
-              const regular = annoncesFiltrees.filter(a => !a.boosted);
+              const boosted = annoncesFiltrees.filter(a => a.boosted && a.type === "perdu");
+              const regular = annoncesFiltrees.filter(a => !a.boosted || a.type !== "perdu");
               return (
                 <>
                   {boosted.length > 0 && (

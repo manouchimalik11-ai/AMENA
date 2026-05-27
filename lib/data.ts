@@ -109,8 +109,6 @@ export const annonces: Annonce[] = [
       fr: "Carte nationale d'identité trouvée devant la poste de Sfax centre. Le propriétaire peut me contacter avec ses informations pour la récupérer.",
       ar: "بطاقة هوية وطنية لقيتها قدام بوسطة صفاقس الوسطى. صاحبها يتواصل معايا بمعلوماتو باش يرجعها.",
     },
-    boosted: true,
-    boostedUntil: Date.now() + 3 * 24 * 60 * 60 * 1000,
   },
   {
     id: 7,

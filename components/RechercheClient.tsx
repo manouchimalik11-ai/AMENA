@@ -331,8 +331,8 @@ export default function RechercheClient({ initialQuery }: Props) {
                 )}
               </div>
             ) : (() => {
-              const boosted = filtered.filter(a => a.boosted);
-              const regular = filtered.filter(a => !a.boosted);
+              const boosted = filtered.filter(a => a.boosted && a.type === "perdu");
+              const regular = filtered.filter(a => !a.boosted || a.type !== "perdu");
               return (
                 <>
                   {boosted.length > 0 && (
