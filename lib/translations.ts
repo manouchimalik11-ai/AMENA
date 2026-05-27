@@ -217,6 +217,18 @@ export const tr = {
         { titre: "7. Modifications", texte: "Amena se réserve le droit de modifier les présentes conditions à tout moment. Les utilisateurs seront informés des changements importants via la plateforme." },
       ],
     },
+    recherche: {
+      title: "Recherche avancée",
+      kw_label: "Mots-clés",
+      kw_ph: "Objet, marque, couleur, description...",
+      lieu_label: "Emplacement spécifique",
+      lieu_ph: "Rue, quartier, lieu précis...",
+      active_filters: "filtre(s) actif(s)",
+      clear: "Tout effacer",
+      for: "pour",
+      no_results: "Aucun résultat",
+      no_results_desc: "Essayez de modifier vos critères de recherche.",
+    },
   },
   ar: {
     nav: {
@@ -435,6 +447,18 @@ export const tr = {
         { titre: "6. تحديد المسؤولية", texte: "أمينة منصة تواصل. نوصيك دايمًا تنجز التسليم في مكان عام." },
         { titre: "7. التعديلات", texte: "أمينة محقها تعدّل هذه الشروط في أي وقت. المستخدمين باش يتبلّغوا على التغييرات المهمة عبر المنصة." },
       ],
+    },
+    recherche: {
+      title: "بحث متقدم",
+      kw_label: "كلمات مفتاحية",
+      kw_ph: "شيء، ماركة، لون، وصف...",
+      lieu_label: "موقع محدد",
+      lieu_ph: "شارع، حي، مكان بالتحديد...",
+      active_filters: "فلتر(ات) نشط(ة)",
+      clear: "امسح الكل",
+      for: "لـ",
+      no_results: "ما لقيناش نتائج",
+      no_results_desc: "حاول تبدّل في معايير البحث.",
     },
   },
 };

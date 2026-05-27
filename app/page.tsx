@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { annonces, categories } from "@/lib/data";
 import Navbar from "@/components/Navbar";
@@ -20,6 +21,7 @@ export default function Home() {
   const [vue, setVue] = useState<"grille" | "liste">("grille");
   const [tri, setTri] = useState("recent");
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const router = useRouter();
   const { lang } = useLang();
   const t = tr[lang];
 
@@ -128,7 +130,10 @@ export default function Home() {
                 onChange={(e) => setSearch(e.target.value)}
                 style={{ flex: 1, border: "none", outline: "none", fontSize: 15, color: "#222", background: "transparent", fontWeight: 500, padding: "14px 12px", minWidth: 0 }}
               />
-              <button style={{ background: "linear-gradient(135deg, #ff5252, #c62828)", color: "#fff", border: "none", borderRadius: 12, padding: "13px 24px", fontWeight: 700, fontSize: 14, cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap" }}>
+              <button
+                onClick={() => router.push(`/recherche${search ? `?q=${encodeURIComponent(search)}` : ""}`)}
+                style={{ background: "linear-gradient(135deg, #ff5252, #c62828)", color: "#fff", border: "none", borderRadius: 12, padding: "13px 24px", fontWeight: 700, fontSize: 14, cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap" }}
+              >
                 {t.hero.search_btn}
               </button>
             </div>
