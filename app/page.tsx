@@ -284,6 +284,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── COMPTEUR D'IMPACT ── */}
+      <section style={{ background: "linear-gradient(135deg, #1a1a2e 0%, #2d1f3d 60%, #3d1a1a 100%)", padding: "64px 32px" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 48 }}>
+            <div style={{ display: "inline-block", background: "rgba(255,82,82,0.18)", color: "#ff8a80", fontSize: 12, fontWeight: 700, padding: "5px 14px", borderRadius: 100, letterSpacing: "0.8px", marginBottom: 14, textTransform: "uppercase", border: "1px solid rgba(255,82,82,0.25)" }}>
+              {t.impact.tag}
+            </div>
+            <h2 style={{ fontSize: 26, fontWeight: 800, color: "#fff", margin: "0 0 10px", letterSpacing: "-0.5px" }}>{t.impact.title}</h2>
+            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 15, margin: 0 }}>{t.impact.sub}</p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 2 }}>
+            {[
+              { num: t.impact.s1_num, label: t.impact.s1_label, icon: "🎯" },
+              { num: t.impact.s2_num, label: t.impact.s2_label, icon: "📋" },
+              { num: t.impact.s3_num, label: t.impact.s3_label, icon: "🗺️" },
+              { num: t.impact.s4_num, label: t.impact.s4_label, icon: "👥" },
+            ].map((stat, i) => (
+              <div key={i} style={{ textAlign: "center", padding: "28px 16px", borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
+                <div style={{ fontSize: 28, marginBottom: 8 }}>{stat.icon}</div>
+                <div style={{ fontSize: 36, fontWeight: 900, color: "#fff", letterSpacing: "-1px", lineHeight: 1, marginBottom: 8 }}>
+                  <span style={{ background: "linear-gradient(90deg, #ff8a80, #ff5252)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                    {stat.num}
+                  </span>
+                </div>
+                <div style={{ fontSize: 13, color: "rgba(255,255,255,0.45)", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.6px" }}>
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
