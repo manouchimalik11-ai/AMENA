@@ -5,102 +5,196 @@ export interface Governorate {
   cities: string[];
 }
 
+// 24 gouvernorats tunisiens, triés alphabétiquement, avec leurs délégations officielles.
+// La première entrée de cities[] est le nom court utilisé dans les annonces existantes.
 export const GOVERNORATES: Governorate[] = [
   {
-    key: "tunis", fr: "Tunis", ar: "تونس",
-    cities: ["Tunis", "La Marsa", "Carthage", "Université de Carthage", "Le Bardo", "La Goulette", "Sidi Bou Saïd", "Ezzouhour", "El Omrane", "Séjoumi"],
-  },
-  {
     key: "ariana", fr: "Ariana", ar: "أريانة",
-    cities: ["Ariana", "Raoued", "La Soukra", "Kalaat el-Andalous", "Sidi Thabet", "Ettadhamen"],
-  },
-  {
-    key: "ben-arous", fr: "Ben Arous", ar: "بن عروس",
-    cities: ["Ben Arous", "Hammam Lif", "Radès", "Mégrine", "Hammam Chott", "Bou Mhel el-Bassatine", "El Mourouj", "Fouchana"],
-  },
-  {
-    key: "manouba", fr: "Manouba", ar: "منوبة",
-    cities: ["Manouba", "Denden", "Oued Ellil", "Tebourba", "Douar Hicher", "El Battan", "Borj El Amri"],
-  },
-  {
-    key: "nabeul", fr: "Nabeul", ar: "نابل",
-    cities: ["Nabeul", "Hammamet", "Kelibia", "Grombalia", "Dar Chaabane", "Menzel Temime", "El Haouaria", "Korba", "Beni Khiar", "Soliman"],
-  },
-  {
-    key: "zaghouan", fr: "Zaghouan", ar: "زغوان",
-    cities: ["Zaghouan", "Zriba", "El Fahs", "Bir Mcherga", "Hammam Zriba"],
-  },
-  {
-    key: "bizerte", fr: "Bizerte", ar: "بنزرت",
-    cities: ["Bizerte", "Menzel Bourguiba", "Mateur", "Ras Jebel", "El Alia", "Menzel Jemil", "Ghar El Melh", "Sejnane", "Tinja"],
+    cities: [
+      "Ariana", "Ariana Ville", "Ettadhamen", "Kalâat el-Andalous",
+      "La Soukra", "Mnihla", "Raoued", "Sidi Thabet",
+    ],
   },
   {
     key: "beja", fr: "Béja", ar: "باجة",
-    cities: ["Béja", "Medjez el-Bab", "Testour", "Nefza", "Téboursouk", "Goubellat", "Amdoun"],
+    cities: [
+      "Béja", "Béja Nord", "Béja Sud", "Amdoun", "Goubellat",
+      "Medjez el-Bab", "Nefza", "Téboursouk", "Testour", "Thibar",
+    ],
   },
   {
-    key: "jendouba", fr: "Jendouba", ar: "جندوبة",
-    cities: ["Jendouba", "Tabarka", "Ain Draham", "Bou Salem", "Ghardimaou", "Fernana", "Oued Meliz"],
+    key: "ben-arous", fr: "Ben Arous", ar: "بن عروس",
+    cities: [
+      "Ben Arous", "Bou Mhel el-Bassatine", "El Mourouj", "Ezzahra",
+      "Fouchana", "Hammam Chott", "Hammam Lif", "Médina Jedida",
+      "Mégrine", "Mohamedia", "Nouvelle Médina", "Radès",
+    ],
   },
   {
-    key: "kef", fr: "Le Kef", ar: "الكاف",
-    cities: ["Le Kef", "Dahmani", "Sakiet Sidi Youssef", "Tajerouine", "Nebeur", "El Ksour"],
-  },
-  {
-    key: "siliana", fr: "Siliana", ar: "سليانة",
-    cities: ["Siliana", "Makthar", "Bou Arada", "El Aroussa", "Gaafour", "Rouhia"],
-  },
-  {
-    key: "kairouan", fr: "Kairouan", ar: "القيروان",
-    cities: ["Kairouan", "Sbikha", "Haffouz", "Chebika", "El Oueslatia", "Bouhajla", "Nasrallah"],
-  },
-  {
-    key: "kasserine", fr: "Kasserine", ar: "القصرين",
-    cities: ["Kasserine", "Sbeitla", "Thala", "Feriana", "Haïdra", "Foussana", "Jediliane"],
-  },
-  {
-    key: "sidi-bouzid", fr: "Sidi Bouzid", ar: "سيدي بوزيد",
-    cities: ["Sidi Bouzid", "Regueb", "Bir El Hafey", "Jelma", "Meknassy", "Menzel Bouzaiene"],
-  },
-  {
-    key: "sousse", fr: "Sousse", ar: "سوسة",
-    cities: ["Sousse", "Msaken", "Hammam Sousse", "Akouda", "Kalaa Kebira", "Enfidha", "Sidi Bou Ali", "Hergla"],
-  },
-  {
-    key: "monastir", fr: "Monastir", ar: "المنستير",
-    cities: ["Monastir", "Ksar Hellal", "Moknine", "Jemmel", "Bembla", "Téboulba", "Sayada", "Bekalta"],
-  },
-  {
-    key: "mahdia", fr: "Mahdia", ar: "المهدية",
-    cities: ["Mahdia", "El Jem", "Ksour Essaf", "Chebba", "Salakta", "Bou Merdes"],
-  },
-  {
-    key: "sfax", fr: "Sfax", ar: "صفاقس",
-    cities: ["Sfax", "Kerkennah", "Sakiet Ezzit", "Sakiet Eddaïr", "El Hencha", "Thyna", "Agareb", "Bir Ali Ben Khalifa"],
-  },
-  {
-    key: "gafsa", fr: "Gafsa", ar: "قفصة",
-    cities: ["Gafsa", "Métlaoui", "Moularès", "Redeyef", "El Gtar", "Om Larayes"],
-  },
-  {
-    key: "tozeur", fr: "Tozeur", ar: "توزر",
-    cities: ["Tozeur", "Degache", "Nefta", "Hazoua", "Tameghza"],
-  },
-  {
-    key: "kebili", fr: "Kébili", ar: "قبلي",
-    cities: ["Kébili", "Douz", "El Faouar", "Souk Lahad"],
+    key: "bizerte", fr: "Bizerte", ar: "بنزرت",
+    cities: [
+      "Bizerte", "Bizerte Nord", "Bizerte Sud", "El Alia", "Ghar El Melh",
+      "Ghezala", "Joumine", "Mateur", "Menzel Bourguiba", "Menzel Jemil",
+      "Ras Jebel", "Sejnane", "Tinja", "Utique", "Zarzouna",
+    ],
   },
   {
     key: "gabes", fr: "Gabès", ar: "قابس",
-    cities: ["Gabès", "Mareth", "Matmata", "Ghannouch", "El Hamma", "Nouvelle Matmata"],
+    cities: [
+      "Gabès", "Gabès Médina", "Gabès Ouest", "Gabès Sud",
+      "El Hamma", "Ghannouch", "Mareth", "Matmata",
+      "Menzel El Habib", "Nouvelle Matmata",
+    ],
+  },
+  {
+    key: "gafsa", fr: "Gafsa", ar: "قفصة",
+    cities: [
+      "Gafsa", "Gafsa Nord", "Gafsa Sud", "Belkhir", "El Guettar",
+      "El Ksar", "Mdhilla", "Métlaoui", "Moularès", "Om Larayes",
+      "Redeyef", "Sened", "Sidi Aïch",
+    ],
+  },
+  {
+    key: "jendouba", fr: "Jendouba", ar: "جندوبة",
+    cities: [
+      "Jendouba", "Jendouba Nord", "Aïn Draham", "Balta - Bou Amdène",
+      "Bou Salem", "Fernana", "Ghardimaou", "Oued Meliz", "Tabarka",
+    ],
+  },
+  {
+    key: "kairouan", fr: "Kairouan", ar: "القيروان",
+    cities: [
+      "Kairouan", "Kairouan Nord", "Kairouan Sud", "Bouhajla", "Chebika",
+      "Cherarda", "El Ala", "El Oueslatia", "Haffouz",
+      "Hajeb El Ayoun", "Nasrallah", "Sbikha",
+    ],
+  },
+  {
+    key: "kasserine", fr: "Kasserine", ar: "القصرين",
+    cities: [
+      "Kasserine", "Kasserine Nord", "Kasserine Sud", "Ezzouhour",
+      "Feriana", "Foussana", "Haïdra", "Hassi El Frid", "Hidra",
+      "Jediliane", "Majel Bel Abbès", "Sbeitla", "Sbiba", "Thala",
+    ],
+  },
+  {
+    key: "kebili", fr: "Kébili", ar: "قبلي",
+    cities: [
+      "Kébili", "Kébili Nord", "Kébili Sud",
+      "Douz Nord", "Douz Sud", "El Faouar", "Souk Lahad",
+    ],
+  },
+  {
+    key: "kef", fr: "Le Kef", ar: "الكاف",
+    cities: [
+      "Le Kef", "Le Kef Est", "Le Kef Ouest", "Dahmani", "El Ksour",
+      "Jérissa", "Kalaat Khasba", "Kalaat Sinane", "Nebeur",
+      "Sakiet Sidi Youssef", "Tajerouine", "Touiref",
+    ],
+  },
+  {
+    key: "mahdia", fr: "Mahdia", ar: "المهدية",
+    cities: [
+      "Mahdia", "Bou Merdes", "Chebba", "Chorbane", "El Jem",
+      "Essouassi", "Ksour Essaf", "Melloulèche",
+      "Ouled Chamekh", "Salakta", "Sidi Alouane",
+    ],
+  },
+  {
+    key: "manouba", fr: "Manouba", ar: "منوبة",
+    cities: [
+      "Manouba", "Borj El Amri", "Denden", "Douar Hicher",
+      "El Battan", "Jedaïda", "Mornaguia", "Oued Ellil", "Tebourba",
+    ],
   },
   {
     key: "medenine", fr: "Médenine", ar: "مدنين",
-    cities: ["Médenine", "Zarzis", "Ben Gardane", "Djerba (Houmt Souk)", "Midoun", "Beni Khedache", "Sidi Makhlouf"],
+    cities: [
+      "Médenine", "Médenine Nord", "Médenine Sud", "Ben Gardane",
+      "Beni Khedache", "Djerba - Ajim", "Djerba - Houmt Souk",
+      "Djerba - Midoun", "Sidi Makhlouf", "Zarzis",
+    ],
+  },
+  {
+    key: "monastir", fr: "Monastir", ar: "المنستير",
+    cities: [
+      "Monastir", "Bekalta", "Bembla", "Beni Hassen", "Jammel",
+      "Ksar Hellal", "Ksibet El Médiouni", "Moknine", "Ouerdanine",
+      "Sahline", "Sayada - Lamta - Bou Hajar", "Téboulba", "Zeramdine",
+    ],
+  },
+  {
+    key: "nabeul", fr: "Nabeul", ar: "نابل",
+    cities: [
+      "Nabeul", "Beni Khaled", "Beni Khiar", "Bou Argoub",
+      "Dar Chaabane El Fehri", "El Haouaria", "El Mida", "Grombalia",
+      "Hammam El Ghezaz", "Hammamet", "Kelibia", "Korba",
+      "Menzel Bouzelfa", "Menzel Temime", "Soliman", "Takelsa",
+    ],
+  },
+  {
+    key: "sfax", fr: "Sfax", ar: "صفاقس",
+    cities: [
+      "Sfax", "Sfax Est", "Sfax Médina", "Sfax Ouest", "Agareb",
+      "Bir Ali Ben Khalifa", "El Amra", "El Ain", "El Ghraïba",
+      "Graïba", "Hencha", "Jebiniana", "Kerkennah", "Mahres",
+      "Menzel Chaker", "Sakiet Eddaïr", "Sakiet Ezzit", "Skhira", "Thyna",
+    ],
+  },
+  {
+    key: "sidi-bouzid", fr: "Sidi Bouzid", ar: "سيدي بوزيد",
+    cities: [
+      "Sidi Bouzid", "Sidi Bouzid Est", "Sidi Bouzid Ouest",
+      "Bir El Hafey", "Cebbala Ouled Asker", "El Meknassy", "Jilma",
+      "Menzel Bouzaiene", "Mezzouna", "Ouled Haffouz",
+      "Regueb", "Sidi Ali Ben Aoun", "Souk Jedid",
+    ],
+  },
+  {
+    key: "siliana", fr: "Siliana", ar: "سليانة",
+    cities: [
+      "Siliana", "Siliana Nord", "Siliana Sud", "Bargou", "Bou Arada",
+      "El Aroussa", "El Krib", "Gaâfour", "Kesra",
+      "Makthar", "Rohia", "Sidi Bou Rouis",
+    ],
+  },
+  {
+    key: "sousse", fr: "Sousse", ar: "سوسة",
+    cities: [
+      "Sousse", "Sousse Jawhara", "Sousse Médina", "Sousse Riadh",
+      "Sousse Sidi Abdelhamid", "Akouda", "Bouficha", "Enfidha",
+      "Hammam Sousse", "Hergla", "Kalaa Kebira", "Kalaa Seghira",
+      "Kondar", "Msaken", "Sidi Bou Ali", "Sidi El Hani",
+    ],
   },
   {
     key: "tataouine", fr: "Tataouine", ar: "تطاوين",
-    cities: ["Tataouine", "Ghomrassen", "Remada", "Dehiba", "Bir Lahmar"],
+    cities: [
+      "Tataouine", "Tataouine Nord", "Tataouine Sud",
+      "Bir Lahmar", "Dhiba", "Ghomrassen", "Remada", "Smar",
+    ],
+  },
+  {
+    key: "tozeur", fr: "Tozeur", ar: "توزر",
+    cities: [
+      "Tozeur", "Degache", "Hazoua", "Nefta", "Tamaghza",
+    ],
+  },
+  {
+    key: "tunis", fr: "Tunis", ar: "تونس",
+    cities: [
+      "Tunis", "Bab El Bhar", "Bab Souika", "Carthage", "El Hrairia",
+      "El Kabaria", "El Menzah", "El Omrane", "El Omrane Supérieur",
+      "El Ouardia", "Ettahrir", "Ezzouhour", "Hai El Khadra",
+      "Jellaz", "La Goulette", "La Marsa", "Le Bardo", "Le Kram",
+      "Médina", "Séjoumi", "Sidi El Béchir", "Sidi Hassine",
+    ],
+  },
+  {
+    key: "zaghouan", fr: "Zaghouan", ar: "زغوان",
+    cities: [
+      "Zaghouan", "Bir Mcherga", "El Fahs", "Nadhour", "Saouaf", "Zriba",
+    ],
   },
 ];
 

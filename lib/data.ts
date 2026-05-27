@@ -109,7 +109,7 @@ export const annonces: Annonce[] = [
   {
     id: 7,
     titre: { fr: "Cahier de révision", ar: "كراسة مراجعة" },
-    lieu: "Université de Carthage",
+    lieu: "Carthage",
     temps: { fr: "Il y a 10 jours", ar: "من 10 أيام" },
     heuresEcoulees: 240,
     type: "perdu",
