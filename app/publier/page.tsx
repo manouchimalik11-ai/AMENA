@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { categories } from "@/lib/data";
 import Navbar from "@/components/Navbar";
@@ -8,13 +8,12 @@ import { useLang } from "@/lib/LangContext";
 import { tr } from "@/lib/translations";
 
 export default function PublierPage() {
-  const [type, setType] = useState<"perdu" | "trouve">(() => {
-    if (typeof window !== "undefined") {
-      const t = new URLSearchParams(window.location.search).get("type");
-      if (t === "trouve" || t === "perdu") return t;
-    }
-    return "perdu";
-  });
+  const [type, setType] = useState<"perdu" | "trouve">("perdu");
+
+  useEffect(() => {
+    const t = new URLSearchParams(window.location.search).get("type");
+    if (t === "trouve" || t === "perdu") setType(t);
+  }, []);
   const [titre, setTitre] = useState("");
   const [categorie, setCategorie] = useState("");
   const [lieu, setLieu] = useState("");
