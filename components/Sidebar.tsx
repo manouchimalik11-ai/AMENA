@@ -197,13 +197,6 @@ export default function Sidebar({
         />
       ))}
 
-      <Divider />
-
-      {/* ── TYPE ── */}
-      <SectionTitle label={t.type} />
-      {([["tous", t.type_all], ["perdu", t.type_lost], ["trouve", t.type_found]] as [string, string][]).map(([val, label]) => (
-        <RadioRow key={val} active={filtreType === val} label={label} onClick={() => setFiltreType(val)} />
-      ))}
     </div>
   );
 }

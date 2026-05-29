@@ -73,8 +73,6 @@ export default function Navbar() {
         {/* Desktop nav */}
         <div className="nav-desktop">
           <Link href="/" style={{ color: "#e53935", fontWeight: 600, fontSize: 14, textDecoration: "none", borderBottom: "2px solid #e53935", paddingBottom: 2 }}>{t.home}</Link>
-          <Link href="/?type=perdu" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>{t.lost}</Link>
-          <Link href="/?type=trouve" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>{t.found}</Link>
           <Link href="/aide" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>{t.help}</Link>
           <Link href="/boost" style={{ background: "linear-gradient(135deg,#f59e0b,#d97706)", color: "#fff", fontSize: 13, fontWeight: 800, textDecoration: "none", padding: "7px 14px", borderRadius: 8, boxShadow: "0 2px 8px rgba(245,158,11,0.35)" }}>{t.boost}</Link>
           {langToggle}
@@ -98,8 +96,6 @@ export default function Navbar() {
       {menuOpen && (
         <div style={{ background: "#fff", borderTop: "1px solid #f0f0f0", padding: "16px 24px", display: "flex", flexDirection: "column", gap: 16 }}>
           <Link href="/" style={{ color: "#e53935", fontWeight: 600, fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.home}</Link>
-          <Link href="/?type=perdu" style={{ color: "#555", fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.lost}</Link>
-          <Link href="/?type=trouve" style={{ color: "#555", fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.found}</Link>
           <Link href="/aide" style={{ color: "#555", fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.help}</Link>
           <Link href="/boost" style={{ color: "#d97706", fontSize: 15, fontWeight: 700, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.boost}</Link>
           <div style={{ paddingTop: 4 }}>{langToggle}</div>
