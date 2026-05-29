@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { categories } from "@/lib/data";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useLang } from "@/lib/LangContext";
 import { tr } from "@/lib/translations";
@@ -40,7 +39,7 @@ export default function PublierPage() {
   if (submitted) {
     return (
       <div style={{ minHeight: "100vh", background: "#f6f6f6" }}>
-        <Navbar />
+
         <div style={{ maxWidth: 560, margin: "80px auto", padding: "0 24px", textAlign: "center" }}>
           <div style={{ background: "#fff", borderRadius: 20, padding: "60px 40px", boxShadow: "0 2px 20px rgba(0,0,0,0.09)", border: "1px solid #ebebeb" }}>
             <div style={{ fontSize: 60, marginBottom: 20 }}>✅</div>
@@ -60,8 +59,6 @@ export default function PublierPage() {
 
   return (
     <div style={{ minHeight: "100vh", background: "#f6f6f6" }}>
-      <Navbar />
-
       <div style={{ maxWidth: 660, margin: "0 auto", padding: "40px 24px" }}>
         <div style={{ fontSize: 13, color: "#888", marginBottom: 24, display: "flex", alignItems: "center", gap: 6 }}>
           <Link href="/" style={{ color: "#e53935", textDecoration: "none", fontWeight: 600 }}>{t.crumb_home}</Link>

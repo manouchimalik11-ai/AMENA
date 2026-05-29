@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useLang } from "@/lib/LangContext";
 import { tr } from "@/lib/translations";
+import { useUser } from "@/lib/UserContext";
 
 export default function InscriptionPage() {
   const [nom, setNom] = useState("");
@@ -15,19 +15,20 @@ export default function InscriptionPage() {
   const [error, setError] = useState("");
   const { lang } = useLang();
   const t = tr[lang].inscription;
+  const { login } = useUser();
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!nom || !email || !password || !confirm) { setError(t.err_fields); return; }
     if (password !== confirm) { setError(t.err_match); return; }
     if (password.length < 6) { setError(t.err_length); return; }
+    login({ name: nom, email });
     setSubmitted(true);
   }
 
   if (submitted) {
     return (
       <div style={{ minHeight: "100vh", background: "#f7f7f8" }}>
-        <Navbar />
         <div style={{ maxWidth: 480, margin: "80px auto", padding: "0 24px", textAlign: "center" }}>
           <div style={{ background: "#fff", borderRadius: 20, padding: "60px 40px", boxShadow: "0 2px 20px rgba(0,0,0,0.09)" }}>
             <div style={{ fontSize: 56, marginBottom: 16 }}>🎉</div>
@@ -52,7 +53,6 @@ export default function InscriptionPage() {
 
   return (
     <div style={{ minHeight: "100vh", background: "#f7f7f8" }}>
-      <Navbar />
       <div style={{ maxWidth: 460, margin: "0 auto", padding: "48px 24px" }}>
         <div style={{ fontSize: 13, color: "#888", marginBottom: 24, display: "flex", gap: 6 }}>
           <Link href="/" style={{ color: "#e53935", textDecoration: "none", fontWeight: 600 }}>{t.crumb_home}</Link>

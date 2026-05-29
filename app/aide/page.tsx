@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useLang } from "@/lib/LangContext";
 import { tr } from "@/lib/translations";
@@ -13,7 +12,6 @@ export default function AidePage() {
 
   return (
     <div style={{ minHeight: "100vh", background: "#f7f7f8" }}>
-      <Navbar />
       <div style={{ maxWidth: 760, margin: "0 auto", padding: "48px 24px" }}>
         <div style={{ fontSize: 13, color: "#888", marginBottom: 24, display: "flex", gap: 6 }}>
           <Link href="/" style={{ color: "#e53935", textDecoration: "none", fontWeight: 600 }}>{t.crumb_home}</Link>

@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { annonces, categories } from "@/lib/data";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Sidebar from "@/components/Sidebar";
 import AnnonceCard from "@/components/AnnonceCard";
@@ -51,7 +50,6 @@ export default function Home() {
 
   return (
     <div style={{ minHeight: "100vh", background: "#f7f7f8", color: "#1a1a2e" }}>
-      <Navbar />
 
       {/* ── HERO ── */}
       <section style={{ position: "relative", padding: "72px 24px 90px", overflow: "hidden" }}>
