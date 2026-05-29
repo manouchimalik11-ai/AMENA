@@ -4,39 +4,59 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import { useLang } from "@/lib/LangContext";
 import { tr } from "@/lib/translations";
-import { useUser } from "@/lib/UserContext";
+
+type Status = "idle" | "loading" | "sent" | "error";
 
 export default function InscriptionPage() {
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
   const { lang } = useLang();
   const t = tr[lang].inscription;
-  const { login } = useUser();
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setError("");
     if (!nom || !email || !password || !confirm) { setError(t.err_fields); return; }
     if (password !== confirm) { setError(t.err_match); return; }
     if (password.length < 6) { setError(t.err_length); return; }
-    login({ name: nom, email });
-    setSubmitted(true);
+
+    setStatus("loading");
+    const res = await fetch("/api/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: nom, email }),
+    });
+    const data = await res.json();
+
+    if (!res.ok || data.error) {
+      setStatus("error");
+      setError(data.error || "Une erreur est survenue.");
+      return;
+    }
+    setStatus("sent");
   }
 
-  if (submitted) {
+  if (status === "sent") {
     return (
       <div style={{ minHeight: "100vh", background: "#f7f7f8" }}>
-        <div style={{ maxWidth: 480, margin: "80px auto", padding: "0 24px", textAlign: "center" }}>
-          <div style={{ background: "#fff", borderRadius: 20, padding: "60px 40px", boxShadow: "0 2px 20px rgba(0,0,0,0.09)" }}>
-            <div style={{ fontSize: 56, marginBottom: 16 }}>🎉</div>
-            <h1 style={{ fontSize: 24, fontWeight: 800, color: "#1a1a2e", marginBottom: 12 }}>{t.ok_title}</h1>
-            <p style={{ color: "#888", marginBottom: 28 }}>{t.ok_desc1} {nom}. {t.ok_desc2}</p>
-            <Link href="/" style={{ display: "inline-block", background: "#e53935", color: "#fff", textDecoration: "none", borderRadius: 12, padding: "13px 32px", fontWeight: 700 }}>
-              {t.ok_btn}
-            </Link>
+        <div style={{ maxWidth: 520, margin: "80px auto", padding: "0 24px", textAlign: "center" }}>
+          <div style={{ background: "#fff", borderRadius: 24, padding: "60px 40px", boxShadow: "0 4px 32px rgba(0,0,0,0.10)" }}>
+            <div style={{ fontSize: 64, marginBottom: 20 }}>📬</div>
+            <h1 style={{ fontSize: 24, fontWeight: 800, color: "#1a1a2e", marginBottom: 12 }}>Email envoyé !</h1>
+            <p style={{ color: "#666", fontSize: 15, lineHeight: 1.8, marginBottom: 8 }}>
+              Un email de confirmation a été envoyé à <strong style={{ color: "#e53935" }}>{email}</strong>.
+            </p>
+            <p style={{ color: "#aaa", fontSize: 13, lineHeight: 1.7, marginBottom: 32 }}>
+              Cliquez sur le lien dans l&apos;email pour activer votre compte.<br />
+              Le lien est valable <strong>24 heures</strong>.
+            </p>
+            <div style={{ background: "#fff8f8", borderRadius: 12, padding: "14px 20px", border: "1px solid #fde8e8", fontSize: 13, color: "#888" }}>
+              Vous ne trouvez pas l&apos;email ? Vérifiez vos <strong>spams</strong>.
+            </div>
           </div>
         </div>
         <Footer />
@@ -71,8 +91,9 @@ export default function InscriptionPage() {
                   onFocus={e => (e.target.style.borderColor = "#e53935")} onBlur={e => (e.target.style.borderColor = "#eee")} />
               </div>
             ))}
-            <button type="submit" style={{ background: "linear-gradient(135deg,#ff5252,#c62828)", color: "#fff", border: "none", borderRadius: 12, padding: "14px", fontWeight: 700, fontSize: 15, cursor: "pointer", marginTop: 4 }}>
-              {t.submit}
+            <button type="submit" disabled={status === "loading"}
+              style={{ background: status === "loading" ? "#ccc" : "linear-gradient(135deg,#ff5252,#c62828)", color: "#fff", border: "none", borderRadius: 12, padding: "14px", fontWeight: 700, fontSize: 15, cursor: status === "loading" ? "not-allowed" : "pointer", marginTop: 4 }}>
+              {status === "loading" ? "Envoi en cours…" : t.submit}
             </button>
             <p style={{ textAlign: "center", fontSize: 13, color: "#aaa", margin: 0 }}>
               {t.has_account}{" "}

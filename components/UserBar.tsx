@@ -57,9 +57,9 @@ export default function UserBar() {
   const initial = user.name.trim()[0]?.toUpperCase() ?? "?";
 
   const items = [
-    { key: "annonces", href: "#", icon: <IconAnnonces />, label: t.annonces, color: "#e53935", bg: "#fff5f5" },
-    { key: "favoris",  href: "#", icon: <IconFavoris />,  label: t.favoris,  color: "#e91e8c", bg: "#fdf0f8", badge: 0 },
-    { key: "messages", href: "#", icon: <IconMessages />, label: t.messages, color: "#1976d2", bg: "#f0f6ff", badge: 2 },
+    { key: "annonces", href: "/mes-annonces", icon: <IconAnnonces />, label: t.annonces, color: "#e53935", bg: "#fff5f5" },
+    { key: "favoris",  href: "/favoris",      icon: <IconFavoris />,  label: t.favoris,  color: "#e91e8c", bg: "#fdf0f8", badge: 0 },
+    { key: "messages", href: "/messages",     icon: <IconMessages />, label: t.messages, color: "#1976d2", bg: "#f0f6ff", badge: 2 },
   ];
 
   return (
@@ -191,8 +191,8 @@ export default function UserBar() {
                 </div>
 
                 {/* menu items */}
-                <DropItem label={t.profile} href="#" />
-                <DropItem label={t.annonces} href="#" />
+                <DropItem label={t.profile} href="/profil" />
+                <DropItem label={t.annonces} href="/mes-annonces" />
 
                 <div style={{ borderTop: "1px solid #f5f5f5", padding: "6px 0" }}>
                   <button

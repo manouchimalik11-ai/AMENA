@@ -3,27 +3,41 @@ import { useState } from "react";
 import Link from "next/link";
 import { useLang } from "@/lib/LangContext";
 import { tr } from "@/lib/translations";
+import { useUser } from "@/lib/UserContext";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { lang, setLang } = useLang();
+  const { user, logout } = useUser();
   const t = tr[lang].nav;
 
   const langToggle = (
     <div style={{ display: "flex", alignItems: "center", border: "1px solid #e0e0e0", borderRadius: 8, overflow: "hidden", fontSize: 13, flexShrink: 0 }}>
-      <button
-        onClick={() => setLang("fr")}
-        style={{ padding: "6px 11px", fontWeight: lang === "fr" ? 700 : 400, color: lang === "fr" ? "#e53935" : "#888", background: lang === "fr" ? "#fff5f5" : "#fff", border: "none", cursor: "pointer" }}
-      >
-        FR
-      </button>
+      <button onClick={() => setLang("fr")} style={{ padding: "6px 11px", fontWeight: lang === "fr" ? 700 : 400, color: lang === "fr" ? "#e53935" : "#888", background: lang === "fr" ? "#fff5f5" : "#fff", border: "none", cursor: "pointer" }}>FR</button>
       <div style={{ width: 1, height: 18, background: "#e0e0e0" }} />
-      <button
-        onClick={() => setLang("ar")}
-        style={{ padding: "6px 11px", fontWeight: lang === "ar" ? 700 : 400, color: lang === "ar" ? "#e53935" : "#888", background: lang === "ar" ? "#fff5f5" : "#fff", border: "none", cursor: "pointer" }}
-      >
-        AR
-      </button>
+      <button onClick={() => setLang("ar")} style={{ padding: "6px 11px", fontWeight: lang === "ar" ? 700 : 400, color: lang === "ar" ? "#e53935" : "#888", background: lang === "ar" ? "#fff5f5" : "#fff", border: "none", cursor: "pointer" }}>AR</button>
+    </div>
+  );
+
+  const userSection = user ? (
+    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+      <div style={{
+        display: "flex", alignItems: "center", gap: 8,
+        padding: "5px 14px 5px 6px", borderRadius: 50,
+        background: "#fff5f5", border: "1.5px solid #e53935",
+      }}>
+        <div style={{ width: 28, height: 28, borderRadius: "50%", background: "linear-gradient(135deg,#ff5252,#c62828)", color: "#fff", fontWeight: 800, fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+          {user.name.trim()[0]?.toUpperCase()}
+        </div>
+        <span style={{ fontSize: 13, fontWeight: 700, color: "#c62828", maxWidth: 120, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          {user.name.split(" ")[0]}
+        </span>
+      </div>
+    </div>
+  ) : (
+    <div style={{ display: "flex", alignItems: "center", border: "2px solid #e53935", borderRadius: 8, overflow: "hidden" }}>
+      <Link href="/inscription" style={{ color: "#e53935", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px", borderRight: "1px solid #e53935" }}>{t.register}</Link>
+      <Link href="/connexion" style={{ color: "#e53935", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px" }}>{t.login}</Link>
     </div>
   );
 
@@ -64,10 +78,7 @@ export default function Navbar() {
           <Link href="/aide" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>{t.help}</Link>
           <Link href="/boost" style={{ background: "linear-gradient(135deg,#f59e0b,#d97706)", color: "#fff", fontSize: 13, fontWeight: 800, textDecoration: "none", padding: "7px 14px", borderRadius: 8, boxShadow: "0 2px 8px rgba(245,158,11,0.35)" }}>{t.boost}</Link>
           {langToggle}
-          <div style={{ display: "flex", alignItems: "center", border: "2px solid #e53935", borderRadius: 8, overflow: "hidden" }}>
-            <Link href="/inscription" style={{ color: "#e53935", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px", borderRight: "1px solid #e53935" }}>{t.register}</Link>
-            <Link href="/connexion" style={{ color: "#e53935", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px" }}>{t.login}</Link>
-          </div>
+          {userSection}
         </div>
 
         {/* Mobile hamburger */}
@@ -92,10 +103,27 @@ export default function Navbar() {
           <Link href="/aide" style={{ color: "#555", fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.help}</Link>
           <Link href="/boost" style={{ color: "#d97706", fontSize: 15, fontWeight: 700, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.boost}</Link>
           <div style={{ paddingTop: 4 }}>{langToggle}</div>
-          <div style={{ display: "flex", gap: 12, paddingTop: 8, borderTop: "1px solid #f0f0f0" }}>
-            <Link href="/inscription" style={{ flex: 1, textAlign: "center", color: "#e53935", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", border: "2px solid #e53935", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>{t.register}</Link>
-            <Link href="/connexion" style={{ flex: 1, textAlign: "center", color: "#fff", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", background: "#e53935", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>{t.login}</Link>
-          </div>
+          {user ? (
+            <div style={{ paddingTop: 8, borderTop: "1px solid #f0f0f0", display: "flex", flexDirection: "column", gap: 12 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "linear-gradient(135deg,#ff5252,#c62828)", color: "#fff", fontWeight: 800, fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  {user.name.trim()[0]?.toUpperCase()}
+                </div>
+                <div>
+                  <div style={{ fontWeight: 700, fontSize: 14, color: "#1a1a2e" }}>{user.name}</div>
+                  <div style={{ fontSize: 11, color: "#aaa" }}>{user.email}</div>
+                </div>
+              </div>
+              <button onClick={() => { logout(); setMenuOpen(false); }} style={{ background: "#fff5f5", color: "#e53935", border: "1px solid #fde8e8", borderRadius: 8, padding: "10px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>
+                Déconnexion
+              </button>
+            </div>
+          ) : (
+            <div style={{ display: "flex", gap: 12, paddingTop: 8, borderTop: "1px solid #f0f0f0" }}>
+              <Link href="/inscription" style={{ flex: 1, textAlign: "center", color: "#e53935", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", border: "2px solid #e53935", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>{t.register}</Link>
+              <Link href="/connexion" style={{ flex: 1, textAlign: "center", color: "#fff", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", background: "#e53935", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>{t.login}</Link>
+            </div>
+          )}
         </div>
       )}
     </nav>
