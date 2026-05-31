@@ -11,9 +11,9 @@ export const tr = {
       login: "Se Connecter",
     },
     hero: {
-      title_line1: "",
-      title_line2: "Rien n'est vraiment perdu.",
-      subtitle: "La plateforme tunisienne pour retrouver vos objets et animaux perdus, ensemble.",
+      title_line1: "Rien n'est",
+      title_line2: " vraiment perdu.",
+      subtitle: "La plateforme tunisienne Lost & Found pour retrouver vos objets et animaux perdus, ensemble.",
       lost_title: "J'ai perdu un objet",
       lost_desc: "Signalez votre perte et soyez contacté dès qu'on le retrouve.",
       found_title: "J'ai trouvé un objet",
