@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useLang } from "@/lib/LangContext";
 import { tr } from "@/lib/translations";
 import { useUser } from "@/lib/UserContext";
@@ -45,6 +46,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropOpen, setDropOpen] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
+  const pathname = usePathname();
   const { lang, setLang } = useLang();
   const { user, logout } = useUser();
   const t = tr[lang].nav;
@@ -172,8 +174,8 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <div className="nav-desktop">
-            <Link href="/" style={{ color: "#e53935", fontWeight: 600, fontSize: 14, textDecoration: "none", borderBottom: "2px solid #e53935", paddingBottom: 2 }}>{t.home}</Link>
-            <Link href="/aide" style={{ color: "#555", fontSize: 14, textDecoration: "none" }}>{t.help}</Link>
+            <NavLink href="/" active={pathname === "/"}>{t.home}</NavLink>
+            <NavLink href="/aide" active={pathname === "/aide"}>{t.help}</NavLink>
             <Link href="/boost" style={{ background: "linear-gradient(135deg,#f59e0b,#d97706)", color: "#fff", fontSize: 13, fontWeight: 800, textDecoration: "none", padding: "7px 14px", borderRadius: 8, boxShadow: "0 2px 8px rgba(245,158,11,0.35)" }}>{t.boost}</Link>
             {langToggle}
             {userSection}
@@ -280,6 +282,25 @@ export default function Navbar() {
         )}
       </nav>
     </>
+  );
+}
+
+function NavLink({ href, active, children }: { href: string; active: boolean; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      style={{
+        color: active ? "#e53935" : "#555",
+        fontWeight: active ? 700 : 500,
+        fontSize: 14,
+        textDecoration: "none",
+        borderBottom: active ? "2px solid #e53935" : "2px solid transparent",
+        paddingBottom: 2,
+        transition: "color 0.15s, border-color 0.15s",
+      }}
+    >
+      {children}
+    </Link>
   );
 }
 
