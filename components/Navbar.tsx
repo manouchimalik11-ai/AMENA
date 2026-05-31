@@ -196,7 +196,7 @@ export default function Navbar() {
         {user && (
           <div className="nav-desktop" style={{
             borderTop: "1px solid rgba(229,57,53,0.10)",
-            background: "#fafafa",
+            background: "#fff",
             padding: "0 32px",
             height: 44,
             alignItems: "center",
@@ -231,7 +231,7 @@ export default function Navbar() {
                     fontSize: 10, fontWeight: 800,
                     borderRadius: "50%", width: 16, height: 16,
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    boxShadow: "0 0 0 2px #fafafa",
+                    boxShadow: "0 0 0 2px #fff",
                   }}>{item.badge}</span>
                 ) : null}
               </Link>
