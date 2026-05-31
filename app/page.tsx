@@ -62,7 +62,7 @@ export default function Home() {
             <span style={{ color: "#fff" }}>{t.hero.title_line1}</span>
             <span style={{ background: "linear-gradient(90deg, #ff8a80, #ff5252)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{t.hero.title_line2}</span>
           </h1>
-          <p style={{ fontSize: 20, color: "rgba(255,255,255,0.90)", margin: "0 auto 40px", lineHeight: 1.7, maxWidth: 680, fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: "italic", letterSpacing: "0.2px" }}>
+          <p style={{ fontSize: 20, color: "rgba(255,255,255,0.90)", margin: "0 auto 40px", lineHeight: 1.7, fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: "italic", letterSpacing: "0.2px", whiteSpace: "nowrap" }}>
             {t.hero.subtitle}
           </p>
 
