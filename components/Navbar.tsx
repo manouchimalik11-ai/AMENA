@@ -201,7 +201,7 @@ export default function Navbar() {
             height: 44,
             alignItems: "center",
             gap: 4,
-            justifyContent: "flex-start",
+            justifyContent: "flex-end",
           }}>
             {navItems.map(item => (
               <Link
