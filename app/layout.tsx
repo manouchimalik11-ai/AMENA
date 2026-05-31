@@ -4,7 +4,6 @@ import "./globals.css";
 import LangWrapper from "@/lib/LangContext";
 import UserProvider from "@/lib/UserContext";
 import Navbar from "@/components/Navbar";
-import UserBar from "@/components/UserBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +31,6 @@ export default function RootLayout({
         <LangWrapper>
           <UserProvider>
             <Navbar />
-            <UserBar />
             {children}
           </UserProvider>
         </LangWrapper>
