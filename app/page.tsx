@@ -52,91 +52,12 @@ export default function Home() {
     <div style={{ minHeight: "100vh", background: "#f7f7f8", color: "#1a1a2e" }}>
 
       {/* ── HERO ── */}
-      <section style={{ position: "relative", padding: "72px 24px 90px", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('https://images.unsplash.com/photo-1726428977637-ba8fc5a5047d?w=1600&fit=crop')", backgroundSize: "cover", backgroundPosition: "center" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(10,15,60,0.72) 0%, rgba(20,10,50,0.55) 60%, rgba(180,20,20,0.45) 100%)" }} />
-        <div style={{ position: "absolute", inset: 0, opacity: 0.04, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
-
-        <div style={{ position: "relative", maxWidth: 820, margin: "0 auto", textAlign: "center" }}>
-          <h1 className="hero-title" style={{ fontSize: 52, fontWeight: 900, color: "#fff", marginBottom: 16, lineHeight: 1.12, letterSpacing: "-1px" }}>
-            {t.hero.title_line1 && <>{t.hero.title_line1}<br /></>}
-            <span style={{ background: "linear-gradient(90deg, #ff8a80, #ff5252)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{t.hero.title_line2}</span>
-          </h1>
-          <p style={{ fontSize: 17, color: "rgba(255,255,255,0.78)", marginBottom: 40, maxWidth: 700, margin: "0 auto 40px", lineHeight: 1.6, whiteSpace: "nowrap" }}>
-            {t.hero.subtitle}
-          </p>
-
-          {/* Deux cartes d'action */}
-          <div className="hero-actions" style={{ display: "flex", gap: 16, justifyContent: "center", marginBottom: 28, alignItems: "stretch" }}>
-
-            {/* Perdu */}
-            <Link href="/publier?type=perdu" style={{ textDecoration: "none", flex: 1, maxWidth: 300 }}>
-              <div style={{ background: "linear-gradient(145deg, #ff5252 0%, #b71c1c 100%)", borderRadius: 22, padding: "28px 26px", boxShadow: "0 16px 48px rgba(183,28,28,0.55)", cursor: "pointer", textAlign: "left", height: "100%", boxSizing: "border-box", position: "relative", overflow: "hidden" }}>
-                <div style={{ position: "absolute", top: -20, right: -20, width: 110, height: 110, borderRadius: "50%", background: "rgba(255,255,255,0.08)" }} />
-                <div style={{ width: 48, height: 48, borderRadius: 14, background: "rgba(255,255,255,0.18)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18 }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="2"/>
-                    <path d="M12 8v4M12 16h.01" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
-                  </svg>
-                </div>
-                <div style={{ color: "#fff", fontWeight: 800, fontSize: 18, marginBottom: 6, letterSpacing: "-0.3px" }}>{t.hero.lost_title}</div>
-                <div style={{ color: "rgba(255,255,255,0.72)", fontSize: 13, lineHeight: 1.5, marginBottom: 18 }}>{t.hero.lost_desc}</div>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(255,255,255,0.2)", borderRadius: 100, padding: "7px 16px", color: "#fff", fontWeight: 700, fontSize: 13 }}>
-                  {t.hero.post}
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </div>
-              </div>
-            </Link>
-
-            {/* Séparateur */}
-            <div style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
-              <div style={{ background: "rgba(255,255,255,0.25)", borderRadius: 100, padding: "6px 12px", color: "#fff", fontSize: 12, fontWeight: 700, letterSpacing: "0.5px" }}>{t.hero.or}</div>
-            </div>
-
-            {/* Trouvé */}
-            <Link href="/publier?type=trouve" style={{ textDecoration: "none", flex: 1, maxWidth: 300 }}>
-              <div style={{ background: "linear-gradient(145deg, #2e7d32 0%, #1b5e20 100%)", borderRadius: 22, padding: "28px 26px", boxShadow: "0 16px 48px rgba(27,94,32,0.55)", cursor: "pointer", textAlign: "left", height: "100%", boxSizing: "border-box", position: "relative", overflow: "hidden" }}>
-                <div style={{ position: "absolute", top: -20, right: -20, width: 110, height: 110, borderRadius: "50%", background: "rgba(255,255,255,0.08)" }} />
-                <div style={{ width: 48, height: 48, borderRadius: 14, background: "rgba(255,255,255,0.18)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18 }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="2"/>
-                  </svg>
-                </div>
-                <div style={{ color: "#fff", fontWeight: 800, fontSize: 18, marginBottom: 6, letterSpacing: "-0.3px" }}>{t.hero.found_title}</div>
-                <div style={{ color: "rgba(255,255,255,0.72)", fontSize: 13, lineHeight: 1.5, marginBottom: 18 }}>{t.hero.found_desc}</div>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(255,255,255,0.2)", borderRadius: 100, padding: "7px 16px", color: "#fff", fontWeight: 700, fontSize: 13 }}>
-                  {t.hero.post}
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </div>
-              </div>
-            </Link>
-
-          </div>
-
-          {/* Barre de recherche */}
-          <div style={{ background: "#fff", borderRadius: 16, boxShadow: "0 8px 32px rgba(0,0,0,0.2)", overflow: "hidden" }}>
-            <div className="search-bar-inner" style={{ display: "flex", alignItems: "center", padding: "6px 6px 6px 20px" }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ color: "#bbb", flexShrink: 0 }}>
-                <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
-                <path d="M16.5 16.5L21 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-              <input
-                type="text"
-                placeholder={t.hero.search_ph}
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                style={{ flex: 1, border: "none", outline: "none", fontSize: 15, color: "#222", background: "transparent", fontWeight: 500, padding: "14px 12px", minWidth: 0 }}
-              />
-              <button
-                onClick={() => router.push(`/recherche${search ? `?q=${encodeURIComponent(search)}` : ""}`)}
-                style={{ background: "linear-gradient(135deg, #ff5252, #c62828)", color: "#fff", border: "none", borderRadius: 12, padding: "13px 24px", fontWeight: 700, fontSize: 14, cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap" }}
-              >
-                {t.hero.search_btn}
-              </button>
-            </div>
-          </div>
-        </div>
+      <section style={{ width: "100%", lineHeight: 0 }}>
+        <img
+          src="/affiche-amena.png"
+          alt="Amena – Rien n'est vraiment perdu"
+          style={{ width: "100%", display: "block", objectFit: "cover" }}
+        />
       </section>
 
       {/* ── CONTENU PRINCIPAL ── */}
