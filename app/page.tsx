@@ -73,42 +73,13 @@ export default function Home() {
             <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "1.5px", marginBottom: 16 }}>{t.how.title}</div>
             <div className="features-grid" style={{ gap: 12 }}>
               {[
-                {
-                  icon: (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                      <path d="M12 20h9" stroke="#ff8a80" strokeWidth="2" strokeLinecap="round" />
-                      <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="#ff8a80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  ),
-                  titre: t.how.s1_title,
-                  desc: t.how.s1_desc,
-                },
-                {
-                  icon: (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                      <circle cx="11" cy="11" r="8" stroke="#ff8a80" strokeWidth="2" />
-                      <path d="M16.5 16.5L21 21" stroke="#ff8a80" strokeWidth="2" strokeLinecap="round" />
-                      <path d="M8 11h6M11 8v6" stroke="#ff8a80" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                  ),
-                  titre: t.how.s2_title,
-                  desc: t.how.s2_desc,
-                },
-                {
-                  icon: (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                      <path d="M9 12l2 2 4-4" stroke="#ff8a80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" stroke="#ff8a80" strokeWidth="2" />
-                    </svg>
-                  ),
-                  titre: t.how.s3_title,
-                  desc: t.how.s3_desc,
-                },
+                { titre: t.how.s1_title, desc: t.how.s1_desc },
+                { titre: t.how.s2_title, desc: t.how.s2_desc },
+                { titre: t.how.s3_title, desc: t.how.s3_desc },
               ].map((f, i) => (
                 <div key={i} className="step-card" style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(10px)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: 16, padding: "20px 18px", textAlign: "left", position: "relative", overflow: "hidden" }}>
-                  <div className="step-num">{String(i + 1).padStart(2, "0")}</div>
-                  <div className="step-icon" style={{ width: 40, height: 40, borderRadius: 12, background: "rgba(255,138,128,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12 }}>
-                    {f.icon}
+                  <div className="step-icon" style={{ width: 48, height: 48, borderRadius: 14, background: "linear-gradient(135deg, rgba(255,82,82,0.35), rgba(255,138,128,0.2))", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14, border: "1px solid rgba(255,138,128,0.35)" }}>
+                    <span style={{ fontSize: 22, fontWeight: 900, color: "#ff8a80", letterSpacing: "-1px" }}>{String(i + 1).padStart(2, "0")}</span>
                   </div>
                   <div style={{ fontWeight: 700, fontSize: 13, color: "#fff", marginBottom: 6 }}>{f.titre}</div>
                   <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)", lineHeight: 1.6 }}>{f.desc}</div>
