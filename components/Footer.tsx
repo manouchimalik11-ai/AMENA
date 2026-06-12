@@ -13,7 +13,6 @@ export default function Footer() {
         <Link href="/aide" style={{ color: "#aaa", textDecoration: "none", fontSize: 14 }}>{t.faq}</Link>
         <Link href="/contact" style={{ color: "#aaa", textDecoration: "none", fontSize: 14 }}>{t.contact}</Link>
         <Link href="/conditions" style={{ color: "#aaa", textDecoration: "none", fontSize: 14 }}>{t.conditions}</Link>
-        <Link href="/publier" style={{ color: "#ff7070", textDecoration: "none", fontSize: 14, fontWeight: 600 }}>{t.post}</Link>
       </div>
       <div style={{ display: "flex", justifyContent: "center", gap: 16, marginBottom: 18 }}>
         {["f", "t", "in"].map((s) => (

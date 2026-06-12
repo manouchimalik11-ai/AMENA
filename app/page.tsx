@@ -62,7 +62,7 @@ export default function Home() {
             <span style={{ color: "#fff" }}>{t.hero.title_line1}</span>
             <span style={{ background: "linear-gradient(90deg, #ff8a80, #ff5252)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{t.hero.title_line2}</span>
           </h1>
-          <p style={{ fontSize: 20, color: "rgba(255,255,255,0.90)", margin: "0 auto 40px", lineHeight: 1.7, fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: "italic", letterSpacing: "0.2px", whiteSpace: "nowrap" }}>
+          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", margin: "0 auto 40px", lineHeight: 1.6, fontFamily: "var(--font-geist-sans), sans-serif", fontWeight: 400, letterSpacing: "0.3px", whiteSpace: "nowrap" }}>
             {t.hero.subtitle}
           </p>
 
@@ -171,9 +171,6 @@ export default function Home() {
                   <button onClick={() => setVue("grille")} title="Grille" style={{ padding: "8px 13px", border: "none", background: vue === "grille" ? "#fff0f0" : "transparent", color: vue === "grille" ? "#e53935" : "#aaa", cursor: "pointer", fontSize: 15, transition: "all 0.15s" }}>⊞</button>
                   <button onClick={() => setVue("liste")} title="Liste" style={{ padding: "8px 13px", border: "none", borderLeft: "1px solid #e8e8e8", background: vue === "liste" ? "#fff0f0" : "transparent", color: vue === "liste" ? "#e53935" : "#aaa", cursor: "pointer", fontSize: 15, transition: "all 0.15s" }}>☰</button>
                 </div>
-                <Link href="/publier" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "#fff", background: "linear-gradient(135deg,#ff5252,#c62828)", fontSize: 13, textDecoration: "none", fontWeight: 700, padding: "8px 16px", borderRadius: 10, boxShadow: "0 4px 12px rgba(229,57,53,0.3)" }}>
-                  {t.listing.publish}
-                </Link>
               </div>
             </div>
 
