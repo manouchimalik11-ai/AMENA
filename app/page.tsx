@@ -105,8 +105,9 @@ export default function Home() {
                   desc: t.how.s3_desc,
                 },
               ].map((f, i) => (
-                <div key={i} style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(10px)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: 16, padding: "20px 18px", textAlign: "left" }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 12, background: "rgba(255,138,128,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12 }}>
+                <div key={i} className="step-card" style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(10px)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: 16, padding: "20px 18px", textAlign: "left", position: "relative", overflow: "hidden" }}>
+                  <div className="step-num">{String(i + 1).padStart(2, "0")}</div>
+                  <div className="step-icon" style={{ width: 40, height: 40, borderRadius: 12, background: "rgba(255,138,128,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12 }}>
                     {f.icon}
                   </div>
                   <div style={{ fontWeight: 700, fontSize: 13, color: "#fff", marginBottom: 6 }}>{f.titre}</div>
