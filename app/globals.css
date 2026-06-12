@@ -62,11 +62,6 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes floatIcon {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-7px); }
-}
-
 .step-card {
   opacity: 0;
   animation: slideUpFade 0.55s ease forwards;
@@ -83,11 +78,6 @@ body {
   box-shadow: 0 12px 36px rgba(255, 82, 82, 0.22);
 }
 
-.step-icon {
-  animation: floatIcon 3.2s ease-in-out infinite;
-}
-.step-card:nth-child(2) .step-icon { animation-delay: 0.6s; }
-.step-card:nth-child(3) .step-icon { animation-delay: 1.2s; }
 
 
 .hero-actions {

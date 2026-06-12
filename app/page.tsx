@@ -77,22 +77,24 @@ export default function Home() {
                 { titre: t.how.s2_title, desc: t.how.s2_desc },
                 { titre: t.how.s3_title, desc: t.how.s3_desc },
               ].map((f, i) => (
-                <div key={i} className="step-card" style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(10px)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: 16, padding: "20px 18px", textAlign: "left", position: "relative", overflow: "hidden" }}>
-                  <div className="step-icon" style={{ width: 48, height: 48, borderRadius: 14, background: "linear-gradient(135deg, rgba(255,82,82,0.35), rgba(255,138,128,0.2))", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14, border: "1px solid rgba(255,138,128,0.35)" }}>
-                    <span style={{ fontSize: 22, fontWeight: 900, color: "#ff8a80", letterSpacing: "-1px" }}>{String(i + 1).padStart(2, "0")}</span>
+                <div key={i} className="step-card" style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(10px)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: 16, padding: "18px 16px", textAlign: "left", display: "flex", alignItems: "flex-start", gap: 14 }}>
+                  <div style={{ width: 44, height: 44, flexShrink: 0, borderRadius: 12, background: "linear-gradient(135deg, rgba(255,82,82,0.35), rgba(255,138,128,0.2))", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(255,138,128,0.35)" }}>
+                    <span style={{ fontSize: 20, fontWeight: 900, color: "#ff8a80", letterSpacing: "-1px" }}>{String(i + 1).padStart(2, "0")}</span>
                   </div>
-                  <div style={{ fontWeight: 700, fontSize: 13, color: "#fff", marginBottom: 6 }}>{f.titre}</div>
-                  <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)", lineHeight: 1.6 }}>{f.desc}</div>
+                  <div>
+                    <div style={{ fontWeight: 700, fontSize: 13, color: "#fff", marginBottom: 5 }}>{f.titre}</div>
+                    <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)", lineHeight: 1.6 }}>{f.desc}</div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Deux boutons d'action */}
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", marginBottom: 28, alignItems: "center" }}>
+          <div style={{ display: "flex", gap: 16, justifyContent: "center", marginBottom: 28, alignItems: "center" }}>
 
-            <Link href="/publier?type=perdu" style={{ textDecoration: "none" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, background: "linear-gradient(135deg, #ff5252, #c62828)", borderRadius: 14, padding: "14px 24px", boxShadow: "0 4px 20px rgba(183,28,28,0.45)", cursor: "pointer", transition: "transform 0.15s, box-shadow 0.15s" }}>
+            <Link href="/publier?type=perdu" style={{ textDecoration: "none", flex: 1, maxWidth: 340 }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: "linear-gradient(135deg, #ff5252, #c62828)", borderRadius: 14, padding: "16px 28px", boxShadow: "0 4px 20px rgba(183,28,28,0.45)", cursor: "pointer", transition: "transform 0.15s, box-shadow 0.15s" }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="2"/>
                   <path d="M12 8v4M12 16h.01" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
@@ -101,10 +103,10 @@ export default function Home() {
               </div>
             </Link>
 
-            <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 13, fontWeight: 600 }}>{t.hero.or}</span>
+            <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 13, fontWeight: 600, flexShrink: 0 }}>{t.hero.or}</span>
 
-            <Link href="/publier?type=trouve" style={{ textDecoration: "none" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, background: "linear-gradient(135deg, #2e7d32, #1b5e20)", borderRadius: 14, padding: "14px 24px", boxShadow: "0 4px 20px rgba(27,94,32,0.45)", cursor: "pointer", transition: "transform 0.15s, box-shadow 0.15s" }}>
+            <Link href="/publier?type=trouve" style={{ textDecoration: "none", flex: 1, maxWidth: 340 }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: "linear-gradient(135deg, #2e7d32, #1b5e20)", borderRadius: 14, padding: "16px 28px", boxShadow: "0 4px 20px rgba(27,94,32,0.45)", cursor: "pointer", transition: "transform 0.15s, box-shadow 0.15s" }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="2"/>
