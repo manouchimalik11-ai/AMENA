@@ -68,7 +68,7 @@ export default function Home() {
 
           {/* Comment ça marche — dans le hero */}
           <div style={{ marginBottom: 36 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: 16 }}>{t.how.title}</div>
+            <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "1.5px", marginBottom: 16 }}>{t.how.title}</div>
             <div className="features-grid" style={{ gap: 12 }}>
               {[
                 {
