@@ -77,35 +77,33 @@ export default function Home() {
           {/* Comment ça marche — carousel */}
           {(() => {
             const steps = [
-              { titre: t.how.s1_title, desc: t.how.s1_desc, img: "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=800&fit=crop" },
-              { titre: t.how.s2_title, desc: t.how.s2_desc, img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&fit=crop" },
-              { titre: t.how.s3_title, desc: t.how.s3_desc, img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&fit=crop" },
+              { titre: t.how.s1_title, desc: t.how.s1_desc, img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1000&fit=crop" },
+              { titre: t.how.s2_title, desc: t.how.s2_desc, img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1000&fit=crop" },
+              { titre: t.how.s3_title, desc: t.how.s3_desc, img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1000&fit=crop" },
             ];
             const step = steps[activeStep];
             return (
               <div style={{ marginBottom: 52 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "1.5px", marginBottom: 20, textAlign: "center" }}>{t.how.title}</div>
-                <div style={{ display: "flex", gap: 16, alignItems: "center", borderRadius: 18, overflow: "hidden", background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.15)" }}>
-                  {/* Photo */}
-                  <div style={{ width: 260, flexShrink: 0, height: 160, position: "relative", overflow: "hidden" }}>
+                <div style={{ display: "flex", gap: 0, alignItems: "stretch", borderRadius: 18, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
+                  {/* Photo — dominante */}
+                  <div style={{ flex: 2, minHeight: 200, position: "relative", overflow: "hidden" }}>
                     {steps.map((s, i) => (
                       <img key={i} src={s.img} alt="" style={{
                         position: "absolute", inset: 0, width: "100%", height: "100%",
                         objectFit: "cover",
                         opacity: activeStep === i ? 1 : 0,
-                        transition: "opacity 0.65s ease",
+                        transition: "opacity 0.7s ease",
                       }} />
                     ))}
+                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, transparent 60%, rgba(10,15,40,0.85) 100%)" }} />
                   </div>
                   {/* Texte */}
-                  <div style={{ flex: 1, padding: "20px 24px 20px 0", textAlign: "left" }}>
-                    <div style={{ fontSize: 11, fontWeight: 700, color: "#ff8a80", letterSpacing: "1px", textTransform: "uppercase", marginBottom: 8 }}>
-                      {String(activeStep + 1).padStart(2, "0")} / 03
-                    </div>
-                    <div style={{ fontWeight: 800, fontSize: 16, color: "#fff", marginBottom: 8, transition: "opacity 0.4s ease" }}>{step.titre}</div>
-                    <div style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", lineHeight: 1.65 }}>{step.desc}</div>
+                  <div style={{ flex: 1, padding: "28px 24px", textAlign: "left", background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                    <div style={{ fontWeight: 800, fontSize: 16, color: "#fff", marginBottom: 10 }}>{step.titre}</div>
+                    <div style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", lineHeight: 1.7 }}>{step.desc}</div>
                     {/* Dots */}
-                    <div style={{ display: "flex", gap: 6, marginTop: 16 }}>
+                    <div style={{ display: "flex", gap: 6, marginTop: 20 }}>
                       {steps.map((_, i) => (
                         <div key={i} onClick={() => setActiveStep(i)} style={{ width: activeStep === i ? 22 : 6, height: 6, borderRadius: 3, background: activeStep === i ? "#ff5252" : "rgba(255,255,255,0.3)", transition: "all 0.35s ease", cursor: "pointer" }} />
                       ))}
