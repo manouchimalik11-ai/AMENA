@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { annonces, categories } from "@/lib/data";
@@ -20,7 +20,13 @@ export default function Home() {
   const [vue, setVue] = useState<"grille" | "liste">("grille");
   const [tri, setTri] = useState("recent");
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [activeStep, setActiveStep] = useState(0);
   const router = useRouter();
+
+  useEffect(() => {
+    const timer = setInterval(() => setActiveStep(s => (s + 1) % 3), 3500);
+    return () => clearInterval(timer);
+  }, []);
   const { lang } = useLang();
   const t = tr[lang];
 
@@ -69,24 +75,60 @@ export default function Home() {
           </p>
 
           {/* Comment ça marche — dans le hero */}
-          <div style={{ marginBottom: 52 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "1.5px", marginBottom: 16 }}>{t.how.title}</div>
-            <div className="features-grid" style={{ gap: 12 }}>
-              {[
-                { titre: t.how.s1_title, desc: t.how.s1_desc },
-                { titre: t.how.s2_title, desc: t.how.s2_desc },
-                { titre: t.how.s3_title, desc: t.how.s3_desc },
-              ].map((f, i) => (
-                <div key={i} className="step-card" style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(10px)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: 16, padding: "18px 16px", textAlign: "left", display: "flex", alignItems: "flex-start", gap: 14 }}>
-                  <div style={{ width: 44, height: 44, flexShrink: 0, borderRadius: 12, background: "linear-gradient(135deg, rgba(255,82,82,0.35), rgba(255,138,128,0.2))", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(255,138,128,0.35)" }}>
-                    <span style={{ fontSize: 20, fontWeight: 900, color: "#ff8a80", letterSpacing: "-1px" }}>{String(i + 1).padStart(2, "0")}</span>
+          <div style={{ marginBottom: 52, textAlign: "left" }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "1.5px", marginBottom: 20, textAlign: "center" }}>{t.how.title}</div>
+            <div style={{ display: "flex", gap: 16, alignItems: "stretch" }}>
+
+              {/* Steps list */}
+              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 10 }}>
+                {[
+                  { titre: t.how.s1_title, desc: t.how.s1_desc },
+                  { titre: t.how.s2_title, desc: t.how.s2_desc },
+                  { titre: t.how.s3_title, desc: t.how.s3_desc },
+                ].map((step, i) => (
+                  <div
+                    key={i}
+                    onClick={() => setActiveStep(i)}
+                    className="step-card"
+                    style={{
+                      background: activeStep === i ? "rgba(255,82,82,0.18)" : "rgba(255,255,255,0.08)",
+                      backdropFilter: "blur(10px)",
+                      border: activeStep === i ? "1.5px solid rgba(255,82,82,0.5)" : "1px solid rgba(255,255,255,0.14)",
+                      borderRadius: 14,
+                      padding: "16px 18px",
+                      cursor: "pointer",
+                      transition: "all 0.35s ease",
+                    }}
+                  >
+                    <div style={{ fontWeight: 700, fontSize: 13, color: activeStep === i ? "#ff8a80" : "#fff", marginBottom: 4, transition: "color 0.35s ease" }}>{step.titre}</div>
+                    <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)", lineHeight: 1.6 }}>{step.desc}</div>
                   </div>
-                  <div>
-                    <div style={{ fontWeight: 700, fontSize: 13, color: "#fff", marginBottom: 5 }}>{f.titre}</div>
-                    <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)", lineHeight: 1.6 }}>{f.desc}</div>
-                  </div>
+                ))}
+              </div>
+
+              {/* Image panel */}
+              <div style={{ width: 340, flexShrink: 0, borderRadius: 18, overflow: "hidden", position: "relative" }}>
+                {[
+                  "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=800&fit=crop",
+                  "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&fit=crop",
+                  "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&fit=crop",
+                ].map((img, i) => (
+                  <img key={i} src={img} alt="" style={{
+                    position: "absolute", inset: 0, width: "100%", height: "100%",
+                    objectFit: "cover",
+                    opacity: activeStep === i ? 1 : 0,
+                    transition: "opacity 0.7s ease",
+                  }} />
+                ))}
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(180,20,20,0.3) 0%, transparent 60%)" }} />
+                {/* Indicateurs */}
+                <div style={{ position: "absolute", bottom: 12, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 6 }}>
+                  {[0,1,2].map(i => (
+                    <div key={i} onClick={() => setActiveStep(i)} style={{ width: activeStep === i ? 20 : 6, height: 6, borderRadius: 3, background: activeStep === i ? "#ff5252" : "rgba(255,255,255,0.4)", transition: "all 0.35s ease", cursor: "pointer" }} />
+                  ))}
                 </div>
-              ))}
+              </div>
+
             </div>
           </div>
 
