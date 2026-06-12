@@ -57,14 +57,62 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(10,15,60,0.72) 0%, rgba(20,10,50,0.55) 60%, rgba(180,20,20,0.45) 100%)" }} />
         <div style={{ position: "absolute", inset: 0, opacity: 0.04, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
 
-        <div style={{ position: "relative", maxWidth: 820, margin: "0 auto", textAlign: "center" }}>
+        <div style={{ position: "relative", maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
           <h1 className="hero-title" style={{ fontSize: 52, fontWeight: 900, color: "#fff", marginBottom: 16, lineHeight: 1.12, letterSpacing: "-1px" }}>
             <span style={{ color: "#fff" }}>{t.hero.title_line1}</span>
             <span style={{ background: "linear-gradient(90deg, #ff8a80, #ff5252)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{t.hero.title_line2}</span>
           </h1>
-          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", margin: "0 auto 40px", lineHeight: 1.6, fontFamily: "var(--font-geist-sans), sans-serif", fontWeight: 400, letterSpacing: "0.3px", whiteSpace: "nowrap" }}>
+          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", margin: "0 auto 36px", lineHeight: 1.6, fontFamily: "var(--font-geist-sans), sans-serif", fontWeight: 400, letterSpacing: "0.3px", whiteSpace: "nowrap" }}>
             {t.hero.subtitle}
           </p>
+
+          {/* Comment ça marche — dans le hero */}
+          <div style={{ marginBottom: 36 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: 16 }}>{t.how.title}</div>
+            <div className="features-grid" style={{ gap: 12 }}>
+              {[
+                {
+                  icon: (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 20h9" stroke="#ff8a80" strokeWidth="2" strokeLinecap="round" />
+                      <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="#ff8a80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  ),
+                  titre: t.how.s1_title,
+                  desc: t.how.s1_desc,
+                },
+                {
+                  icon: (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <circle cx="11" cy="11" r="8" stroke="#ff8a80" strokeWidth="2" />
+                      <path d="M16.5 16.5L21 21" stroke="#ff8a80" strokeWidth="2" strokeLinecap="round" />
+                      <path d="M8 11h6M11 8v6" stroke="#ff8a80" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  ),
+                  titre: t.how.s2_title,
+                  desc: t.how.s2_desc,
+                },
+                {
+                  icon: (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <path d="M9 12l2 2 4-4" stroke="#ff8a80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" stroke="#ff8a80" strokeWidth="2" />
+                    </svg>
+                  ),
+                  titre: t.how.s3_title,
+                  desc: t.how.s3_desc,
+                },
+              ].map((f, i) => (
+                <div key={i} style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(10px)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: 16, padding: "20px 18px", textAlign: "left" }}>
+                  <div style={{ width: 40, height: 40, borderRadius: 12, background: "rgba(255,138,128,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12 }}>
+                    {f.icon}
+                  </div>
+                  <div style={{ fontWeight: 700, fontSize: 13, color: "#fff", marginBottom: 6 }}>{f.titre}</div>
+                  <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)", lineHeight: 1.6 }}>{f.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Deux boutons d'action */}
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginBottom: 28, alignItems: "center" }}>
@@ -230,64 +278,6 @@ export default function Home() {
           </main>
         </div>
       </div>
-
-      {/* ── COMMENT ÇA MARCHE ── */}
-      <section style={{ background: "#fff", padding: "64px 32px", borderTop: "1px solid #f0f0f0" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 52 }}>
-            <div style={{ display: "inline-block", background: "#fff0f0", color: "#e53935", fontSize: 12, fontWeight: 700, padding: "5px 14px", borderRadius: 100, letterSpacing: "0.8px", marginBottom: 14, textTransform: "uppercase" }}>{t.how.tag}</div>
-            <h2 style={{ fontSize: 28, fontWeight: 800, color: "#1a1a2e", margin: 0, letterSpacing: "-0.5px" }}>{t.how.title}</h2>
-            <p style={{ color: "#999", fontSize: 15, marginTop: 10 }}>{t.how.sub}</p>
-          </div>
-          <div className="features-grid" style={{ gap: 20 }}>
-            {[
-              {
-                num: "01",
-                icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 20h9" stroke="#e53935" strokeWidth="2" strokeLinecap="round" />
-                    <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="#e53935" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                ),
-                titre: t.how.s1_title,
-                desc: t.how.s1_desc,
-              },
-              {
-                num: "02",
-                icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                    <circle cx="11" cy="11" r="8" stroke="#e53935" strokeWidth="2" />
-                    <path d="M16.5 16.5L21 21" stroke="#e53935" strokeWidth="2" strokeLinecap="round" />
-                    <path d="M8 11h6M11 8v6" stroke="#e53935" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
-                ),
-                titre: t.how.s2_title,
-                desc: t.how.s2_desc,
-              },
-              {
-                num: "03",
-                icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 12l2 2 4-4" stroke="#e53935" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" stroke="#e53935" strokeWidth="2" />
-                  </svg>
-                ),
-                titre: t.how.s3_title,
-                desc: t.how.s3_desc,
-              },
-            ].map((f) => (
-              <div key={f.num} style={{ background: "#fafafa", borderRadius: 20, padding: "36px 28px", border: "1px solid #eeeeee", position: "relative", overflow: "hidden" }}>
-                <div style={{ position: "absolute", top: 20, right: 24, fontSize: 48, fontWeight: 900, color: "#f0f0f0", lineHeight: 1, userSelect: "none" }}>{f.num}</div>
-                <div style={{ width: 56, height: 56, borderRadius: 16, background: "#fff0f0", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20, boxShadow: "0 4px 12px rgba(229,57,53,0.12)" }}>
-                  {f.icon}
-                </div>
-                <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 10, color: "#1a1a2e" }}>{f.titre}</div>
-                <div style={{ fontSize: 14, color: "#888", lineHeight: 1.75 }}>{f.desc}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── COMPTEUR D'IMPACT ── */}
       <section style={{ background: "linear-gradient(135deg, #1a1a2e 0%, #2d1f3d 60%, #3d1a1a 100%)", padding: "64px 32px" }}>
