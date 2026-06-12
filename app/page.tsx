@@ -74,63 +74,47 @@ export default function Home() {
             ))}
           </p>
 
-          {/* Comment ça marche — dans le hero */}
-          <div style={{ marginBottom: 52, textAlign: "left" }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "1.5px", marginBottom: 20, textAlign: "center" }}>{t.how.title}</div>
-            <div style={{ display: "flex", gap: 16, alignItems: "stretch" }}>
-
-              {/* Steps list */}
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 10 }}>
-                {[
-                  { titre: t.how.s1_title, desc: t.how.s1_desc },
-                  { titre: t.how.s2_title, desc: t.how.s2_desc },
-                  { titre: t.how.s3_title, desc: t.how.s3_desc },
-                ].map((step, i) => (
-                  <div
-                    key={i}
-                    onClick={() => setActiveStep(i)}
-                    className="step-card"
-                    style={{
-                      background: activeStep === i ? "rgba(255,82,82,0.18)" : "rgba(255,255,255,0.08)",
-                      backdropFilter: "blur(10px)",
-                      border: activeStep === i ? "1.5px solid rgba(255,82,82,0.5)" : "1px solid rgba(255,255,255,0.14)",
-                      borderRadius: 14,
-                      padding: "16px 18px",
-                      cursor: "pointer",
-                      transition: "all 0.35s ease",
-                    }}
-                  >
-                    <div style={{ fontWeight: 700, fontSize: 13, color: activeStep === i ? "#ff8a80" : "#fff", marginBottom: 4, transition: "color 0.35s ease" }}>{step.titre}</div>
-                    <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)", lineHeight: 1.6 }}>{step.desc}</div>
+          {/* Comment ça marche — carousel */}
+          {(() => {
+            const steps = [
+              { titre: t.how.s1_title, desc: t.how.s1_desc, img: "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=800&fit=crop" },
+              { titre: t.how.s2_title, desc: t.how.s2_desc, img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&fit=crop" },
+              { titre: t.how.s3_title, desc: t.how.s3_desc, img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&fit=crop" },
+            ];
+            const step = steps[activeStep];
+            return (
+              <div style={{ marginBottom: 52 }}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "1.5px", marginBottom: 20, textAlign: "center" }}>{t.how.title}</div>
+                <div style={{ display: "flex", gap: 16, alignItems: "center", borderRadius: 18, overflow: "hidden", background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.15)" }}>
+                  {/* Photo */}
+                  <div style={{ width: 260, flexShrink: 0, height: 160, position: "relative", overflow: "hidden" }}>
+                    {steps.map((s, i) => (
+                      <img key={i} src={s.img} alt="" style={{
+                        position: "absolute", inset: 0, width: "100%", height: "100%",
+                        objectFit: "cover",
+                        opacity: activeStep === i ? 1 : 0,
+                        transition: "opacity 0.65s ease",
+                      }} />
+                    ))}
                   </div>
-                ))}
-              </div>
-
-              {/* Image panel */}
-              <div style={{ width: 340, flexShrink: 0, borderRadius: 18, overflow: "hidden", position: "relative" }}>
-                {[
-                  "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=800&fit=crop",
-                  "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&fit=crop",
-                  "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&fit=crop",
-                ].map((img, i) => (
-                  <img key={i} src={img} alt="" style={{
-                    position: "absolute", inset: 0, width: "100%", height: "100%",
-                    objectFit: "cover",
-                    opacity: activeStep === i ? 1 : 0,
-                    transition: "opacity 0.7s ease",
-                  }} />
-                ))}
-                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(180,20,20,0.3) 0%, transparent 60%)" }} />
-                {/* Indicateurs */}
-                <div style={{ position: "absolute", bottom: 12, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 6 }}>
-                  {[0,1,2].map(i => (
-                    <div key={i} onClick={() => setActiveStep(i)} style={{ width: activeStep === i ? 20 : 6, height: 6, borderRadius: 3, background: activeStep === i ? "#ff5252" : "rgba(255,255,255,0.4)", transition: "all 0.35s ease", cursor: "pointer" }} />
-                  ))}
+                  {/* Texte */}
+                  <div style={{ flex: 1, padding: "20px 24px 20px 0", textAlign: "left" }}>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: "#ff8a80", letterSpacing: "1px", textTransform: "uppercase", marginBottom: 8 }}>
+                      {String(activeStep + 1).padStart(2, "0")} / 03
+                    </div>
+                    <div style={{ fontWeight: 800, fontSize: 16, color: "#fff", marginBottom: 8, transition: "opacity 0.4s ease" }}>{step.titre}</div>
+                    <div style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", lineHeight: 1.65 }}>{step.desc}</div>
+                    {/* Dots */}
+                    <div style={{ display: "flex", gap: 6, marginTop: 16 }}>
+                      {steps.map((_, i) => (
+                        <div key={i} onClick={() => setActiveStep(i)} style={{ width: activeStep === i ? 22 : 6, height: 6, borderRadius: 3, background: activeStep === i ? "#ff5252" : "rgba(255,255,255,0.3)", transition: "all 0.35s ease", cursor: "pointer" }} />
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-
-            </div>
-          </div>
+            );
+          })()}
 
           {/* Deux boutons d'action */}
           <div style={{ display: "flex", gap: 16, justifyContent: "center", marginBottom: 28, alignItems: "center" }}>
