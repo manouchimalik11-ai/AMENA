@@ -63,7 +63,9 @@ export default function Home() {
             <span style={{ background: "linear-gradient(90deg, #ff8a80, #ff5252)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{t.hero.title_line2}</span>
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", margin: "0 auto 36px", lineHeight: 1.6, fontFamily: "var(--font-geist-sans), sans-serif", fontWeight: 400, letterSpacing: "0.3px", whiteSpace: "nowrap" }}>
-            {t.hero.subtitle}
+            {t.hero.subtitle.split("LOST & FOUND").map((part, i) => i === 0 ? part : (
+              <><span key={i} style={{ background: "linear-gradient(90deg, #ff8a80, #ff5252)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 700 }}>LOST & FOUND</span>{part}</>
+            ))}
           </p>
 
           {/* Comment ça marche — dans le hero */}
