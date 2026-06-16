@@ -147,29 +147,8 @@ export default function Navbar() {
         {/* Main row */}
         <div style={{ padding: "0 32px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
           {/* Logo */}
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="logoGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#1976d2" />
-                  <stop offset="60%" stopColor="#1565C0" />
-                  <stop offset="100%" stopColor="#0d47a1" />
-                </linearGradient>
-                <filter id="logoShadow" x="-10%" y="-10%" width="120%" height="120%">
-                  <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#0d47a1" floodOpacity="0.4" />
-                </filter>
-              </defs>
-              <rect width="44" height="44" rx="14" fill="url(#logoGrad)" filter="url(#logoShadow)" />
-              <rect width="44" height="22" rx="14" fill="white" fillOpacity="0.07" />
-              <circle cx="18" cy="18" r="10.5" stroke="white" strokeWidth="2.5" fill="none" />
-              <path d="M18 21.5 C15.8 19.8 13.5 18.2 13.5 15.8 A4.5 4.5 0 0 1 22.5 15.8 C22.5 18.2 20.2 19.8 18 21.5Z" fill="white" />
-              <circle cx="18" cy="14.8" r="1.6" fill="url(#logoGrad)" />
-              <line x1="26.5" y1="26.5" x2="34" y2="34" stroke="white" strokeWidth="2.8" strokeLinecap="round" />
-            </svg>
-            <div>
-              <div style={{ fontWeight: 800, fontSize: 20, color: "#1a1a2e", lineHeight: 1, letterSpacing: "-0.5px", fontFamily: "var(--font-geist-sans)", textTransform: "uppercase" }}>Amena</div>
-              <div style={{ fontSize: 10, color: "#aaa", letterSpacing: "0.5px", textTransform: "uppercase", fontWeight: 500 }}>{t.logo_sub}</div>
-            </div>
+          <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+            <img src="/logo.png" alt="Amena" style={{ height: 52, width: "auto" }} />
           </Link>
 
           {/* Desktop nav */}
