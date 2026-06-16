@@ -75,7 +75,7 @@ export default function Home() {
           </p>
 
           {/* Deux boutons d'action */}
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", marginBottom: 28, alignItems: "center" }}>
+          <div style={{ display: "flex", gap: 16, justifyContent: "center", marginBottom: 0, alignItems: "center" }}>
 
             <Link href="/publier?type=perdu" style={{ textDecoration: "none", flex: 1, maxWidth: 340 }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: "linear-gradient(135deg, #ff5252, #c62828)", borderRadius: 14, padding: "16px 28px", boxShadow: "0 4px 20px rgba(183,28,28,0.45)", cursor: "pointer", transition: "transform 0.15s, box-shadow 0.15s" }}>
@@ -100,9 +100,15 @@ export default function Home() {
             </Link>
 
           </div>
+        </div>
+      </section>
 
-          {/* Barre de recherche */}
-          <div style={{ background: "#fff", borderRadius: 16, boxShadow: "0 8px 32px rgba(0,0,0,0.2)", overflow: "hidden" }}>
+      {/* ── CONTENU PRINCIPAL ── */}
+      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "36px 32px" }}>
+
+        {/* Barre de recherche */}
+        <div style={{ marginBottom: 28 }}>
+          <div style={{ background: "#fff", borderRadius: 16, boxShadow: "0 2px 12px rgba(0,0,0,0.07)", border: "1px solid #ebebeb", overflow: "hidden" }}>
             <div className="search-bar-inner" style={{ display: "flex", alignItems: "center", padding: "6px 6px 6px 20px" }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ color: "#bbb", flexShrink: 0 }}>
                 <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
@@ -124,10 +130,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* ── CONTENU PRINCIPAL ── */}
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "36px 32px" }}>
         <div className="main-layout">
 
           {/* SIDEBAR */}
