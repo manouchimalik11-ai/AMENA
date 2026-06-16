@@ -63,19 +63,17 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(10,15,60,0.38) 0%, rgba(20,10,50,0.22) 60%, rgba(21,101,192,0.18) 100%)" }} />
         <div style={{ position: "absolute", inset: 0, opacity: 0.04, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
 
-        <div style={{ position: "relative", maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+        <div style={{ position: "relative", maxWidth: 900, margin: "0 auto", textAlign: "left" }}>
           <h1 className="hero-title" style={{ fontSize: 52, fontWeight: 900, color: "#fff", marginBottom: 16, lineHeight: 1.12, letterSpacing: "-1px", textTransform: "uppercase" }}>
             <span style={{ color: "#fff" }}>{t.hero.title_line1}</span>
-            <span style={{ background: "linear-gradient(90deg, #64b5f6, #1565C0)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{t.hero.title_line2}</span>
+            <span style={{ color: "#fff" }}>{t.hero.title_line2}</span>
           </h1>
-          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", margin: "0 auto 56px", lineHeight: 1.6, fontFamily: "var(--font-geist-sans), sans-serif", fontWeight: 400, letterSpacing: "0.3px", whiteSpace: "nowrap" }}>
-            {t.hero.subtitle.split("LOST & FOUND").map((part, i) => i === 0 ? part : (
-              <><span key={i} style={{ background: "linear-gradient(90deg, #64b5f6, #1565C0)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 700 }}>LOST & FOUND</span>{part}</>
-            ))}
+          <p style={{ fontSize: 18, color: "#fff", margin: "0 0 56px", lineHeight: 1.6, fontFamily: "var(--font-geist-sans), sans-serif", fontWeight: 400, letterSpacing: "0.3px", whiteSpace: "nowrap" }}>
+            {t.hero.subtitle}
           </p>
 
           {/* Deux boutons d'action */}
-          <div style={{ display: "flex", gap: 20, justifyContent: "center", marginBottom: 0, alignItems: "stretch" }}>
+          <div style={{ display: "flex", gap: 20, justifyContent: "flex-start", marginBottom: 0, alignItems: "stretch" }}>
 
             <Link href="/publier?type=perdu" style={{ textDecoration: "none", flex: 1, maxWidth: 300 }}>
               <div style={{
