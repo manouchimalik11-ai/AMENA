@@ -77,9 +77,9 @@ export default function Home() {
           {/* Comment ça marche — carousel */}
           {(() => {
             const steps = [
-              { titre: t.how.s1_title, desc: t.how.s1_desc, img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1000&fit=crop" },
-              { titre: t.how.s2_title, desc: t.how.s2_desc, img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1000&fit=crop" },
-              { titre: t.how.s3_title, desc: t.how.s3_desc, img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1000&fit=crop" },
+              { titre: t.how.s1_title, desc: t.how.s1_desc, img: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1000&fit=crop" },
+              { titre: t.how.s2_title, desc: t.how.s2_desc, img: "https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg?auto=compress&cs=tinysrgb&w=1000&fit=crop" },
+              { titre: t.how.s3_title, desc: t.how.s3_desc, img: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1000&fit=crop" },
             ];
             const step = steps[activeStep];
             return (
