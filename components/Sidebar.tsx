@@ -1,5 +1,4 @@
 "use client";
-import { categories } from "@/lib/data";
 import { GOVERNORATES } from "@/lib/geo";
 import { useLang } from "@/lib/LangContext";
 import { tr } from "@/lib/translations";
@@ -183,19 +182,6 @@ export default function Sidebar({
         <RadioRow key={key} active={filtreDate === key} label={label} onClick={() => setFiltreDate(key)} />
       ))}
 
-      <Divider />
-
-      {/* ── CATÉGORIE ── */}
-      <SectionTitle label={t.category} />
-      <CheckRow active={filtreCategorie === "all"} label={t.all} onClick={() => setFiltreCategorie("all")} />
-      {categories.map(cat => (
-        <CheckRow
-          key={cat.key}
-          active={filtreCategorie === cat.key}
-          label={`${cat.icon} ${cat[lang]}`}
-          onClick={() => setFiltreCategorie(cat.key)}
-        />
-      ))}
 
     </div>
   );
