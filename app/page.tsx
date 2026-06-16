@@ -78,7 +78,7 @@ export default function Home() {
           <div style={{ display: "flex", gap: 16, justifyContent: "center", marginBottom: 28, alignItems: "center" }}>
 
             <Link href="/publier?type=perdu" style={{ textDecoration: "none", flex: 1, maxWidth: 340 }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: "linear-gradient(135deg, #1976d2, #0d47a1)", borderRadius: 14, padding: "16px 28px", boxShadow: "0 4px 20px rgba(13,71,161,0.45)", cursor: "pointer", transition: "transform 0.15s, box-shadow 0.15s" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: "linear-gradient(135deg, #ff5252, #c62828)", borderRadius: 14, padding: "16px 28px", boxShadow: "0 4px 20px rgba(183,28,28,0.45)", cursor: "pointer", transition: "transform 0.15s, box-shadow 0.15s" }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="2"/>
                   <path d="M12 8v4M12 16h.01" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>

@@ -167,7 +167,7 @@ export default function Navbar() {
               <line x1="26.5" y1="26.5" x2="34" y2="34" stroke="white" strokeWidth="2.8" strokeLinecap="round" />
             </svg>
             <div>
-              <div style={{ fontWeight: 800, fontSize: 20, color: "#1a1a2e", lineHeight: 1, letterSpacing: "-0.5px", fontFamily: "var(--font-geist-sans)" }}>Amena</div>
+              <div style={{ fontWeight: 800, fontSize: 20, color: "#1a1a2e", lineHeight: 1, letterSpacing: "-0.5px", fontFamily: "var(--font-geist-sans)", textTransform: "uppercase" }}>Amena</div>
               <div style={{ fontSize: 10, color: "#aaa", letterSpacing: "0.5px", textTransform: "uppercase", fontWeight: 500 }}>{t.logo_sub}</div>
             </div>
           </Link>
