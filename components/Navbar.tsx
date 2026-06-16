@@ -145,10 +145,10 @@ export default function Navbar() {
 
       <nav style={{ background: "#fff", borderBottom: "1px solid #e8e8e8", position: "sticky", top: 0, zIndex: 100, boxShadow: "0 1px 4px rgba(0,0,0,0.08)" }}>
         {/* Main row */}
-        <div style={{ padding: "0 32px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 130 }}>
+        <div style={{ padding: "0 32px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 72 }}>
           {/* Logo */}
-          <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", position: "relative", overflow: "hidden", width: 280, height: 130, flexShrink: 0 }}>
-            <img src="/logo.png" alt="Amena" style={{ position: "absolute", height: 300, width: "auto", top: -58, left: -25 }} />
+          <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+            <img src="/logo.png" alt="Amena" style={{ height: 60, width: "auto" }} />
           </Link>
 
           {/* Desktop nav */}
