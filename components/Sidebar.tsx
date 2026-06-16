@@ -182,7 +182,6 @@ export default function Sidebar({
         <RadioRow key={key} active={filtreDate === key} label={label} onClick={() => setFiltreDate(key)} />
       ))}
 
-
     </div>
   );
 }
