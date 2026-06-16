@@ -128,9 +128,9 @@ export default function Navbar() {
       )}
     </div>
   ) : (
-    <div style={{ display: "flex", alignItems: "center", border: "2px solid #1565C0", borderRadius: 8, overflow: "hidden" }}>
-      <Link href="/inscription" style={{ color: "#1565C0", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px", borderRight: "1px solid #1565C0" }}>{t.register}</Link>
-      <Link href="/connexion" style={{ color: "#1565C0", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px" }}>{t.login}</Link>
+    <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+      <Link href="/inscription" style={{ color: "#555", fontSize: 14, textDecoration: "none", fontWeight: 500, paddingBottom: 2, borderBottom: "2px solid transparent" }}>{t.register}</Link>
+      <Link href="/connexion" style={{ color: "#555", fontSize: 14, textDecoration: "none", fontWeight: 500, paddingBottom: 2, borderBottom: "2px solid transparent" }}>{t.login}</Link>
     </div>
   );
 
@@ -147,7 +147,7 @@ export default function Navbar() {
         {/* Main row */}
         <div style={{ padding: "0 32px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 72 }}>
           {/* Logo */}
-          <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+          <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", cursor: "pointer" }}>
             <img src="/logo.png" alt="Amena" style={{ height: 60, width: "auto" }} />
           </Link>
 
