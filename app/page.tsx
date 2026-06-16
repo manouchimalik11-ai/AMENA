@@ -60,65 +60,25 @@ export default function Home() {
       {/* ── HERO ── */}
       <section style={{ position: "relative", padding: "72px 24px 90px", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "url('https://images.unsplash.com/photo-1726428977637-ba8fc5a5047d?w=1600&fit=crop')", backgroundSize: "cover", backgroundPosition: "center" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(10,15,60,0.72) 0%, rgba(20,10,50,0.55) 60%, rgba(180,20,20,0.45) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(10,15,60,0.72) 0%, rgba(20,10,50,0.55) 60%, rgba(21,101,192,0.45) 100%)" }} />
         <div style={{ position: "absolute", inset: 0, opacity: 0.04, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
 
         <div style={{ position: "relative", maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
           <h1 className="hero-title" style={{ fontSize: 52, fontWeight: 900, color: "#fff", marginBottom: 16, lineHeight: 1.12, letterSpacing: "-1px", textTransform: "uppercase" }}>
             <span style={{ color: "#fff" }}>{t.hero.title_line1}</span>
-            <span style={{ background: "linear-gradient(90deg, #ff8a80, #ff5252)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{t.hero.title_line2}</span>
+            <span style={{ background: "linear-gradient(90deg, #64b5f6, #1565C0)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{t.hero.title_line2}</span>
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", margin: "0 auto 56px", lineHeight: 1.6, fontFamily: "var(--font-geist-sans), sans-serif", fontWeight: 400, letterSpacing: "0.3px", whiteSpace: "nowrap" }}>
             {t.hero.subtitle.split("LOST & FOUND").map((part, i) => i === 0 ? part : (
-              <><span key={i} style={{ background: "linear-gradient(90deg, #ff8a80, #ff5252)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 700 }}>LOST & FOUND</span>{part}</>
+              <><span key={i} style={{ background: "linear-gradient(90deg, #64b5f6, #1565C0)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 700 }}>LOST & FOUND</span>{part}</>
             ))}
           </p>
-
-          {/* Comment ça marche — carousel */}
-          {(() => {
-            const steps = [
-              { titre: t.how.s1_title, desc: t.how.s1_desc, img: "/publier-hero.jpg" },
-              { titre: t.how.s2_title, desc: t.how.s2_desc, img: "https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg?auto=compress&cs=tinysrgb&w=1000&fit=crop" },
-              { titre: t.how.s3_title, desc: t.how.s3_desc, img: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1000&fit=crop" },
-            ];
-            const step = steps[activeStep];
-            return (
-              <div style={{ marginBottom: 52 }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "1.5px", marginBottom: 20, textAlign: "center" }}>{t.how.title}</div>
-                <div style={{ display: "flex", gap: 0, alignItems: "stretch", borderRadius: 18, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
-                  {/* Photo — dominante */}
-                  <div style={{ flex: 2, minHeight: 200, position: "relative", overflow: "hidden" }}>
-                    {steps.map((s, i) => (
-                      <img key={i} src={s.img} alt="" style={{
-                        position: "absolute", inset: 0, width: "100%", height: "100%",
-                        objectFit: "cover",
-                        opacity: activeStep === i ? 1 : 0,
-                        transition: "opacity 0.7s ease",
-                      }} />
-                    ))}
-                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, transparent 60%, rgba(10,15,40,0.85) 100%)" }} />
-                  </div>
-                  {/* Texte */}
-                  <div style={{ flex: 1, padding: "28px 24px", textAlign: "left", background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                    <div style={{ fontWeight: 800, fontSize: 16, color: "#fff", marginBottom: 10 }}>{step.titre}</div>
-                    <div style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", lineHeight: 1.7 }}>{step.desc}</div>
-                    {/* Dots */}
-                    <div style={{ display: "flex", gap: 6, marginTop: 20 }}>
-                      {steps.map((_, i) => (
-                        <div key={i} onClick={() => setActiveStep(i)} style={{ width: activeStep === i ? 22 : 6, height: 6, borderRadius: 3, background: activeStep === i ? "#ff5252" : "rgba(255,255,255,0.3)", transition: "all 0.35s ease", cursor: "pointer" }} />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })()}
 
           {/* Deux boutons d'action */}
           <div style={{ display: "flex", gap: 16, justifyContent: "center", marginBottom: 28, alignItems: "center" }}>
 
             <Link href="/publier?type=perdu" style={{ textDecoration: "none", flex: 1, maxWidth: 340 }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: "linear-gradient(135deg, #ff5252, #c62828)", borderRadius: 14, padding: "16px 28px", boxShadow: "0 4px 20px rgba(183,28,28,0.45)", cursor: "pointer", transition: "transform 0.15s, box-shadow 0.15s" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: "linear-gradient(135deg, #1976d2, #0d47a1)", borderRadius: 14, padding: "16px 28px", boxShadow: "0 4px 20px rgba(13,71,161,0.45)", cursor: "pointer", transition: "transform 0.15s, box-shadow 0.15s" }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="2"/>
                   <path d="M12 8v4M12 16h.01" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
@@ -157,7 +117,7 @@ export default function Home() {
               />
               <button
                 onClick={() => router.push(`/recherche${search ? `?q=${encodeURIComponent(search)}` : ""}`)}
-                style={{ background: "linear-gradient(135deg, #ff5252, #c62828)", color: "#fff", border: "none", borderRadius: 12, padding: "13px 24px", fontWeight: 700, fontSize: 14, cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap" }}
+                style={{ background: "linear-gradient(135deg, #1976d2, #0d47a1)", color: "#fff", border: "none", borderRadius: 12, padding: "13px 24px", fontWeight: 700, fontSize: 14, cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap" }}
               >
                 {t.hero.search_btn}
               </button>
@@ -197,7 +157,7 @@ export default function Home() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24, flexWrap: "wrap", gap: 12 }}>
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
-                  <div style={{ width: 4, height: 22, background: "linear-gradient(180deg,#ff5252,#c62828)", borderRadius: 4 }} />
+                  <div style={{ width: 4, height: 22, background: "linear-gradient(180deg,#1976d2,#0d47a1)", borderRadius: 4 }} />
                   <h2 style={{ fontSize: 20, fontWeight: 800, margin: 0, color: "#1a1a2e" }}>{t.listing.title}</h2>
                 </div>
                 <p style={{ fontSize: 13, color: "#aaa", margin: 0, paddingLeft: 14 }}>
@@ -216,8 +176,8 @@ export default function Home() {
                   <option value="pertinence">{t.listing.sort_relevance}</option>
                 </select>
                 <div style={{ display: "flex", border: "1px solid #e8e8e8", borderRadius: 10, overflow: "hidden", background: "#fff" }}>
-                  <button onClick={() => setVue("grille")} title="Grille" style={{ padding: "8px 13px", border: "none", background: vue === "grille" ? "#fff0f0" : "transparent", color: vue === "grille" ? "#e53935" : "#aaa", cursor: "pointer", fontSize: 15, transition: "all 0.15s" }}>⊞</button>
-                  <button onClick={() => setVue("liste")} title="Liste" style={{ padding: "8px 13px", border: "none", borderLeft: "1px solid #e8e8e8", background: vue === "liste" ? "#fff0f0" : "transparent", color: vue === "liste" ? "#e53935" : "#aaa", cursor: "pointer", fontSize: 15, transition: "all 0.15s" }}>☰</button>
+                  <button onClick={() => setVue("grille")} title="Grille" style={{ padding: "8px 13px", border: "none", background: vue === "grille" ? "#e8f4fc" : "transparent", color: vue === "grille" ? "#1565C0" : "#aaa", cursor: "pointer", fontSize: 15, transition: "all 0.15s" }}>⊞</button>
+                  <button onClick={() => setVue("liste")} title="Liste" style={{ padding: "8px 13px", border: "none", borderLeft: "1px solid #e8e8e8", background: vue === "liste" ? "#e8f4fc" : "transparent", color: vue === "liste" ? "#1565C0" : "#aaa", cursor: "pointer", fontSize: 15, transition: "all 0.15s" }}>☰</button>
                 </div>
               </div>
             </div>
@@ -228,7 +188,7 @@ export default function Home() {
                 <div style={{ fontSize: 18, fontWeight: 700, color: "#888", marginBottom: 8 }}>{t.listing.empty_title}</div>
                 <div style={{ fontSize: 14, color: "#bbb" }}>
                   {t.listing.empty_desc}{" "}
-                  <Link href="/publier" style={{ color: "#e53935", textDecoration: "none", fontWeight: 600 }}>{t.listing.empty_link}</Link>
+                  <Link href="/publier" style={{ color: "#1565C0", textDecoration: "none", fontWeight: 600 }}>{t.listing.empty_link}</Link>
                 </div>
               </div>
             ) : (() => {
@@ -279,11 +239,47 @@ export default function Home() {
         </div>
       </div>
 
+      {/* ── COMMENT ÇA MARCHE ── */}
+      {(() => {
+        const steps = [
+          { titre: t.how.s1_title, desc: t.how.s1_desc, img: "/publier-hero.jpg" },
+          { titre: t.how.s2_title, desc: t.how.s2_desc, img: "https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg?auto=compress&cs=tinysrgb&w=1000&fit=crop" },
+          { titre: t.how.s3_title, desc: t.how.s3_desc, img: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1000&fit=crop" },
+        ];
+        const step = steps[activeStep];
+        return (
+          <section style={{ background: "linear-gradient(160deg, #0d2a6e 0%, #1565C0 60%, #1976d2 100%)", padding: "64px 32px" }}>
+            <div style={{ maxWidth: 900, margin: "0 auto" }}>
+              <div style={{ textAlign: "center", marginBottom: 36 }}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "1.5px", textTransform: "uppercase" }}>{t.how.title}</div>
+              </div>
+              <div style={{ display: "flex", gap: 0, alignItems: "stretch", borderRadius: 18, overflow: "hidden", border: "1px solid rgba(255,255,255,0.2)", boxShadow: "0 8px 40px rgba(0,0,0,0.25)" }}>
+                <div style={{ flex: 2, minHeight: 240, position: "relative", overflow: "hidden" }}>
+                  {steps.map((s, i) => (
+                    <img key={i} src={s.img} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: activeStep === i ? 1 : 0, transition: "opacity 0.7s ease" }} />
+                  ))}
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, transparent 60%, rgba(13,42,110,0.9) 100%)" }} />
+                </div>
+                <div style={{ flex: 1, padding: "28px 24px", textAlign: "left", background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                  <div style={{ fontWeight: 800, fontSize: 16, color: "#fff", marginBottom: 10 }}>{step.titre}</div>
+                  <div style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", lineHeight: 1.7 }}>{step.desc}</div>
+                  <div style={{ display: "flex", gap: 6, marginTop: 20 }}>
+                    {steps.map((_, i) => (
+                      <div key={i} onClick={() => setActiveStep(i)} style={{ width: activeStep === i ? 22 : 6, height: 6, borderRadius: 3, background: activeStep === i ? "#fff" : "rgba(255,255,255,0.3)", transition: "all 0.35s ease", cursor: "pointer" }} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
       {/* ── COMPTEUR D'IMPACT ── */}
-      <section style={{ background: "linear-gradient(135deg, #1a1a2e 0%, #2d1f3d 60%, #3d1a1a 100%)", padding: "64px 32px" }}>
+      <section style={{ background: "linear-gradient(135deg, #0d1b4e 0%, #1565C0 60%, #1976d2 100%)", padding: "64px 32px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <div style={{ display: "inline-block", background: "rgba(255,82,82,0.18)", color: "#ff8a80", fontSize: 12, fontWeight: 700, padding: "5px 14px", borderRadius: 100, letterSpacing: "0.8px", marginBottom: 14, textTransform: "uppercase", border: "1px solid rgba(255,82,82,0.25)" }}>
+            <div style={{ display: "inline-block", background: "rgba(255,255,255,0.15)", color: "#fff", fontSize: 12, fontWeight: 700, padding: "5px 14px", borderRadius: 100, letterSpacing: "0.8px", marginBottom: 14, textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.3)" }}>
               {t.impact.tag}
             </div>
             <h2 style={{ fontSize: 26, fontWeight: 800, color: "#fff", margin: "0 0 10px", letterSpacing: "-0.5px" }}>{t.impact.title}</h2>
@@ -300,7 +296,7 @@ export default function Home() {
               <div key={i} style={{ textAlign: "center", padding: "28px 16px", borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
                 <div style={{ fontSize: 28, marginBottom: 8 }}>{stat.icon}</div>
                 <div style={{ fontSize: 36, fontWeight: 900, color: "#fff", letterSpacing: "-1px", lineHeight: 1, marginBottom: 8 }}>
-                  <span style={{ background: "linear-gradient(90deg, #ff8a80, #ff5252)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                  <span style={{ background: "linear-gradient(90deg, #90caf9, #fff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                     {stat.num}
                   </span>
                 </div>

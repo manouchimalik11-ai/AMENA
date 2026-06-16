@@ -57,18 +57,18 @@ export default function Navbar() {
   }[lang];
 
   const navItems = [
-    { key: "annonces", href: "/mes-annonces", icon: <IconAnnonces />, label: tl.annonces, color: "#e53935", bg: "#fff5f5" },
-    { key: "favoris",  href: "/favoris",      icon: <IconFavoris />,  label: tl.favoris,  color: "#e91e8c", bg: "#fdf0f8" },
-    { key: "messages", href: "/messages",     icon: <IconMessages />, label: tl.messages, color: "#1976d2", bg: "#f0f6ff", badge: 2 },
+    { key: "annonces", href: "/mes-annonces", icon: <IconAnnonces />, label: tl.annonces, color: "#1565C0", bg: "#e8f4fc" },
+    { key: "favoris",  href: "/favoris",      icon: <IconFavoris />,  label: tl.favoris,  color: "#1565C0", bg: "#e8f4fc" },
+    { key: "messages", href: "/messages",     icon: <IconMessages />, label: tl.messages, color: "#1565C0", bg: "#e8f4fc", badge: 2 },
   ];
 
   const initial = user?.name.trim()[0]?.toUpperCase() ?? "?";
 
   const langToggle = (
     <div style={{ display: "flex", alignItems: "center", border: "1px solid #e0e0e0", borderRadius: 8, overflow: "hidden", fontSize: 13, flexShrink: 0 }}>
-      <button onClick={() => setLang("fr")} style={{ padding: "6px 11px", fontWeight: lang === "fr" ? 700 : 400, color: lang === "fr" ? "#e53935" : "#888", background: lang === "fr" ? "#fff5f5" : "#fff", border: "none", cursor: "pointer" }}>FR</button>
+      <button onClick={() => setLang("fr")} style={{ padding: "6px 11px", fontWeight: lang === "fr" ? 700 : 400, color: lang === "fr" ? "#1565C0" : "#888", background: lang === "fr" ? "#e8f4fc" : "#fff", border: "none", cursor: "pointer" }}>FR</button>
       <div style={{ width: 1, height: 18, background: "#e0e0e0" }} />
-      <button onClick={() => setLang("ar")} style={{ padding: "6px 11px", fontWeight: lang === "ar" ? 700 : 400, color: lang === "ar" ? "#e53935" : "#888", background: lang === "ar" ? "#fff5f5" : "#fff", border: "none", cursor: "pointer" }}>AR</button>
+      <button onClick={() => setLang("ar")} style={{ padding: "6px 11px", fontWeight: lang === "ar" ? 700 : 400, color: lang === "ar" ? "#1565C0" : "#888", background: lang === "ar" ? "#e8f4fc" : "#fff", border: "none", cursor: "pointer" }}>AR</button>
     </div>
   );
 
@@ -79,15 +79,15 @@ export default function Navbar() {
         style={{
           display: "flex", alignItems: "center", gap: 8,
           padding: "5px 12px 5px 6px", borderRadius: 50,
-          background: "#fff5f5", border: `1.5px solid ${dropOpen ? "#c62828" : "#e53935"}`,
+          background: "#e8f4fc", border: `1.5px solid ${dropOpen ? "#0d47a1" : "#1565C0"}`,
           cursor: "pointer", transition: "all 0.18s",
-          boxShadow: dropOpen ? "0 2px 12px rgba(229,57,53,0.18)" : "none",
+          boxShadow: dropOpen ? "0 2px 12px rgba(21,101,192,0.18)" : "none",
         }}
       >
-        <div style={{ width: 28, height: 28, borderRadius: "50%", background: "linear-gradient(135deg,#ff5252,#c62828)", color: "#fff", fontWeight: 800, fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+        <div style={{ width: 28, height: 28, borderRadius: "50%", background: "linear-gradient(135deg,#1976d2,#0d47a1)", color: "#fff", fontWeight: 800, fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
           {initial}
         </div>
-        <span style={{ fontSize: 13, fontWeight: 700, color: "#c62828", maxWidth: 120, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+        <span style={{ fontSize: 13, fontWeight: 700, color: "#0d47a1", maxWidth: 120, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
           {user.name.split(" ")[0]}
         </span>
         <IconChevron open={dropOpen} />
@@ -103,9 +103,9 @@ export default function Navbar() {
             minWidth: 200, overflow: "hidden", zIndex: 200,
             animation: "navDropDown 0.18s ease",
           }}>
-            <div style={{ padding: "14px 16px", background: "linear-gradient(135deg,#fff5f5,#fff)", borderBottom: "1px solid #f5f5f5" }}>
+            <div style={{ padding: "14px 16px", background: "linear-gradient(135deg,#e8f4fc,#fff)", borderBottom: "1px solid #f5f5f5" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "linear-gradient(135deg,#ff5252,#c62828)", color: "#fff", fontWeight: 800, fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>{initial}</div>
+                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "linear-gradient(135deg,#1976d2,#0d47a1)", color: "#fff", fontWeight: 800, fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>{initial}</div>
                 <div>
                   <div style={{ fontWeight: 700, fontSize: 14, color: "#1a1a2e" }}>{user.name}</div>
                   <div style={{ fontSize: 11, color: "#aaa", marginTop: 1 }}>{user.email}</div>
@@ -117,7 +117,7 @@ export default function Navbar() {
             <div style={{ borderTop: "1px solid #f5f5f5", padding: "6px 0" }}>
               <button
                 onClick={() => { setDropOpen(false); logout(); }}
-                style={{ width: "100%", textAlign: "left", padding: "10px 16px", background: "none", border: "none", fontSize: 14, color: "#e53935", cursor: "pointer", fontWeight: 600, display: "flex", alignItems: "center", gap: 8 }}
+                style={{ width: "100%", textAlign: "left", padding: "10px 16px", background: "none", border: "none", fontSize: 14, color: "#1565C0", cursor: "pointer", fontWeight: 600, display: "flex", alignItems: "center", gap: 8 }}
               >
                 <IconLogout />{tl.logout}
               </button>
@@ -128,9 +128,9 @@ export default function Navbar() {
       )}
     </div>
   ) : (
-    <div style={{ display: "flex", alignItems: "center", border: "2px solid #e53935", borderRadius: 8, overflow: "hidden" }}>
-      <Link href="/inscription" style={{ color: "#e53935", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px", borderRight: "1px solid #e53935" }}>{t.register}</Link>
-      <Link href="/connexion" style={{ color: "#e53935", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px" }}>{t.login}</Link>
+    <div style={{ display: "flex", alignItems: "center", border: "2px solid #1565C0", borderRadius: 8, overflow: "hidden" }}>
+      <Link href="/inscription" style={{ color: "#1565C0", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px", borderRight: "1px solid #1565C0" }}>{t.register}</Link>
+      <Link href="/connexion" style={{ color: "#1565C0", fontSize: 13, textDecoration: "none", fontWeight: 600, padding: "7px 14px" }}>{t.login}</Link>
     </div>
   );
 
@@ -151,12 +151,12 @@ export default function Navbar() {
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="logoGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#FF5252" />
-                  <stop offset="60%" stopColor="#D32F2F" />
-                  <stop offset="100%" stopColor="#B71C1C" />
+                  <stop offset="0%" stopColor="#1976d2" />
+                  <stop offset="60%" stopColor="#1565C0" />
+                  <stop offset="100%" stopColor="#0d47a1" />
                 </linearGradient>
                 <filter id="logoShadow" x="-10%" y="-10%" width="120%" height="120%">
-                  <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#B71C1C" floodOpacity="0.4" />
+                  <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#0d47a1" floodOpacity="0.4" />
                 </filter>
               </defs>
               <rect width="44" height="44" rx="14" fill="url(#logoGrad)" filter="url(#logoShadow)" />
@@ -244,14 +244,14 @@ export default function Navbar() {
         {/* Mobile dropdown menu */}
         {menuOpen && (
           <div style={{ background: "#fff", borderTop: "1px solid #f0f0f0", padding: "16px 24px", display: "flex", flexDirection: "column", gap: 16 }}>
-            <Link href="/" style={{ color: "#e53935", fontWeight: 600, fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.home}</Link>
+            <Link href="/" style={{ color: "#1565C0", fontWeight: 600, fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.home}</Link>
             <Link href="/aide" style={{ color: "#555", fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.help}</Link>
             <Link href="/boost" style={{ color: "#d97706", fontSize: 15, fontWeight: 700, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.boost}</Link>
             <div style={{ paddingTop: 4 }}>{langToggle}</div>
             {user ? (
               <div style={{ paddingTop: 8, borderTop: "1px solid #f0f0f0", display: "flex", flexDirection: "column", gap: 12 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <div style={{ width: 36, height: 36, borderRadius: "50%", background: "linear-gradient(135deg,#ff5252,#c62828)", color: "#fff", fontWeight: 800, fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div style={{ width: 36, height: 36, borderRadius: "50%", background: "linear-gradient(135deg,#1976d2,#0d47a1)", color: "#fff", fontWeight: 800, fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>
                     {initial}
                   </div>
                   <div>
@@ -268,14 +268,14 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </div>
-                <button onClick={() => { logout(); setMenuOpen(false); }} style={{ background: "#fff5f5", color: "#e53935", border: "1px solid #fde8e8", borderRadius: 8, padding: "10px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>
+                <button onClick={() => { logout(); setMenuOpen(false); }} style={{ background: "#e8f4fc", color: "#1565C0", border: "1px solid #fde8e8", borderRadius: 8, padding: "10px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>
                   {tl.logout}
                 </button>
               </div>
             ) : (
               <div style={{ display: "flex", gap: 12, paddingTop: 8, borderTop: "1px solid #f0f0f0" }}>
-                <Link href="/inscription" style={{ flex: 1, textAlign: "center", color: "#e53935", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", border: "2px solid #e53935", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>{t.register}</Link>
-                <Link href="/connexion" style={{ flex: 1, textAlign: "center", color: "#fff", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", background: "#e53935", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>{t.login}</Link>
+                <Link href="/inscription" style={{ flex: 1, textAlign: "center", color: "#1565C0", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", border: "2px solid #1565C0", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>{t.register}</Link>
+                <Link href="/connexion" style={{ flex: 1, textAlign: "center", color: "#fff", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", background: "#1565C0", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>{t.login}</Link>
               </div>
             )}
           </div>
@@ -290,11 +290,11 @@ function NavLink({ href, active, children }: { href: string; active: boolean; ch
     <Link
       href={href}
       style={{
-        color: active ? "#e53935" : "#555",
+        color: active ? "#1565C0" : "#555",
         fontWeight: active ? 700 : 500,
         fontSize: 14,
         textDecoration: "none",
-        borderBottom: active ? "2px solid #e53935" : "2px solid transparent",
+        borderBottom: active ? "2px solid #1565C0" : "2px solid transparent",
         paddingBottom: 2,
         transition: "color 0.15s, border-color 0.15s",
       }}
@@ -310,7 +310,7 @@ function DropItem({ label, href, onClose }: { label: string; href: string; onClo
     <Link
       href={href}
       onClick={onClose}
-      style={{ display: "block", padding: "10px 16px", fontSize: 14, color: h ? "#e53935" : "#333", background: h ? "#fff5f5" : "transparent", textDecoration: "none", transition: "all 0.12s", fontWeight: 500 }}
+      style={{ display: "block", padding: "10px 16px", fontSize: 14, color: h ? "#1565C0" : "#333", background: h ? "#e8f4fc" : "transparent", textDecoration: "none", transition: "all 0.12s", fontWeight: 500 }}
       onMouseEnter={() => setH(true)}
       onMouseLeave={() => setH(false)}
     >

@@ -74,8 +74,8 @@ body {
 
 .step-card:hover {
   transform: translateY(-5px) scale(1.03);
-  border-color: rgba(255, 82, 82, 0.55) !important;
-  box-shadow: 0 12px 36px rgba(255, 82, 82, 0.22);
+  border-color: rgba(21, 101, 192, 0.55) !important;
+  box-shadow: 0 12px 36px rgba(21, 101, 192, 0.22);
 }
 
 
