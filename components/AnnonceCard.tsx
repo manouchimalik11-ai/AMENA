@@ -76,7 +76,7 @@ export default function AnnonceCard({ annonce, vue }: Props) {
             <div style={{ fontSize: 13, color: "#999", marginBottom: 8, display: "flex", alignItems: "center", gap: 4 }}>
               <span>📍</span>{annonce.lieu} · {annonce.temps[lang]}
             </div>
-            <span style={{ fontSize: 12, background: "#fff5f5", color: "#e53935", fontWeight: 600, padding: "3px 10px", borderRadius: 20 }}>{catLabel}</span>
+            <span style={{ fontSize: 12, background: "#e8f4fc", color: "#1565C0", fontWeight: 600, padding: "3px 10px", borderRadius: 20 }}>{catLabel}</span>
           </div>
           <div style={{ padding: "18px 16px", display: "flex", alignItems: "center" }}>
             {heartBtn}
@@ -116,7 +116,7 @@ export default function AnnonceCard({ annonce, vue }: Props) {
           <div style={{ fontSize: 12, color: "#999", display: "flex", alignItems: "center", gap: 4, marginBottom: 6 }}>
             <span>📍</span>{annonce.lieu} · {annonce.temps[lang]}
           </div>
-          <div style={{ fontSize: 12, color: "#e53935", fontWeight: 600 }}>{catLabel}</div>
+          <div style={{ fontSize: 12, color: "#1565C0", fontWeight: 600 }}>{catLabel}</div>
         </div>
       </div>
     </Link>
