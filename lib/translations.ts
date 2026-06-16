@@ -11,8 +11,8 @@ export const tr = {
       login: "Se Connecter",
     },
     hero: {
-      title_line1: "Rien n'est",
-      title_line2: " vraiment perdu.",
+      title_line1: "",
+      title_line2: "AMENA",
       subtitle: "La 1ère plateforme tunisienne LOST & FOUND pour retrouver vos objets et animaux perdus, ensemble.",
       lost_title: "J'ai perdu quelque chose",
       lost_desc: "Signalez votre perte et soyez contacté dès qu'on le retrouve.",
@@ -309,7 +309,7 @@ export const tr = {
     },
     hero: {
       title_line1: "",
-      title_line2: "شي ما يضيع عليك",
+      title_line2: "AMENA",
       subtitle: "دوّر على حوايجك الضايعة أو عاون حد يلقاها.",
       lost_title: "ضيّعت حاجة",
       lost_desc: "بلّغ على ضياعك وكون محروس كي لقاوها.",
