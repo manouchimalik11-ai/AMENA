@@ -148,8 +148,17 @@ export default function Navbar() {
         {/* Main row */}
         <div style={{ padding: "0 32px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 72 }}>
           {/* Logo */}
-          <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", cursor: "pointer" }}>
-            <img src="/logo.png" alt="Amena" style={{ height: 60, width: "auto" }} />
+          <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", cursor: "pointer" }}>
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 3L5 10v12c0 9.4 6.8 18.2 16 20.4C30.2 40.2 37 31.4 37 22V10L21 3z" fill="#1565C0" />
+              <circle cx="21" cy="21" r="7" stroke="white" strokeWidth="2" fill="none" />
+              <circle cx="21" cy="21" r="2.5" fill="white" />
+              <line x1="26" y1="26" x2="30" y2="30" stroke="white" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+            <div style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
+              <span style={{ fontSize: 20, fontWeight: 900, color: "#1565C0", letterSpacing: "-0.5px" }}>AMENA</span>
+              <span style={{ fontSize: 9.5, fontWeight: 700, color: "#e07b1a", letterSpacing: "0.8px", textTransform: "uppercase" }}>TUNISIA LOST & FOUND</span>
+            </div>
           </Link>
 
           {/* Desktop nav */}
