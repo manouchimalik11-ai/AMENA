@@ -149,7 +149,7 @@ export default function Navbar() {
         <div style={{ padding: "0 32px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 72 }}>
           {/* Logo */}
           <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", cursor: "pointer" }}>
-            <img src="/logo.png" alt="Tunisia Lost & Found" style={{ height: 56, width: "auto", mixBlendMode: "multiply" }} />
+            <img src="/logo.png" alt="Tunisia Lost & Found" style={{ height: 56, width: "auto", filter: "brightness(1.4)" }} />
           </Link>
 
           {/* Desktop nav */}
