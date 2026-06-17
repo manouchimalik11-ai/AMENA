@@ -64,15 +64,6 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, opacity: 0.04, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
 
         <div style={{ position: "relative" }}>
-          <div style={{ maxWidth: 680, margin: "0", textAlign: "left" }}>
-            <h1 className="hero-title" style={{ fontSize: 52, fontWeight: 900, color: "#fff", marginBottom: 16, lineHeight: 1.12, letterSpacing: "-1px", textTransform: "uppercase" }}>
-              <span style={{ color: "#fff" }}>{t.hero.title_line1}</span>
-              <span style={{ color: "#fff" }}>{t.hero.title_line2}</span>
-            </h1>
-            <p style={{ fontSize: 18, color: "#fff", margin: "0 0 48px", lineHeight: 1.6, fontFamily: "var(--font-geist-sans), sans-serif", fontWeight: 400, letterSpacing: "0.3px", whiteSpace: "nowrap" }}>
-              {t.hero.subtitle}
-            </p>
-          </div>
 
           {/* Deux boutons d'action — centrés sur toute la largeur */}
           <div style={{ display: "flex", gap: 20, justifyContent: "center", alignItems: "stretch" }}>
