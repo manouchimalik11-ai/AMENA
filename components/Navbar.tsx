@@ -129,9 +129,9 @@ export default function Navbar() {
     </div>
   ) : (
     <div style={{ display: "flex", alignItems: "center", border: "1px solid #e0e0e0", borderRadius: 8, overflow: "hidden", fontSize: 13, flexShrink: 0 }}>
-      <Link href="/inscription" style={{ padding: "7px 14px", fontWeight: pathname === "/inscription" ? 700 : 400, color: pathname === "/inscription" ? "#1565C0" : "#888", background: pathname === "/inscription" ? "#e8f4fc" : "#fff", textDecoration: "none", display: "block" }}>{t.register}</Link>
+      <Link href="/inscription" style={{ padding: "7px 14px", fontWeight: 700, color: pathname === "/inscription" ? "#1565C0" : "#888", background: pathname === "/inscription" ? "#e8f4fc" : "#fff", textDecoration: "none", display: "block" }}>{t.register}</Link>
       <div style={{ width: 1, height: 18, background: "#e0e0e0" }} />
-      <Link href="/connexion" style={{ padding: "7px 14px", fontWeight: pathname === "/connexion" ? 700 : 400, color: pathname === "/connexion" ? "#1565C0" : "#888", background: pathname === "/connexion" ? "#e8f4fc" : "#fff", textDecoration: "none", display: "block" }}>{t.login}</Link>
+      <Link href="/connexion" style={{ padding: "7px 14px", fontWeight: 700, color: pathname === "/connexion" ? "#1565C0" : "#888", background: pathname === "/connexion" ? "#e8f4fc" : "#fff", textDecoration: "none", display: "block" }}>{t.login}</Link>
     </div>
   );
 
