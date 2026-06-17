@@ -63,9 +63,9 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(10,15,60,0.38) 0%, rgba(20,10,50,0.22) 60%, rgba(21,101,192,0.18) 100%)" }} />
         <div style={{ position: "absolute", inset: 0, opacity: 0.04, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
 
-        <div style={{ position: "relative", minHeight: 356, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ position: "relative", minHeight: 356, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
 
-          {/* Deux boutons d'action — centrés sur toute la largeur */}
+          {/* Deux boutons d'action — en bas du hero */}
           <div style={{ display: "flex", gap: 20, justifyContent: "center", alignItems: "stretch" }}>
 
             <Link href="/publier?type=perdu" style={{ textDecoration: "none", flex: "0 0 300px" }}>
