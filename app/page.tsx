@@ -62,7 +62,7 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/hero-cover.png')", backgroundSize: "cover", backgroundPosition: "center" }} />
 
         {/* Carte rouge — juste à gauche de la femme au centre (~32% depuis la gauche) */}
-        <Link href="/publier?type=perdu" style={{ textDecoration: "none", position: "absolute", left: "30%", top: "52%", width: 180, zIndex: 10 }}>
+        <Link href="/publier?type=perdu" style={{ textDecoration: "none", position: "absolute", left: "27%", top: "52%", width: 180, zIndex: 10 }}>
           <div style={{
             display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 8,
             background: "#c0392b",
@@ -86,7 +86,7 @@ export default function Home() {
         </Link>
 
         {/* Carte verte — juste à droite de l'homme au centre (~58% depuis la gauche) */}
-        <Link href="/publier?type=trouve" style={{ textDecoration: "none", position: "absolute", left: "60%", top: "52%", width: 180, zIndex: 10 }}>
+        <Link href="/publier?type=trouve" style={{ textDecoration: "none", position: "absolute", left: "62%", top: "52%", width: 180, zIndex: 10 }}>
           <div style={{
             display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 8,
             background: "#27ae60",
