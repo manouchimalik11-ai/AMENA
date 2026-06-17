@@ -78,13 +78,13 @@ export default function Home() {
             <Link href="/publier?type=perdu" style={{ textDecoration: "none", flex: 1, maxWidth: 300 }}>
               <div style={{
                 display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 10,
-                background: "rgba(255,255,255,0.09)",
+                background: "rgba(180,20,20,0.28)",
                 backdropFilter: "blur(18px)",
-                border: "1px solid rgba(255,100,100,0.35)",
-                borderTop: "3px solid #ff5252",
+                border: "2px solid rgba(255,82,82,0.65)",
+                borderTop: "4px solid #ff5252",
                 borderRadius: 22,
                 padding: "24px 24px 20px",
-                boxShadow: "0 12px 40px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.12)",
+                boxShadow: "0 12px 40px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.12)",
                 cursor: "pointer",
                 height: "100%", boxSizing: "border-box",
               }}>
@@ -96,7 +96,7 @@ export default function Home() {
                 </div>
                 <div style={{ color: "#fff", fontWeight: 800, fontSize: 16, lineHeight: 1.3 }}>{t.hero.lost_title}</div>
                 <div style={{ color: "rgba(255,255,255,0.55)", fontSize: 12.5, lineHeight: 1.5 }}>{t.hero.lost_desc}</div>
-                <div style={{ marginTop: 4, background: "rgba(255,82,82,0.22)", borderRadius: 100, padding: "6px 18px", color: "#ff8a80", fontSize: 12, fontWeight: 700, letterSpacing: "0.3px" }}>
+                <div style={{ marginTop: 4, background: "rgba(255,82,82,0.35)", borderRadius: 100, padding: "9px 24px", color: "#fff", fontSize: 13, fontWeight: 700, letterSpacing: "0.3px", border: "1px solid rgba(255,82,82,0.5)" }}>
                   Publier →
                 </div>
               </div>
@@ -107,13 +107,13 @@ export default function Home() {
             <Link href="/publier?type=trouve" style={{ textDecoration: "none", flex: 1, maxWidth: 300 }}>
               <div style={{
                 display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 10,
-                background: "rgba(255,255,255,0.09)",
+                background: "rgba(20,80,20,0.28)",
                 backdropFilter: "blur(18px)",
-                border: "1px solid rgba(46,200,100,0.35)",
-                borderTop: "3px solid #4caf50",
+                border: "2px solid rgba(76,175,80,0.65)",
+                borderTop: "4px solid #4caf50",
                 borderRadius: 22,
                 padding: "24px 24px 20px",
-                boxShadow: "0 12px 40px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.12)",
+                boxShadow: "0 12px 40px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.12)",
                 cursor: "pointer",
                 height: "100%", boxSizing: "border-box",
               }}>
@@ -125,7 +125,7 @@ export default function Home() {
                 </div>
                 <div style={{ color: "#fff", fontWeight: 800, fontSize: 16, lineHeight: 1.3 }}>{t.hero.found_title}</div>
                 <div style={{ color: "rgba(255,255,255,0.55)", fontSize: 12.5, lineHeight: 1.5 }}>{t.hero.found_desc}</div>
-                <div style={{ marginTop: 4, background: "rgba(76,175,80,0.22)", borderRadius: 100, padding: "6px 18px", color: "#81c784", fontSize: 12, fontWeight: 700, letterSpacing: "0.3px" }}>
+                <div style={{ marginTop: 4, background: "rgba(76,175,80,0.35)", borderRadius: 100, padding: "9px 24px", color: "#fff", fontSize: 13, fontWeight: 700, letterSpacing: "0.3px", border: "1px solid rgba(76,175,80,0.5)" }}>
                   Publier →
                 </div>
               </div>
@@ -163,29 +163,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="main-layout">
-
-          {/* SIDEBAR */}
-          <aside className="sidebar-wrapper">
-            <button className="sidebar-mobile-toggle" onClick={() => setSidebarOpen(!sidebarOpen)}>
-              <span>☰ {t.sidebar.filters}</span>
-              <span>{sidebarOpen ? "▲" : "▼"}</span>
-            </button>
-            <div className={`sidebar-content${sidebarOpen ? " open" : ""}`}>
-              <Sidebar
-                filtreCategorie={filtreCategorie}
-                setFiltreCategorie={setFiltreCategorie}
-                filtreType={filtreType}
-                setFiltreType={setFiltreType}
-                gouvernoratSelectionne={gouvernoratSelectionne}
-                setGouvernoratSelectionne={setGouvernoratSelectionne}
-                villeSelectionnee={villeSelectionnee}
-                setVilleSelectionnee={setVilleSelectionnee}
-                filtreDate={filtreDate}
-                setFiltreDate={setFiltreDate}
-              />
-            </div>
-          </aside>
+        <div className="main-layout" style={{ display: "block" }}>
 
           {/* ANNONCES */}
           <main style={{ flex: 1, minWidth: 0 }}>
@@ -275,7 +253,7 @@ export default function Home() {
         ];
         const step = steps[activeStep];
         return (
-          <section style={{ background: "linear-gradient(160deg, #0d2a6e 0%, #1565C0 60%, #1976d2 100%)", padding: "64px 32px" }}>
+          <section style={{ background: "linear-gradient(160deg, #0a0f3c 0%, #0d2a6e 40%, #1565C0 80%, #1976d2 100%)", padding: "64px 32px" }}>
             <div style={{ maxWidth: 900, margin: "0 auto" }}>
               <div style={{ textAlign: "center", marginBottom: 36 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "1.5px", textTransform: "uppercase" }}>{t.how.title}</div>
@@ -303,7 +281,7 @@ export default function Home() {
       })()}
 
       {/* ── COMPTEUR D'IMPACT ── */}
-      <section style={{ background: "linear-gradient(135deg, #0d1b4e 0%, #1565C0 60%, #1976d2 100%)", padding: "64px 32px" }}>
+      <section style={{ background: "linear-gradient(160deg, #0a0f3c 0%, #0d2a6e 40%, #1565C0 80%, #1976d2 100%)", padding: "64px 32px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <div style={{ display: "inline-block", background: "rgba(255,255,255,0.15)", color: "#fff", fontSize: 12, fontWeight: 700, padding: "5px 14px", borderRadius: 100, letterSpacing: "0.8px", marginBottom: 14, textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.3)" }}>
