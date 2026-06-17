@@ -58,12 +58,12 @@ export default function Home() {
     <div style={{ minHeight: "100vh", background: "#f7f7f8", color: "#1a1a2e" }}>
 
       {/* ── HERO ── */}
-      <section style={{ position: "relative", padding: "72px 48px 90px 64px", overflow: "hidden" }}>
+      <section style={{ position: "relative", padding: "72px 48px 90px 64px", overflow: "hidden", minHeight: 520 }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/hero-cover.png')", backgroundSize: "cover", backgroundPosition: "center" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(10,15,60,0.38) 0%, rgba(20,10,50,0.22) 60%, rgba(21,101,192,0.18) 100%)" }} />
         <div style={{ position: "absolute", inset: 0, opacity: 0.04, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
 
-        <div style={{ position: "relative" }}>
+        <div style={{ position: "relative", minHeight: 356, display: "flex", alignItems: "center", justifyContent: "center" }}>
 
           {/* Deux boutons d'action — centrés sur toute la largeur */}
           <div style={{ display: "flex", gap: 20, justifyContent: "center", alignItems: "stretch" }}>
