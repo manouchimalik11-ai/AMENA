@@ -132,7 +132,7 @@ export default function Home() {
               />
               <button
                 onClick={() => router.push(`/recherche${search ? `?q=${encodeURIComponent(search)}` : ""}`)}
-                style={{ background: "linear-gradient(135deg, #1976d2, #0d47a1)", color: "#fff", border: "none", borderRadius: 12, padding: "13px 24px", fontWeight: 700, fontSize: 14, cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap" }}
+                style={{ background: "linear-gradient(135deg, #b85c25, #6b2f0e)", color: "#fff", border: "none", borderRadius: 12, padding: "13px 24px", fontWeight: 700, fontSize: 14, cursor: "pointer", flexShrink: 0, whiteSpace: "nowrap" }}
               >
                 {t.hero.search_btn}
               </button>
@@ -147,7 +147,7 @@ export default function Home() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24, flexWrap: "wrap", gap: 12 }}>
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
-                  <div style={{ width: 4, height: 22, background: "linear-gradient(180deg,#1976d2,#0d47a1)", borderRadius: 4 }} />
+                  <div style={{ width: 4, height: 22, background: "linear-gradient(180deg,#b85c25,#6b2f0e)", borderRadius: 4 }} />
                   <h2 style={{ fontSize: 20, fontWeight: 800, margin: 0, color: "#1a1a2e" }}>{t.listing.title}</h2>
                 </div>
                 <p style={{ fontSize: 13, color: "#aaa", margin: 0, paddingLeft: 14 }}>
@@ -158,8 +158,8 @@ export default function Home() {
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                 <div style={{ display: "flex", border: "1px solid #e8e8e8", borderRadius: 10, overflow: "hidden", background: "#fff" }}>
-                  <button onClick={() => setVue("grille")} title="Grille" style={{ padding: "8px 13px", border: "none", background: vue === "grille" ? "#e8f4fc" : "transparent", color: vue === "grille" ? "#1565C0" : "#aaa", cursor: "pointer", fontSize: 15, transition: "all 0.15s" }}>⊞</button>
-                  <button onClick={() => setVue("liste")} title="Liste" style={{ padding: "8px 13px", border: "none", borderLeft: "1px solid #e8e8e8", background: vue === "liste" ? "#e8f4fc" : "transparent", color: vue === "liste" ? "#1565C0" : "#aaa", cursor: "pointer", fontSize: 15, transition: "all 0.15s" }}>☰</button>
+                  <button onClick={() => setVue("grille")} title="Grille" style={{ padding: "8px 13px", border: "none", background: vue === "grille" ? "#fef0e6" : "transparent", color: vue === "grille" ? "#b85c25" : "#aaa", cursor: "pointer", fontSize: 15, transition: "all 0.15s" }}>⊞</button>
+                  <button onClick={() => setVue("liste")} title="Liste" style={{ padding: "8px 13px", border: "none", borderLeft: "1px solid #e8e8e8", background: vue === "liste" ? "#fef0e6" : "transparent", color: vue === "liste" ? "#b85c25" : "#aaa", cursor: "pointer", fontSize: 15, transition: "all 0.15s" }}>☰</button>
                 </div>
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function Home() {
                 <div style={{ fontSize: 18, fontWeight: 700, color: "#888", marginBottom: 8 }}>{t.listing.empty_title}</div>
                 <div style={{ fontSize: 14, color: "#bbb" }}>
                   {t.listing.empty_desc}{" "}
-                  <Link href="/publier" style={{ color: "#1565C0", textDecoration: "none", fontWeight: 600 }}>{t.listing.empty_link}</Link>
+                  <Link href="/publier" style={{ color: "#b85c25", textDecoration: "none", fontWeight: 600 }}>{t.listing.empty_link}</Link>
                 </div>
               </div>
             ) : (() => {
@@ -224,7 +224,7 @@ export default function Home() {
       {/* ── COMMENT ÇA MARCHE ── */}
       {(() => {
         const steps = [
-          { titre: t.how.s1_title, desc: t.how.s1_desc, img: "/publier-hero.jpg" },
+          { titre: t.how.s1_title, desc: t.how.s1_desc, img: "https://images.pexels.com/photos/6943441/pexels-photo-6943441.jpeg?auto=compress&cs=tinysrgb&w=1000&fit=crop" },
           { titre: t.how.s2_title, desc: t.how.s2_desc, img: "https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg?auto=compress&cs=tinysrgb&w=1000&fit=crop" },
           { titre: t.how.s3_title, desc: t.how.s3_desc, img: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1000&fit=crop" },
         ];

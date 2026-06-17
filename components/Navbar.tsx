@@ -57,18 +57,18 @@ export default function Navbar() {
   }[lang];
 
   const navItems = [
-    { key: "annonces", href: "/mes-annonces", icon: <IconAnnonces />, label: tl.annonces, color: "#1565C0", bg: "#e8f4fc" },
-    { key: "favoris",  href: "/favoris",      icon: <IconFavoris />,  label: tl.favoris,  color: "#1565C0", bg: "#e8f4fc" },
-    { key: "messages", href: "/messages",     icon: <IconMessages />, label: tl.messages, color: "#1565C0", bg: "#e8f4fc", badge: 2 },
+    { key: "annonces", href: "/mes-annonces", icon: <IconAnnonces />, label: tl.annonces, color: "#b85c25", bg: "#fef0e6" },
+    { key: "favoris",  href: "/favoris",      icon: <IconFavoris />,  label: tl.favoris,  color: "#b85c25", bg: "#fef0e6" },
+    { key: "messages", href: "/messages",     icon: <IconMessages />, label: tl.messages, color: "#b85c25", bg: "#fef0e6", badge: 2 },
   ];
 
   const initial = user?.name.trim()[0]?.toUpperCase() ?? "?";
 
   const langToggle = (
     <div style={{ display: "flex", alignItems: "center", border: "1px solid #e0e0e0", borderRadius: 8, overflow: "hidden", fontSize: 13, flexShrink: 0 }}>
-      <button onClick={() => setLang("fr")} style={{ padding: "6px 11px", fontWeight: lang === "fr" ? 700 : 400, color: lang === "fr" ? "#1565C0" : "#888", background: lang === "fr" ? "#e8f4fc" : "#fff", border: "none", cursor: "pointer" }}>FR</button>
+      <button onClick={() => setLang("fr")} style={{ padding: "6px 11px", fontWeight: lang === "fr" ? 700 : 400, color: lang === "fr" ? "#b85c25" : "#888", background: lang === "fr" ? "#fef0e6" : "#fff", border: "none", cursor: "pointer" }}>FR</button>
       <div style={{ width: 1, height: 18, background: "#e0e0e0" }} />
-      <button onClick={() => setLang("ar")} style={{ padding: "6px 11px", fontWeight: lang === "ar" ? 700 : 400, color: lang === "ar" ? "#1565C0" : "#888", background: lang === "ar" ? "#e8f4fc" : "#fff", border: "none", cursor: "pointer" }}>AR</button>
+      <button onClick={() => setLang("ar")} style={{ padding: "6px 11px", fontWeight: lang === "ar" ? 700 : 400, color: lang === "ar" ? "#b85c25" : "#888", background: lang === "ar" ? "#fef0e6" : "#fff", border: "none", cursor: "pointer" }}>AR</button>
     </div>
   );
 
@@ -79,15 +79,15 @@ export default function Navbar() {
         style={{
           display: "flex", alignItems: "center", gap: 8,
           padding: "5px 12px 5px 6px", borderRadius: 50,
-          background: "#e8f4fc", border: `1.5px solid ${dropOpen ? "#0d47a1" : "#1565C0"}`,
+          background: "#fef0e6", border: `1.5px solid ${dropOpen ? "#6b2f0e" : "#b85c25"}`,
           cursor: "pointer", transition: "all 0.18s",
           boxShadow: dropOpen ? "0 2px 12px rgba(21,101,192,0.18)" : "none",
         }}
       >
-        <div style={{ width: 28, height: 28, borderRadius: "50%", background: "linear-gradient(135deg,#1976d2,#0d47a1)", color: "#fff", fontWeight: 800, fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+        <div style={{ width: 28, height: 28, borderRadius: "50%", background: "linear-gradient(135deg,#1976d2,#6b2f0e)", color: "#fff", fontWeight: 800, fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
           {initial}
         </div>
-        <span style={{ fontSize: 13, fontWeight: 700, color: "#0d47a1", maxWidth: 120, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+        <span style={{ fontSize: 13, fontWeight: 700, color: "#6b2f0e", maxWidth: 120, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
           {user.name.split(" ")[0]}
         </span>
         <IconChevron open={dropOpen} />
@@ -103,9 +103,9 @@ export default function Navbar() {
             minWidth: 200, overflow: "hidden", zIndex: 200,
             animation: "navDropDown 0.18s ease",
           }}>
-            <div style={{ padding: "14px 16px", background: "linear-gradient(135deg,#e8f4fc,#fff)", borderBottom: "1px solid #f5f5f5" }}>
+            <div style={{ padding: "14px 16px", background: "linear-gradient(135deg,#fef0e6,#fff)", borderBottom: "1px solid #f5f5f5" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "linear-gradient(135deg,#1976d2,#0d47a1)", color: "#fff", fontWeight: 800, fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>{initial}</div>
+                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "linear-gradient(135deg,#1976d2,#6b2f0e)", color: "#fff", fontWeight: 800, fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>{initial}</div>
                 <div>
                   <div style={{ fontWeight: 700, fontSize: 14, color: "#1a1a2e" }}>{user.name}</div>
                   <div style={{ fontSize: 11, color: "#aaa", marginTop: 1 }}>{user.email}</div>
@@ -117,7 +117,7 @@ export default function Navbar() {
             <div style={{ borderTop: "1px solid #f5f5f5", padding: "6px 0" }}>
               <button
                 onClick={() => { setDropOpen(false); logout(); }}
-                style={{ width: "100%", textAlign: "left", padding: "10px 16px", background: "none", border: "none", fontSize: 14, color: "#1565C0", cursor: "pointer", fontWeight: 600, display: "flex", alignItems: "center", gap: 8 }}
+                style={{ width: "100%", textAlign: "left", padding: "10px 16px", background: "none", border: "none", fontSize: 14, color: "#b85c25", cursor: "pointer", fontWeight: 600, display: "flex", alignItems: "center", gap: 8 }}
               >
                 <IconLogout />{tl.logout}
               </button>
@@ -129,9 +129,9 @@ export default function Navbar() {
     </div>
   ) : (
     <div style={{ display: "flex", alignItems: "center", border: "1px solid #e0e0e0", borderRadius: 8, overflow: "hidden", fontSize: 13, flexShrink: 0 }}>
-      <Link href="/inscription" style={{ padding: "7px 14px", fontWeight: 700, color: pathname === "/inscription" ? "#1565C0" : "#888", background: pathname === "/inscription" ? "#e8f4fc" : "#fff", textDecoration: "none", display: "block" }}>{t.register}</Link>
+      <Link href="/inscription" style={{ padding: "7px 14px", fontWeight: 700, color: pathname === "/inscription" ? "#b85c25" : "#888", background: pathname === "/inscription" ? "#fef0e6" : "#fff", textDecoration: "none", display: "block" }}>{t.register}</Link>
       <div style={{ width: 1, height: 18, background: "#e0e0e0" }} />
-      <Link href="/connexion" style={{ padding: "7px 14px", fontWeight: 700, color: pathname === "/connexion" ? "#1565C0" : "#888", background: pathname === "/connexion" ? "#e8f4fc" : "#fff", textDecoration: "none", display: "block" }}>{t.login}</Link>
+      <Link href="/connexion" style={{ padding: "7px 14px", fontWeight: 700, color: pathname === "/connexion" ? "#b85c25" : "#888", background: pathname === "/connexion" ? "#fef0e6" : "#fff", textDecoration: "none", display: "block" }}>{t.login}</Link>
     </div>
   );
 
@@ -224,14 +224,14 @@ export default function Navbar() {
         {/* Mobile dropdown menu */}
         {menuOpen && (
           <div style={{ background: "#fff", borderTop: "1px solid #f0f0f0", padding: "16px 24px", display: "flex", flexDirection: "column", gap: 16 }}>
-            <Link href="/" style={{ color: "#1565C0", fontWeight: 600, fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.home}</Link>
+            <Link href="/" style={{ color: "#b85c25", fontWeight: 600, fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.home}</Link>
             <Link href="/aide" style={{ color: "#555", fontSize: 15, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.help}</Link>
             <Link href="/boost" style={{ color: "#d97706", fontSize: 15, fontWeight: 700, textDecoration: "none" }} onClick={() => setMenuOpen(false)}>{t.boost}</Link>
             <div style={{ paddingTop: 4 }}>{langToggle}</div>
             {user ? (
               <div style={{ paddingTop: 8, borderTop: "1px solid #f0f0f0", display: "flex", flexDirection: "column", gap: 12 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <div style={{ width: 36, height: 36, borderRadius: "50%", background: "linear-gradient(135deg,#1976d2,#0d47a1)", color: "#fff", fontWeight: 800, fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div style={{ width: 36, height: 36, borderRadius: "50%", background: "linear-gradient(135deg,#1976d2,#6b2f0e)", color: "#fff", fontWeight: 800, fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>
                     {initial}
                   </div>
                   <div>
@@ -248,14 +248,14 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </div>
-                <button onClick={() => { logout(); setMenuOpen(false); }} style={{ background: "#e8f4fc", color: "#1565C0", border: "1px solid #fde8e8", borderRadius: 8, padding: "10px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>
+                <button onClick={() => { logout(); setMenuOpen(false); }} style={{ background: "#fef0e6", color: "#b85c25", border: "1px solid #fde8e8", borderRadius: 8, padding: "10px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>
                   {tl.logout}
                 </button>
               </div>
             ) : (
               <div style={{ display: "flex", gap: 12, paddingTop: 8, borderTop: "1px solid #f0f0f0" }}>
-                <Link href="/inscription" style={{ flex: 1, textAlign: "center", color: "#1565C0", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", border: "2px solid #1565C0", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>{t.register}</Link>
-                <Link href="/connexion" style={{ flex: 1, textAlign: "center", color: "#fff", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", background: "#1565C0", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>{t.login}</Link>
+                <Link href="/inscription" style={{ flex: 1, textAlign: "center", color: "#b85c25", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", border: "2px solid #b85c25", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>{t.register}</Link>
+                <Link href="/connexion" style={{ flex: 1, textAlign: "center", color: "#fff", fontSize: 14, fontWeight: 600, textDecoration: "none", padding: "10px", background: "#b85c25", borderRadius: 8 }} onClick={() => setMenuOpen(false)}>{t.login}</Link>
               </div>
             )}
           </div>
@@ -270,13 +270,13 @@ function NavLink({ href, active, children }: { href: string; active: boolean; ch
     <Link
       href={href}
       style={{
-        color: active ? "#1565C0" : "#555",
+        color: active ? "#b85c25" : "#555",
         fontWeight: 700,
         fontSize: 13,
         textDecoration: "none",
         padding: "7px 14px",
         borderRadius: 8,
-        background: active ? "#e8f4fc" : "transparent",
+        background: active ? "#fef0e6" : "transparent",
         transition: "color 0.15s, background 0.15s",
       }}
     >
@@ -291,7 +291,7 @@ function DropItem({ label, href, onClose }: { label: string; href: string; onClo
     <Link
       href={href}
       onClick={onClose}
-      style={{ display: "block", padding: "10px 16px", fontSize: 14, color: h ? "#1565C0" : "#333", background: h ? "#e8f4fc" : "transparent", textDecoration: "none", transition: "all 0.12s", fontWeight: 500 }}
+      style={{ display: "block", padding: "10px 16px", fontSize: 14, color: h ? "#b85c25" : "#333", background: h ? "#fef0e6" : "transparent", textDecoration: "none", transition: "all 0.12s", fontWeight: 500 }}
       onMouseEnter={() => setH(true)}
       onMouseLeave={() => setH(false)}
     >
