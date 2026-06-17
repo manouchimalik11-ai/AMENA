@@ -63,19 +63,21 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(10,15,60,0.38) 0%, rgba(20,10,50,0.22) 60%, rgba(21,101,192,0.18) 100%)" }} />
         <div style={{ position: "absolute", inset: 0, opacity: 0.04, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
 
-        <div style={{ position: "relative", maxWidth: 680, margin: "0", textAlign: "left" }}>
-          <h1 className="hero-title" style={{ fontSize: 52, fontWeight: 900, color: "#fff", marginBottom: 16, lineHeight: 1.12, letterSpacing: "-1px", textTransform: "uppercase" }}>
-            <span style={{ color: "#fff" }}>{t.hero.title_line1}</span>
-            <span style={{ color: "#fff" }}>{t.hero.title_line2}</span>
-          </h1>
-          <p style={{ fontSize: 18, color: "#fff", margin: "0 0 56px", lineHeight: 1.6, fontFamily: "var(--font-geist-sans), sans-serif", fontWeight: 400, letterSpacing: "0.3px", whiteSpace: "nowrap" }}>
-            {t.hero.subtitle}
-          </p>
+        <div style={{ position: "relative" }}>
+          <div style={{ maxWidth: 680, margin: "0", textAlign: "left" }}>
+            <h1 className="hero-title" style={{ fontSize: 52, fontWeight: 900, color: "#fff", marginBottom: 16, lineHeight: 1.12, letterSpacing: "-1px", textTransform: "uppercase" }}>
+              <span style={{ color: "#fff" }}>{t.hero.title_line1}</span>
+              <span style={{ color: "#fff" }}>{t.hero.title_line2}</span>
+            </h1>
+            <p style={{ fontSize: 18, color: "#fff", margin: "0 0 48px", lineHeight: 1.6, fontFamily: "var(--font-geist-sans), sans-serif", fontWeight: 400, letterSpacing: "0.3px", whiteSpace: "nowrap" }}>
+              {t.hero.subtitle}
+            </p>
+          </div>
 
-          {/* Deux boutons d'action */}
-          <div style={{ display: "flex", gap: 20, justifyContent: "flex-start", marginBottom: 0, alignItems: "stretch" }}>
+          {/* Deux boutons d'action — centrés sur toute la largeur */}
+          <div style={{ display: "flex", gap: 20, justifyContent: "center", alignItems: "stretch" }}>
 
-            <Link href="/publier?type=perdu" style={{ textDecoration: "none", flex: 1, maxWidth: 300 }}>
+            <Link href="/publier?type=perdu" style={{ textDecoration: "none", flex: "0 0 300px" }}>
               <div style={{
                 display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 10,
                 background: "rgba(180,20,20,0.28)",
@@ -104,7 +106,7 @@ export default function Home() {
 
             <div style={{ display: "flex", alignItems: "center", color: "rgba(255,255,255,0.4)", fontSize: 13, fontWeight: 600, flexShrink: 0 }}>{t.hero.or}</div>
 
-            <Link href="/publier?type=trouve" style={{ textDecoration: "none", flex: 1, maxWidth: 300 }}>
+            <Link href="/publier?type=trouve" style={{ textDecoration: "none", flex: "0 0 300px" }}>
               <div style={{
                 display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 10,
                 background: "rgba(20,80,20,0.28)",
@@ -253,7 +255,7 @@ export default function Home() {
         ];
         const step = steps[activeStep];
         return (
-          <section style={{ background: "linear-gradient(160deg, #1565C0 0%, #1e88e5 50%, #64b5f6 100%)", padding: "64px 32px" }}>
+          <section style={{ background: "linear-gradient(135deg, #1976d2, #0d47a1)", padding: "64px 32px" }}>
             <div style={{ maxWidth: 900, margin: "0 auto" }}>
               <div style={{ textAlign: "center", marginBottom: 36 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "1.5px", textTransform: "uppercase" }}>{t.how.title}</div>
@@ -281,7 +283,7 @@ export default function Home() {
       })()}
 
       {/* ── COMPTEUR D'IMPACT ── */}
-      <section style={{ background: "linear-gradient(160deg, #1565C0 0%, #1e88e5 50%, #64b5f6 100%)", padding: "64px 32px" }}>
+      <section style={{ background: "linear-gradient(135deg, #1976d2, #0d47a1)", padding: "64px 32px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <div style={{ display: "inline-block", background: "rgba(255,255,255,0.15)", color: "#fff", fontSize: 12, fontWeight: 700, padding: "5px 14px", borderRadius: 100, letterSpacing: "0.8px", marginBottom: 14, textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.3)" }}>
