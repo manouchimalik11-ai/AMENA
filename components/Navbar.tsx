@@ -128,9 +128,9 @@ export default function Navbar() {
       )}
     </div>
   ) : (
-    <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-      <Link href="/inscription" style={{ color: "#555", fontSize: 14, textDecoration: "none", fontWeight: 500, paddingBottom: 2, borderBottom: "2px solid transparent" }}>{t.register}</Link>
-      <Link href="/connexion" style={{ color: "#555", fontSize: 14, textDecoration: "none", fontWeight: 500, paddingBottom: 2, borderBottom: "2px solid transparent" }}>{t.login}</Link>
+    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+      <Link href="/inscription" style={{ color: "#555", fontSize: 13, textDecoration: "none", fontWeight: 700, padding: "7px 14px", borderRadius: 8, background: "transparent" }}>{t.register}</Link>
+      <Link href="/connexion" style={{ color: "#555", fontSize: 13, textDecoration: "none", fontWeight: 700, padding: "7px 14px", borderRadius: 8, background: "transparent" }}>{t.login}</Link>
     </div>
   );
 
@@ -155,7 +155,7 @@ export default function Navbar() {
           <div className="nav-desktop">
             <NavLink href="/" active={pathname === "/"}>{t.home}</NavLink>
             <NavLink href="/aide" active={pathname === "/aide"}>{t.help}</NavLink>
-            <Link href="/boost" style={{ background: "linear-gradient(135deg,#f59e0b,#d97706)", color: "#fff", fontSize: 13, fontWeight: 800, textDecoration: "none", padding: "7px 14px", borderRadius: 8, boxShadow: "0 2px 8px rgba(245,158,11,0.35)" }}>{t.boost}</Link>
+            <Link href="/boost" style={{ background: "#fff", color: "#d97706", fontSize: 13, fontWeight: 700, textDecoration: "none", padding: "7px 14px", borderRadius: 8, border: "1.5px solid #f59e0b" }}>{t.boost}</Link>
             {langToggle}
             {userSection}
           </div>
@@ -270,12 +270,13 @@ function NavLink({ href, active, children }: { href: string; active: boolean; ch
       href={href}
       style={{
         color: active ? "#1565C0" : "#555",
-        fontWeight: active ? 700 : 500,
-        fontSize: 14,
+        fontWeight: 700,
+        fontSize: 13,
         textDecoration: "none",
-        borderBottom: active ? "2px solid #1565C0" : "2px solid transparent",
-        paddingBottom: 2,
-        transition: "color 0.15s, border-color 0.15s",
+        padding: "7px 14px",
+        borderRadius: 8,
+        background: active ? "#e8f4fc" : "transparent",
+        transition: "color 0.15s, background 0.15s",
       }}
     >
       {children}
