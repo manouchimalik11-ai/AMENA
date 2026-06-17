@@ -86,7 +86,7 @@ export default function Home() {
         </Link>
 
         {/* Carte verte — juste à droite de l'homme au centre (~58% depuis la gauche) */}
-        <Link href="/publier?type=trouve" style={{ textDecoration: "none", position: "absolute", left: "62%", top: "52%", width: 180, zIndex: 10 }}>
+        <Link href="/publier?type=trouve" style={{ textDecoration: "none", position: "absolute", left: "63%", top: "52%", width: 180, zIndex: 10 }}>
           <div style={{
             display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 8,
             background: "#27ae60",
@@ -230,7 +230,7 @@ export default function Home() {
         ];
         const step = steps[activeStep];
         return (
-          <section style={{ background: "linear-gradient(135deg, #1976d2, #0d47a1)", padding: "64px 32px" }}>
+          <section style={{ background: "linear-gradient(135deg, #6b2f0e, #b85c25)", padding: "64px 32px" }}>
             <div style={{ maxWidth: 900, margin: "0 auto" }}>
               <div style={{ textAlign: "center", marginBottom: 36 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "1.5px", textTransform: "uppercase" }}>{t.how.title}</div>
@@ -240,7 +240,7 @@ export default function Home() {
                   {steps.map((s, i) => (
                     <img key={i} src={s.img} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: activeStep === i ? 1 : 0, transition: "opacity 0.7s ease" }} />
                   ))}
-                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, transparent 60%, rgba(13,42,110,0.9) 100%)" }} />
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, transparent 60%, rgba(80,30,8,0.9) 100%)" }} />
                 </div>
                 <div style={{ flex: 1, padding: "28px 24px", textAlign: "left", background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                   <div style={{ fontWeight: 800, fontSize: 16, color: "#fff", marginBottom: 10 }}>{step.titre}</div>
@@ -258,7 +258,7 @@ export default function Home() {
       })()}
 
       {/* ── COMPTEUR D'IMPACT ── */}
-      <section style={{ background: "linear-gradient(135deg, #1976d2, #0d47a1)", padding: "64px 32px" }}>
+      <section style={{ background: "linear-gradient(135deg, #6b2f0e, #b85c25)", padding: "64px 32px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <div style={{ display: "inline-block", background: "rgba(255,255,255,0.15)", color: "#fff", fontSize: 12, fontWeight: 700, padding: "5px 14px", borderRadius: 100, letterSpacing: "0.8px", marginBottom: 14, textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.3)" }}>
@@ -278,7 +278,7 @@ export default function Home() {
               <div key={i} style={{ textAlign: "center", padding: "28px 16px", borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
                 <div style={{ fontSize: 28, marginBottom: 8 }}>{stat.icon}</div>
                 <div style={{ fontSize: 36, fontWeight: 900, color: "#fff", letterSpacing: "-1px", lineHeight: 1, marginBottom: 8 }}>
-                  <span style={{ background: "linear-gradient(90deg, #90caf9, #fff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                  <span style={{ background: "linear-gradient(90deg, #ffd180, #fff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                     {stat.num}
                   </span>
                 </div>

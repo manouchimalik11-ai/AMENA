@@ -8,7 +8,7 @@ export default function Footer() {
   const t = tr[lang].footer;
 
   return (
-    <footer style={{ background: "linear-gradient(135deg, #1976d2, #0d47a1)", color: "rgba(255,255,255,0.7)", padding: "36px 32px", textAlign: "center" }}>
+    <footer style={{ background: "linear-gradient(135deg, #6b2f0e, #b85c25)", color: "rgba(255,255,255,0.7)", padding: "36px 32px", textAlign: "center" }}>
       <div style={{ display: "flex", justifyContent: "center", gap: 28, marginBottom: 18, flexWrap: "wrap" }}>
         <Link href="/aide" style={{ color: "rgba(255,255,255,0.8)", textDecoration: "none", fontSize: 14 }}>{t.faq}</Link>
         <Link href="/contact" style={{ color: "rgba(255,255,255,0.8)", textDecoration: "none", fontSize: 14 }}>{t.contact}</Link>
