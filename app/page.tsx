@@ -58,60 +58,58 @@ export default function Home() {
     <div style={{ minHeight: "100vh", background: "#f7f7f8", color: "#1a1a2e" }}>
 
       {/* ── HERO ── */}
-      <section style={{ position: "relative", overflow: "hidden", minHeight: 420 }}>
+      <section style={{ position: "relative", overflow: "hidden", minHeight: 560 }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/hero-cover.png')", backgroundSize: "cover", backgroundPosition: "center" }} />
 
-        <div style={{ position: "relative", minHeight: 420, display: "flex", alignItems: "flex-end", justifyContent: "space-between", padding: "0 80px 40px" }}>
-
-          {/* Carte rouge — J'ai perdu */}
-          <Link href="/publier?type=perdu" style={{ textDecoration: "none", width: 240 }}>
-            <div style={{
-              display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 10,
-              background: "#c0392b",
-              borderRadius: 18,
-              padding: "20px 20px 16px",
-              boxShadow: "0 8px 28px rgba(192,57,43,0.45)",
-              cursor: "pointer",
-            }}>
-              <div style={{ width: 48, height: 48, borderRadius: 14, background: "rgba(255,255,255,0.18)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="2"/>
-                  <path d="M12 8v4M12 16h.01" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
-                </svg>
-              </div>
-              <div style={{ color: "#fff", fontWeight: 800, fontSize: 15, lineHeight: 1.3 }}>{t.hero.lost_title}</div>
-              <div style={{ color: "rgba(255,255,255,0.75)", fontSize: 12, lineHeight: 1.5 }}>{t.hero.lost_desc}</div>
-              <div style={{ marginTop: 4, background: "rgba(255,255,255,0.2)", borderRadius: 100, padding: "8px 22px", color: "#fff", fontSize: 13, fontWeight: 700, border: "1px solid rgba(255,255,255,0.4)" }}>
-                Publier →
-              </div>
+        {/* Carte rouge — juste à gauche de la femme au centre (~32% depuis la gauche) */}
+        <Link href="/publier?type=perdu" style={{ textDecoration: "none", position: "absolute", left: "27%", top: "42%", width: 180, zIndex: 10 }}>
+          <div style={{
+            display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 8,
+            background: "#c0392b",
+            borderRadius: 14,
+            padding: "14px 14px 12px",
+            boxShadow: "0 8px 24px rgba(192,57,43,0.55)",
+            cursor: "pointer",
+          }}>
+            <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="2"/>
+                <path d="M12 8v4M12 16h.01" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+              </svg>
             </div>
-          </Link>
-
-          {/* Carte verte — J'ai trouvé */}
-          <Link href="/publier?type=trouve" style={{ textDecoration: "none", width: 240 }}>
-            <div style={{
-              display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 10,
-              background: "#27ae60",
-              borderRadius: 18,
-              padding: "20px 20px 16px",
-              boxShadow: "0 8px 28px rgba(39,174,96,0.45)",
-              cursor: "pointer",
-            }}>
-              <div style={{ width: 48, height: 48, borderRadius: 14, background: "rgba(255,255,255,0.18)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                  <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="2"/>
-                </svg>
-              </div>
-              <div style={{ color: "#fff", fontWeight: 800, fontSize: 15, lineHeight: 1.3 }}>{t.hero.found_title}</div>
-              <div style={{ color: "rgba(255,255,255,0.75)", fontSize: 12, lineHeight: 1.5 }}>{t.hero.found_desc}</div>
-              <div style={{ marginTop: 4, background: "rgba(255,255,255,0.2)", borderRadius: 100, padding: "8px 22px", color: "#fff", fontSize: 13, fontWeight: 700, border: "1px solid rgba(255,255,255,0.4)" }}>
-                Publier →
-              </div>
+            <div style={{ color: "#fff", fontWeight: 800, fontSize: 13, lineHeight: 1.3 }}>{t.hero.lost_title}</div>
+            <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 11, lineHeight: 1.4 }}>{t.hero.lost_desc}</div>
+            <div style={{ background: "rgba(255,255,255,0.2)", borderRadius: 100, padding: "6px 18px", color: "#fff", fontSize: 12, fontWeight: 700, border: "1px solid rgba(255,255,255,0.4)" }}>
+              Publier →
             </div>
-          </Link>
+          </div>
+        </Link>
 
-        </div>
+        {/* Carte verte — juste à droite de l'homme au centre (~58% depuis la gauche) */}
+        <Link href="/publier?type=trouve" style={{ textDecoration: "none", position: "absolute", left: "58%", top: "42%", width: 180, zIndex: 10 }}>
+          <div style={{
+            display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 8,
+            background: "#27ae60",
+            borderRadius: 14,
+            padding: "14px 14px 12px",
+            boxShadow: "0 8px 24px rgba(39,174,96,0.55)",
+            cursor: "pointer",
+          }}>
+            <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="2"/>
+              </svg>
+            </div>
+            <div style={{ color: "#fff", fontWeight: 800, fontSize: 13, lineHeight: 1.3 }}>{t.hero.found_title}</div>
+            <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 11, lineHeight: 1.4 }}>{t.hero.found_desc}</div>
+            <div style={{ background: "rgba(255,255,255,0.2)", borderRadius: 100, padding: "6px 18px", color: "#fff", fontSize: 12, fontWeight: 700, border: "1px solid rgba(255,255,255,0.4)" }}>
+              Publier →
+            </div>
+          </div>
+        </Link>
+
+        <div style={{ minHeight: 560 }} />
       </section>
 
       {/* ── CONTENU PRINCIPAL ── */}
