@@ -253,7 +253,7 @@ export default function Home() {
         ];
         const step = steps[activeStep];
         return (
-          <section style={{ background: "linear-gradient(160deg, #0a0f3c 0%, #0d2a6e 40%, #1565C0 80%, #1976d2 100%)", padding: "64px 32px" }}>
+          <section style={{ background: "linear-gradient(160deg, #1565C0 0%, #1e88e5 50%, #64b5f6 100%)", padding: "64px 32px" }}>
             <div style={{ maxWidth: 900, margin: "0 auto" }}>
               <div style={{ textAlign: "center", marginBottom: 36 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "1.5px", textTransform: "uppercase" }}>{t.how.title}</div>
@@ -281,7 +281,7 @@ export default function Home() {
       })()}
 
       {/* ── COMPTEUR D'IMPACT ── */}
-      <section style={{ background: "linear-gradient(160deg, #0a0f3c 0%, #0d2a6e 40%, #1565C0 80%, #1976d2 100%)", padding: "64px 32px" }}>
+      <section style={{ background: "linear-gradient(160deg, #1565C0 0%, #1e88e5 50%, #64b5f6 100%)", padding: "64px 32px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <div style={{ display: "inline-block", background: "rgba(255,255,255,0.15)", color: "#fff", fontSize: 12, fontWeight: 700, padding: "5px 14px", borderRadius: 100, letterSpacing: "0.8px", marginBottom: 14, textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.3)" }}>
