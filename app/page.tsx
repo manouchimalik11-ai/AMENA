@@ -233,7 +233,7 @@ export default function Home() {
           <section style={{ background: "linear-gradient(135deg, #6b2f0e, #b85c25)", padding: "64px 32px" }}>
             <div style={{ maxWidth: 900, margin: "0 auto" }}>
               <div style={{ textAlign: "center", marginBottom: 36 }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "1.5px", textTransform: "uppercase" }}>{t.how.title}</div>
+                <h2 style={{ fontSize: 26, fontWeight: 800, color: "#fff", margin: "0 0 10px", letterSpacing: "-0.5px" }}>{t.how.title}</h2>
               </div>
               <div style={{ display: "flex", gap: 0, alignItems: "stretch", borderRadius: 18, overflow: "hidden", border: "1px solid rgba(255,255,255,0.2)", boxShadow: "0 8px 40px rgba(0,0,0,0.25)" }}>
                 <div style={{ flex: 2, minHeight: 240, position: "relative", overflow: "hidden" }}>
