@@ -132,7 +132,7 @@ export const annonces: Annonce[] = [
     heuresEcoulees: 144,
     type: "perdu",
     categorie: "keys",
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=500&fit=crop",
+    image: "/cle-app.png",
     description: {
       fr: "Clés d'appartement perdues à Bizerte. Trousseau avec 3 clés et un porte-clés bleu. Perdu probablement dans le centre-ville. Récompense promise.",
       ar: "مفاتح شقة ضاعت في بنزرت. سلسلة بـ3 مفاتح وبورت كلي أزرق. ضاعت على الأرجح في وسط المدينة. نكافئ من يرجعها.",
