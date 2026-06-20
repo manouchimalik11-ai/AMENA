@@ -126,7 +126,7 @@ export const annonces: Annonce[] = [
   },
   {
     id: 12,
-    titre: { fr: "Gilet de jeune trouvé", ar: "جيلي شباب ملقى" },
+    titre: { fr: "Gilet beige trouvé", ar: "جيلي بيج ملقى" },
     lieu: "Menzah 1",
     temps: { fr: "Il y a 21 jours", ar: "من 21 يوم" },
     heuresEcoulees: 504,
@@ -140,13 +140,13 @@ export const annonces: Annonce[] = [
   },
   {
     id: 11,
-    titre: { fr: "Clés d'appartement perdues", ar: "مفاتح شقة ضايعة" },
+    titre: { fr: "Clés d'appartement", ar: "مفاتح شقة" },
     lieu: "Bizerte",
     temps: { fr: "Il y a 6 jours", ar: "من 6 أيام" },
     heuresEcoulees: 144,
     type: "perdu",
     categorie: "keys",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=500&fit=crop",
+    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=500&fit=crop",
     description: {
       fr: "Clés d'appartement perdues à Bizerte. Trousseau avec 3 clés et un porte-clés bleu. Perdu probablement dans le centre-ville. Récompense promise.",
       ar: "مفاتح شقة ضاعت في بنزرت. سلسلة بـ3 مفاتح وبورت كلي أزرق. ضاعت على الأرجح في وسط المدينة. نكافئ من يرجعها.",
