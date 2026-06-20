@@ -56,7 +56,7 @@ export const annonces: Annonce[] = [
   },
   {
     id: 3,
-    titre: { fr: "Clé de voiture Renault", ar: "مفتاح كرهبة رونو" },
+    titre: { fr: "Clé de voiture Golf 7", ar: "مفتاح كرهبة غولف 7" },
     lieu: "Ariana",
     temps: { fr: "Il y a 3 heures", ar: "من 3 ساعات" },
     heuresEcoulees: 3,
@@ -64,13 +64,13 @@ export const annonces: Annonce[] = [
     categorie: "keys",
     image: "/cle-voiture.jpg",
     description: {
-      fr: "Clé de voiture Renault Clio perdue à la Galeria Jean, Ariana. Porte-clés rouge en forme de cœur.",
-      ar: "مفتاح كرهبة رونو كليو ضاع في قالاريا جيان أريانة. فيه سلسلة حمرا على شكل قلب.",
+      fr: "Clé de voiture Golf 7 perdue à la Galeria Jean, Ariana. Porte-clés rouge en forme de cœur.",
+      ar: "مفتاح كرهبة غولف 7 ضاع في قالاريا جيان أريانة. فيه سلسلة حمرا على شكل قلب.",
     },
   },
   {
     id: 4,
-    titre: { fr: "Sac à main beige", ar: "شنطة بيج" },
+    titre: { fr: "Sac à main noir", ar: "شنطة سوداء" },
     lieu: "La Marsa",
     temps: { fr: "Il y a 2 jours", ar: "من يومين" },
     heuresEcoulees: 48,
@@ -78,8 +78,8 @@ export const annonces: Annonce[] = [
     categorie: "wallets",
     image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&h=500&fit=crop",
     description: {
-      fr: "Sac à main beige trouvé sur la plage de La Marsa. Contient des effets personnels. Contactez-moi pour le récupérer.",
-      ar: "شنطة يد بيج لقيتها في الشاطئ المرسى. فيها حوايج شخصية. تواصلو معايا باش ترجعوها.",
+      fr: "Sac à main noir trouvé sur la plage de La Marsa. Contient des effets personnels. Contactez-moi pour le récupérer.",
+      ar: "شنطة يد سوداء لقيتها في الشاطئ المرسى. فيها حوايج شخصية. تواصلو معايا باش ترجعوها.",
     },
   },
   {
@@ -122,6 +122,34 @@ export const annonces: Annonce[] = [
     description: {
       fr: "Cahier de révision perdu à la bibliothèque de l'Université de Carthage. Couverture bleue avec 'Ahmed' écrit dessus. L'examen est dans 3 jours.",
       ar: "كراسة مراجعة ضاعت في مكتبة جامعة قرطاج. غلافها أزرق ومكتوب عليها 'أحمد'. الامتحان بعد 3 أيام.",
+    },
+  },
+  {
+    id: 9,
+    titre: { fr: "Chien caniche perdu", ar: "كلب بودل ضايع" },
+    lieu: "Bardo",
+    temps: { fr: "Il y a 1 jour", ar: "من يوم" },
+    heuresEcoulees: 24,
+    type: "perdu",
+    categorie: "animals",
+    image: "https://images.unsplash.com/photo-1591160690555-5debfba289f0?w=800&h=500&fit=crop",
+    description: {
+      fr: "Chien caniche blanc perdu au Bardo. Répond au nom de Milou. Porte un collier rose. Si vous l'avez vu, contactez-nous.",
+      ar: "كلب بودل أبيض ضاع في باردو. اسمو ميلو. عليه قلادة وردية. تواصلو معانا كي تشوفوه.",
+    },
+  },
+  {
+    id: 10,
+    titre: { fr: "Chargeur Samsung perdu", ar: "شاحن سامسونج ضايع" },
+    lieu: "Tunis",
+    temps: { fr: "Il y a 4 heures", ar: "من 4 ساعات" },
+    heuresEcoulees: 4,
+    type: "perdu",
+    categorie: "phones",
+    image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=800&h=500&fit=crop",
+    description: {
+      fr: "Chargeur Samsung perdu à l'Université Tunis El Manar. Chargeur rapide 25W avec câble USB-C. Perdu en salle de cours ou à la bibliothèque.",
+      ar: "شاحن سامسونج ضاع في جامعة تونس المنار. شاحن سريع 25W مع كابل USB-C. ضاع في قاعة الدراسة أو المكتبة.",
     },
   },
   {
