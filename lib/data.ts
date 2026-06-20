@@ -76,7 +76,7 @@ export const annonces: Annonce[] = [
     heuresEcoulees: 48,
     type: "trouve",
     categorie: "wallets",
-    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&h=500&fit=crop",
+    image: "/sac-a-main.png",
     description: {
       fr: "Sac à main noir trouvé sur la plage de La Marsa. Contient des effets personnels. Contactez-moi pour le récupérer.",
       ar: "شنطة يد سوداء لقيتها في الشاطئ المرسى. فيها حوايج شخصية. تواصلو معايا باش ترجعوها.",
