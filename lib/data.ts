@@ -97,20 +97,6 @@ export const annonces: Annonce[] = [
     },
   },
   {
-    id: 6,
-    titre: { fr: "Carte d'identité nationale", ar: "بطاقة هوية وطنية" },
-    lieu: "Sfax",
-    temps: { fr: "Il y a 2 heures", ar: "من 2 ساعات" },
-    heuresEcoulees: 2,
-    type: "trouve",
-    categorie: "documents",
-    image: "/carte-identite.png",
-    description: {
-      fr: "Carte nationale d'identité trouvée devant la poste de Sfax centre. Le propriétaire peut me contacter avec ses informations pour la récupérer.",
-      ar: "بطاقة هوية وطنية لقيتها قدام بوسطة صفاقس الوسطى. صاحبها يتواصل معايا بمعلوماتو باش يرجعها.",
-    },
-  },
-  {
     id: 7,
     titre: { fr: "Cahier de révision", ar: "كراسة مراجعة" },
     lieu: "Carthage",
