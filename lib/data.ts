@@ -188,7 +188,7 @@ export const annonces: Annonce[] = [
     heuresEcoulees: 6,
     type: "trouve",
     categorie: "phones",
-    image: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&h=500&fit=crop",
+    image: "/airpods-pro.jpg",
     description: {
       fr: "AirPods Pro trouvés dans un taxi à Nabeul. Boîtier blanc avec numéro de série inscrit. Contactez-moi avec la description pour les récupérer.",
       ar: "آيربودس برو لقيتهم في تاكسي بنابل. الواحة بيضاء ومكتوب عليها رقم سيريال. تواصلو معايا بالوصف باش ترجعوهم.",
