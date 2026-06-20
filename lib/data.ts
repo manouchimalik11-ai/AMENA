@@ -48,7 +48,7 @@ export const annonces: Annonce[] = [
     heuresEcoulees: 9,
     type: "trouve",
     categorie: "wallets",
-    image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=800&h=500&fit=crop",
+    image: "/portefeuille-homme.png",
     description: {
       fr: "Portefeuille en cuir bleu marine trouvé devant le café Central à Sfax. Contient des cartes et de l'argent. Contactez-moi pour le récupérer.",
       ar: "محفظة جلد كحلة لقيتها قدام قهوة السنترال في صفاقس. فيها كارطات وفلوس. تواصلو معايا باش ترجعوها.",
