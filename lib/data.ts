@@ -26,7 +26,7 @@ export const categories = [
 export const annonces: Annonce[] = [
   {
     id: 1,
-    titre: { fr: "iPhone 13 gris", ar: "آيفون 13 رمادي" },
+    titre: { fr: "iPhone 13 Pro gris", ar: "آيفون 13 برو رمادي" },
     lieu: "Tunis",
     temps: { fr: "Il y a 2 heures", ar: "من 2 ساعات" },
     heuresEcoulees: 2,
@@ -34,8 +34,8 @@ export const annonces: Annonce[] = [
     categorie: "phones",
     image: "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=800&h=500&fit=crop",
     description: {
-      fr: "iPhone 13 gris perdu dans le métro ligne 1, station République. Fond d'écran photo de famille. Récompense promise.",
-      ar: "آيفون 13 رمادي ضاع في الترينو خط 1، محطة الجمهورية. فند الشاشة صورة العيلة. نكافئ من يرجعو.",
+      fr: "iPhone 13 Pro gris perdu dans le métro ligne 1, station République. Fond d'écran photo de famille. Récompense promise.",
+      ar: "آيفون 13 برو رمادي ضاع في الترينو خط 1، محطة الجمهورية. فند الشاشة صورة العيلة. نكافئ من يرجعو.",
     },
     boosted: true,
     boostedUntil: Date.now() + 7 * 24 * 60 * 60 * 1000,
@@ -95,6 +95,8 @@ export const annonces: Annonce[] = [
       fr: "Chat siamois nommé Simba disparu dans le quartier El Khazama, Sousse. Porte un collier bleu. Très important pour notre famille.",
       ar: "قطوس سيامي اسمو سيمبا ضاع في حي الخزامى سوسة. عليه قلادة زرقا. مهم برشا لعيلتنا.",
     },
+    boosted: true,
+    boostedUntil: Date.now() + 7 * 24 * 60 * 60 * 1000,
   },
   {
     id: 7,
