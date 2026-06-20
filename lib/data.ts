@@ -84,13 +84,13 @@ export const annonces: Annonce[] = [
   },
   {
     id: 5,
-    titre: { fr: "Chat siamois disparu", ar: "قطوس سيامي ضايع" },
+    titre: { fr: "Chat siamois", ar: "قطوس سيامي" },
     lieu: "Sousse",
     temps: { fr: "Il y a 5 jours", ar: "من 5 أيام" },
     heuresEcoulees: 120,
     type: "perdu",
     categorie: "animals",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&h=500&fit=crop",
+    image: "/OSK.jpg",
     description: {
       fr: "Chat siamois nommé Simba disparu dans le quartier El Khazama, Sousse. Porte un collier bleu. Très important pour notre famille.",
       ar: "قطوس سيامي اسمو سيمبا ضاع في حي الخزامى سوسة. عليه قلادة زرقا. مهم برشا لعيلتنا.",
@@ -146,7 +146,7 @@ export const annonces: Annonce[] = [
     heuresEcoulees: 144,
     type: "perdu",
     categorie: "keys",
-    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=500&fit=crop",
+    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=500&fit=crop",
     description: {
       fr: "Clés d'appartement perdues à Bizerte. Trousseau avec 3 clés et un porte-clés bleu. Perdu probablement dans le centre-ville. Récompense promise.",
       ar: "مفاتح شقة ضاعت في بنزرت. سلسلة بـ3 مفاتح وبورت كلي أزرق. ضاعت على الأرجح في وسط المدينة. نكافئ من يرجعها.",
