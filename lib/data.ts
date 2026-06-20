@@ -125,6 +125,20 @@ export const annonces: Annonce[] = [
     },
   },
   {
+    id: 12,
+    titre: { fr: "Gilet de jeune trouvé", ar: "جيلي شباب ملقى" },
+    lieu: "Menzah 1",
+    temps: { fr: "Il y a 21 jours", ar: "من 21 يوم" },
+    heuresEcoulees: 504,
+    type: "trouve",
+    categorie: "other",
+    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&h=500&fit=crop",
+    description: {
+      fr: "Gilet de jeune homme trouvé dans un parc public au Menzah 1. Semble appartenir à un adolescent ou jeune adulte. Contactez-moi avec la description pour le récupérer.",
+      ar: "جيلي لشاب لقيتو في حديقة عامة في المنزه 1. يبدو أنو لشاب صغير. تواصلو معايا بالوصف باش ترجعوه.",
+    },
+  },
+  {
     id: 11,
     titre: { fr: "Clés d'appartement perdues", ar: "مفاتح شقة ضايعة" },
     lieu: "Bizerte",
