@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Annonce, categories } from "@/lib/data";
+import { Annonce } from "@/lib/data";
 import { useLang } from "@/lib/LangContext";
 import { tr } from "@/lib/translations";
 
@@ -15,8 +15,6 @@ export default function AnnonceCard({ annonce, vue }: Props) {
   const [hovered, setHovered] = useState(false);
   const { lang } = useLang();
   const t = tr[lang];
-
-  const catLabel = categories.find((c) => c.key === annonce.categorie)?.[lang] || annonce.categorie;
 
   const badge = (
     <div style={{
@@ -73,10 +71,9 @@ export default function AnnonceCard({ annonce, vue }: Props) {
           </div>
           <div style={{ padding: "18px 20px", flex: 1 }}>
             <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6, color: "#1a1a2e" }}>{annonce.titre[lang]}</div>
-            <div style={{ fontSize: 13, color: "#999", marginBottom: 8, display: "flex", alignItems: "center", gap: 4 }}>
+            <div style={{ fontSize: 13, color: "#999", display: "flex", alignItems: "center", gap: 4 }}>
               <span>📍</span>{annonce.lieu} · {annonce.temps[lang]}
             </div>
-            <span style={{ fontSize: 12, background: "#e8f4fc", color: "#1565C0", fontWeight: 600, padding: "3px 10px", borderRadius: 20 }}>{catLabel}</span>
           </div>
           <div style={{ padding: "18px 16px", display: "flex", alignItems: "center" }}>
             {heartBtn}
@@ -113,10 +110,9 @@ export default function AnnonceCard({ annonce, vue }: Props) {
         </div>
         <div style={{ padding: "14px 16px" }}>
           <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 5, color: "#1a1a2e" }}>{annonce.titre[lang]}</div>
-          <div style={{ fontSize: 12, color: "#999", display: "flex", alignItems: "center", gap: 4, marginBottom: 6 }}>
+          <div style={{ fontSize: 12, color: "#999", display: "flex", alignItems: "center", gap: 4 }}>
             <span>📍</span>{annonce.lieu} · {annonce.temps[lang]}
           </div>
-          <div style={{ fontSize: 12, color: "#1565C0", fontWeight: 600 }}>{catLabel}</div>
         </div>
       </div>
     </Link>
