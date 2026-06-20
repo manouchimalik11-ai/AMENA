@@ -111,6 +111,20 @@ export const annonces: Annonce[] = [
     },
   },
   {
+    id: 13,
+    titre: { fr: "Lunettes de vue trouvées", ar: "نظارات طبية ملقاة" },
+    lieu: "Gabès",
+    temps: { fr: "Il y a 10 heures", ar: "من 10 ساعات" },
+    heuresEcoulees: 10,
+    type: "trouve",
+    categorie: "other",
+    image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=800&h=500&fit=crop",
+    description: {
+      fr: "Lunettes de vue trouvées à Gabès. Monture noire, verres correcteurs. Contactez-moi avec la description pour les récupérer.",
+      ar: "نظارات طبية لقيتها في قابس. إطار أسود وعدسات تصحيحية. تواصلو معايا بالوصف باش ترجعوها.",
+    },
+  },
+  {
     id: 12,
     titre: { fr: "Gilet beige trouvé", ar: "جيلي بيج ملقى" },
     lieu: "Menzah 1",
